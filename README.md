@@ -16,6 +16,6 @@ wget https://raw.githubusercontent.com/danlikestocode/embervim/main/install.sh &
 ## Task List
 - [x] Write installation script for UNIX based OS'
 - [ ] Write installation script for Windows
-- [ ] Update README
 - [ ] Write keybind reference
+- [ ] Make documentation describing plugin configuration
 
