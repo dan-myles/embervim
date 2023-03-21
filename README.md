@@ -14,7 +14,7 @@ convenience that will install embervim for you!
 
 Linux:
 ```sh 
-wget https://raw.githubusercontent.com/danlikestocode/embervim/main/webinstall.sh && chmod u+x webinstall.sh && ./webinstall.sh
+wget https://raw.githubusercontent.com/danlikestocode/embervim/main/linux-install.sh && chmod u+x linux-install.sh && ./linux-install.sh
 ```
 
 Windows:
