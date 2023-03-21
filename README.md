@@ -18,4 +18,6 @@ wget https://raw.githubusercontent.com/danlikestocode/embervim/main/install.sh &
 - [ ] Write installation script for Windows
 - [ ] Write keybind reference
 - [ ] Make documentation describing plugin configuration
+- [ ] Update README with required dependencies (for Windows especially)
+
 
