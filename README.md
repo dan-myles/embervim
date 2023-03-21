@@ -29,4 +29,10 @@ coming soon
 - [ ] Make documentation describing plugin configuration
 - [ ] Update README with required dependencies (for Windows especially)
 
+### Notes
+I couldn't get a good file tree working between both Windows and Linux, and 
+since that is really important to me as I move from those machines often
+I thought using NetRW is just as good. The commands are a bit tricky but easy
+once you get the hang of them. Moreover, NetRW lets you open a folder on a remote
+machine, and I have yet to find a "File Tree" that allows that type of functionality.
 
