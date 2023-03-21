@@ -8,11 +8,14 @@ A simple NeoVim bootstrap made with Windows/Linux cross-compatibility in mind.
 ## Usage
 Simple one-liner to download and run the installation script.
 *This will delete your exisiting NeoVim configuration!*
+
+Linux:
 ```sh 
 wget https://raw.githubusercontent.com/danlikestocode/embervim/main/install.sh && chmod u+x install.sh && ./install.sh
 ```
 ## Task List
-- [x] Write installation script
+- [x] Write installation script for UNIX based OS'
+- [ ] Write installation script for Windows
 - [ ] Update README
 - [ ] Write keybind reference
 
