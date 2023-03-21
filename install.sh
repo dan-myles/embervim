@@ -14,6 +14,7 @@ then
     echo "Copying new configuration files..."
     cp -R ./nvim/ ~/.config/nvim/
     echo "Finished!"
+    echo "Make sure to clean up the created Git repository!"
 else
     echo "Stopped installation!"
 fi
