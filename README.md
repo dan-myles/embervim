@@ -3,7 +3,7 @@ A simple NeoVim bootstrap made with Windows/Linux cross-compatibility in mind.
 **CURRENTLY A WORK IN PROGRESS**
 
 ## Showcase
-<img width="100%" src"https://i.imgur.com/BKhTAkj.png" alt="embervim showcase screenshot">
+<img width="100%" src="https://i.imgur.com/BKhTAkj.png" alt="embervim showcase screenshot">
 
 ## Usage
 Simple one-liner to download and run the installation script.
