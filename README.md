@@ -1,5 +1,5 @@
 # Ember Vim
-A simple NeoVim bootstrap made with Windows/Linux cross-compatibility in mind.
+A simple neovim bootstrap made with Windows/Linux cross-compatibility in mind.
 **CURRENTLY A WORK IN PROGRESS**
 
 ## Showcase
