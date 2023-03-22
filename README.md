@@ -1,4 +1,4 @@
-# Ember Vim
+# embervim
 A simple neovim bootstrap made with Windows/Linux cross-compatibility in mind.
 **CURRENTLY A WORK IN PROGRESS**
 
