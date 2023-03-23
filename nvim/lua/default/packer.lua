@@ -56,8 +56,10 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- Glow (Markdown Preview)
+    use('ellisonleao/glow.nvim')
+
     -- Noice
-    -- Packer
     use({
         "folke/noice.nvim",
         requires = {
