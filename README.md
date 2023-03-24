@@ -20,7 +20,9 @@ wget https://raw.githubusercontent.com/danlikestocode/embervim/main/linux-instal
 Windows:
 ```ps
 coming soon
-```
+```  
+  
+Finally make sure to intall packer, as that is required and can be found [here](https://github.com/wbthomason/packer.nvim#quickstart).
 
 ## Task List
 - [x] Write installation script for UNIX based OS'
