@@ -37,7 +37,7 @@ dashboard.section.buttons.val = {
     {type = "text", val = " ", opts = { hl = "SpecialComment", position="center" } },
     {type = "text", val = " ", opts = { hl = "SpecialComment", position="center" } },
     {type = "text", val = "Configuration", opts = { hl = "SpecialComment", position="center" } },
-    dashboard.button( "s", "  > Settings" , ":cd %:p:h | :e . | wincmd k | pwd<CR>"),
+    dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h | :e . | wincmd k | pwd<CR>"),
     --dashboard.button( "u", "  > Update plugins", ":PackerSync<CR>"),  this is currently broken? not sure why but navigating to packer file and sourcing works...
     dashboard.button( "q", "  > Quit", ":qa<CR>"),
 
