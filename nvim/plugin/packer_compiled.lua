@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["bufdelete.nvim"] = {
+    loaded = true,
+    path = "/home/dan/.local/share/nvim/site/pack/packer/start/bufdelete.nvim",
+    url = "https://github.com/famiu/bufdelete.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -129,11 +134,6 @@ _G.packer_plugins = {
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["glow.nvim"] = {
-    loaded = true,
-    path = "/home/dan/.local/share/nvim/site/pack/packer/start/glow.nvim",
-    url = "https://github.com/ellisonleao/glow.nvim"
-  },
   harpoon = {
     loaded = true,
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -164,16 +164,6 @@ _G.packer_plugins = {
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["noice.nvim"] = {
-    loaded = true,
-    path = "/home/dan/.local/share/nvim/site/pack/packer/start/noice.nvim",
-    url = "https://github.com/folke/noice.nvim"
-  },
-  ["nui.nvim"] = {
-    loaded = true,
-    path = "/home/dan/.local/share/nvim/site/pack/packer/start/nui.nvim",
-    url = "https://github.com/MunifTanjim/nui.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -183,11 +173,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-notify"] = {
-    loaded = true,
-    path = "/home/dan/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -208,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["presence.nvim"] = {
+    loaded = true,
+    path = "/home/dan/.local/share/nvim/site/pack/packer/start/presence.nvim",
+    url = "https://github.com/andweeb/presence.nvim"
   },
   ["telescope-project.nvim"] = {
     loaded = true,

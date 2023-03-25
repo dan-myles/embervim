@@ -56,21 +56,24 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- Glow (Markdown Preview)
-    use('ellisonleao/glow.nvim')
+    -- -- Noice
+    -- use({
+    --     "folke/noice.nvim",
+    --     requires = {
+    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    --         "MunifTanjim/nui.nvim",
+    --         -- OPTIONAL:
+    --         --   `nvim-notify` is only needed, if you want to use the notification view.
+    --         --   If not available, we use `mini` as the fallback
+    --         "rcarriga/nvim-notify",
+    --     }
+    -- })
 
-    -- Noice
-    use({
-        "folke/noice.nvim",
-        requires = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        }
-    })
+    -- Discord Rich Presence
+    use('andweeb/presence.nvim')
+
+    -- Better Buffer Closing
+    use('famiu/bufdelete.nvim')
 
     -- LSP Zero
     use {
