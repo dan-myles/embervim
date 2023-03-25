@@ -26,9 +26,6 @@ return require('packer').startup(function(use)
     -- Telescope Projects
     use('nvim-telescope/telescope-project.nvim')
 
-    -- Harpooon
-    use('theprimeagen/harpoon')
-
     -- Undo Tree
     use('mbbill/undotree')
 
@@ -56,21 +53,19 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- -- Noice
-    -- use({
-    --     "folke/noice.nvim",
-    --     requires = {
-    --         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    --         "MunifTanjim/nui.nvim",
-    --         -- OPTIONAL:
-    --         --   `nvim-notify` is only needed, if you want to use the notification view.
-    --         --   If not available, we use `mini` as the fallback
-    --         "rcarriga/nvim-notify",
-    --     }
-    -- })
-
-    -- Discord Rich Presence
-    use('andweeb/presence.nvim')
+    -- Show Keybinds!
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
 
     -- Better Buffer Closing
     use('famiu/bufdelete.nvim')
