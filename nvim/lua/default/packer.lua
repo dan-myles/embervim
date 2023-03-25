@@ -53,6 +53,9 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- CHADTree
+    use('ms-jpq/chadtree', { branch = 'chad', run = ':CHADdeps' })
+
     -- Show Keybinds!
     use {
         "folke/which-key.nvim",
@@ -67,8 +70,8 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- Better Buffer Closing
-    use('famiu/bufdelete.nvim')
+    -- CHADTree
+    use('ms-jpq/chadtree')
 
     -- LSP Zero
     use {
