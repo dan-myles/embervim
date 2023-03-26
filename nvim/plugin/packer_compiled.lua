@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/dan/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   chadtree = {
     loaded = true,
     path = "/home/dan/.local/share/nvim/site/pack/packer/start/chadtree",

@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
     -- Telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        -- or                            , branch = '0.1.x',
+        -- or                          , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
@@ -28,6 +28,12 @@ return require('packer').startup(function(use)
 
     -- Undo Tree
     use('mbbill/undotree')
+
+    -- CHADTree
+    use('ms-jpq/chadtree')
+
+    -- Buffer Line
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
     -- Vim Fugitive
     use('tpope/vim-fugitive')
@@ -53,9 +59,6 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    -- CHADTree
-    use('ms-jpq/chadtree', { branch = 'chad', run = ':CHADdeps' })
-
     -- Show Keybinds!
     use {
         "folke/which-key.nvim",
@@ -69,9 +72,6 @@ return require('packer').startup(function(use)
             }
         end
     }
-
-    -- CHADTree
-    use('ms-jpq/chadtree')
 
     -- LSP Zero
     use {
