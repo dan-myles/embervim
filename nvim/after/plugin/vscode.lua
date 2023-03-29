@@ -13,7 +13,7 @@ require('vscode').setup({
     },
 
     color_overrides = {
-        -- vscLeftDark= '#000000',
+        vscLeftDark= '#000000',
     },
 })
 

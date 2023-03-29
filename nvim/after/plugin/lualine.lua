@@ -16,6 +16,7 @@ local colors = {
   magenta  = '#c678dd',
   blue     = '#bd4f1b',
   red      = '#bd4f1b',
+  redred   = '#d9212a',
 }
 
 local conditions = {
@@ -34,43 +35,49 @@ local conditions = {
 
 -- Config
 local config = {
-  options = {
-    -- Disable sections and component separators
-    component_separators = '',
-    section_separators = '',
-    disabled_filetypes = {
-        'packer',
-        'netrw',
-        'alpha',
-        'CHADTree',
+    options = {
+        -- Disable sections and component separators
+        component_separators = '',
+        section_separators = '',
+        disabled_filetypes = {
+            winbar = {
+                'packer',
+                'netrw',
+                'alpha',
+                'CHADTree',
+            },
+            'packer',
+            'netrw',
+            'alpha',
+            'CHADTree',
+        },
+        theme = {
+            -- We are going to use lualine_c an lualine_x as left and
+            -- right section. Both are highlighted by c theme .  So we
+            -- are just setting default looks o statusline
+            normal = { c = { fg = colors.fg, bg = colors.bg } },
+            inactive = { c = { fg = colors.fg, bg = colors.bg } },
+        },
     },
-    theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
-      normal = { c = { fg = colors.fg, bg = colors.bg } },
-      inactive = { c = { fg = colors.fg, bg = colors.bg } },
+    sections = {
+        -- these are to remove the defaults
+        lualine_a = {},
+        lualine_b = {},
+        lualine_y = {},
+        lualine_z = {},
+        -- These will be filled later
+        lualine_c = {},
+        lualine_x = {},
     },
-  },
-  sections = {
-    -- these are to remove the defaults
-    lualine_a = {},
-    lualine_b = {},
-    lualine_y = {},
-    lualine_z = {},
-    -- These will be filled later
-    lualine_c = {},
-    lualine_x = {},
-  },
-  inactive_sections = {
-    -- these are to remove the defaults
-    lualine_a = {},
-    lualine_b = {},
-    lualine_y = {},
-    lualine_z = {},
-    lualine_c = {},
-    lualine_x = {},
-  },
+    inactive_sections = {
+        -- these are to remove the defaults
+        lualine_a = {},
+        lualine_b = {},
+        lualine_y = {},
+        lualine_z = {},
+        lualine_c = {},
+        lualine_x = {},
+    },
 }
 
 -- Inserts a component in lualine_c at left section
@@ -108,7 +115,6 @@ ins_left {
       no = colors.red,
       s = colors.orange,
       S = colors.orange,
-      [''] = colors.orange,
       ic = colors.yellow,
       R = colors.violet,
       Rv = colors.violet,
@@ -147,7 +153,7 @@ ins_left {
   sources = { 'nvim_diagnostic' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
   diagnostics_color = {
-    color_error = { fg = colors.red },
+    color_error = { fg = colors.redred },
     color_warn = { fg = colors.yellow },
     color_info = { fg = colors.cyan },
   },
@@ -206,11 +212,12 @@ ins_right {
 ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  -- symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  symbols = { added = ' ', modified = ' ', removed = ' ' },
   diff_color = {
     added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
+    modified = { fg = colors.yellow },
+    removed = { fg = colors.redred },
   },
   cond = conditions.hide_in_width,
 }

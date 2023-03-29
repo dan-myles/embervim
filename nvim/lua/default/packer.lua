@@ -23,20 +23,43 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- Illuminate
+    use('RRethy/vim-illuminate')
+
+    -- Barbecue (Breadcrumbs)
+    use({
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        after = "nvim-web-devicons", -- keep this if you're using NvChad
+    })
+
+    -- Harpoon
+    use('ThePrimeagen/harpoon')
+
     -- Telescope Projects
     use('nvim-telescope/telescope-project.nvim')
 
     -- Undo Tree
     use('mbbill/undotree')
 
-    -- CHADTree
-    use('ms-jpq/chadtree')
+    -- Buffer Deleter
+    use('famiu/bufdelete.nvim')
 
     -- Buffer Line
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
     -- Vim Fugitive
     use('tpope/vim-fugitive')
+
+    -- Navic (Window Bar Code Context)
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    }
 
     -- Comment Magic
     use('numToStr/Comment.nvim')
@@ -59,6 +82,22 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+    -- Discord Rich Presence
+    use('andweeb/presence.nvim')
+
+    -- Noice NVIM
+    use({
+        "folke/noice.nvim",
+        requires = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    })
+
     -- Show Keybinds!
     use {
         "folke/which-key.nvim",
@@ -72,6 +111,7 @@ return require('packer').startup(function(use)
             }
         end
     }
+
 
     -- LSP Zero
     use {

@@ -1,5 +1,4 @@
 # embervim
-A personal neovim configuration.
 **CURRENTLY A WORK IN PROGRESS**
 
 ## Showcase

@@ -17,6 +17,7 @@ local colors = {
 
 require("barbecue").setup({
     show_dirname = false,
+    show_basename = false,
 
     symbols = {
         ---Modification indicator.
