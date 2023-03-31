@@ -22,6 +22,7 @@ wk.register({
     ["<C-2>"] = { ":lua require(\"harpoon.ui\").nav_file(2)<CR>", "Go to Bookmark 2" },
     ["<C-3>"] = { ":lua require(\"harpoon.ui\").nav_file(3)<CR>", "Go to Bookmark 3" },
     ["<C-4>"] = { ":lua require(\"harpoon.ui\").nav_file(4)<CR>", "Go to Bookmark 4" },
+    ["<C-p>"] = { ":Telescope git_files<CR>", "Git Files" },
     ["<leader>q"] = { ":Bdelete<CR>", "Close Buffer" },
     ["<leader>Q"] = { ":lua require(\"bufdelete\").bufdelete({1,100})<CR>", "Close All Buffers" },
     ["<leader>w"] = { ":w<CR>", "Write Buffer" },
@@ -39,7 +40,7 @@ wk.register({
 
     -- <leader>g Prefixed Keybinds GIT Actions
     ["<leader>g"] = { name = "+Git" },
-    ["<leader>gf"] = { ":Telescope git_files<CR>", "Git Files" },
+    ["<leader>gd"] = { ":Telescope git_files<CR>", "Git Files" },
     ["<leader>gs"] = { vim.cmd.Git, "Git Menu"},
     ["<leader>gb"] = { ":Telescope git_branches<CR>", "Git Branches" },
     ["<leader>ga"] = { ":Telescope git_commits<CR>", "Git Commits" },

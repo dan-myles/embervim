@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
     -- Vim Fugitive
-    use('tpope/vim-fugitive')
+   use('tpope/vim-fugitive')
 
     -- Navic (Window Bar Code Context)
     use {
