@@ -12,9 +12,8 @@ wk.register({
     ["H"] = { "gT", "Next Buffer" },
     ["L"] = { "gt", "Previous Buffer" },
     ["J"] = { "mzJ`z", "Delete line above" },
-    ["<C-d>"] = {"<C-d>zz", "Down page while centered"},
-    ["<C-u>"] = {"<C-u>zz", "Up page while centered"},
-
+    ["<C-d>"] = { "<C-d>zz", "Down page while centered" },
+    ["<C-u>"] = { "<C-u>zz", "Up page while centered" },
     -- General <leader> Keybinds
     ["<leader>a"] = { ":lua require(\"harpoon.mark\").add_file()<CR>", "Bookmark file" },
     ["<C-e>"] = { ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", "Open Bookmarks" },
@@ -28,38 +27,31 @@ wk.register({
     ["<leader>w"] = { ":w<CR>", "Write Buffer" },
     ["<leader>W"] = { ":wa<CR>", "Write All Buffers" },
     ["<leader>u"] = { vim.cmd.UndotreeToggle, "View Undo Tree" },
-    ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Find and Replace"},
+    ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Find and Replace" },
     ["<leader>/"] = { ":lua require(\"Comment.api\").toggle.linewise.current()<CR>", "Comment" },
-
     -- <leader>p Prefixed Keybinds File Actions
     ["<leader>p"] = { name = "+File" },
     ["<leader>pp"] = { ":lua require'telescope'.extensions.project.project{}<CR>", "Projects" },
-    ["<leader>pv"] = { vim.cmd.Ex, "File Explorer"},
+    ["<leader>pv"] = { vim.cmd.Ex, "File Explorer" },
     ["<leader>pf"] = { ":Telescope find_files<CR>", "Search File" },
-    ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word"},
-
+    ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word" },
     -- <leader>g Prefixed Keybinds GIT Actions
     ["<leader>g"] = { name = "+Git" },
     ["<leader>gd"] = { ":Telescope git_files<CR>", "Git Files" },
-    ["<leader>gs"] = { vim.cmd.Git, "Git Menu"},
+    ["<leader>gs"] = { vim.cmd.Git, "Git Menu" },
     ["<leader>gb"] = { ":Telescope git_branches<CR>", "Git Branches" },
     ["<leader>ga"] = { ":Telescope git_commits<CR>", "Git Commits" },
-
     -- <leader>b Prefixed Keybinds Buffer Actions
     ["<leader>o"] = { name = "+Buffer" },
     ["<leader>of"] = { ":Telescope buffers<CR>", "" },
     ["<leader>oo"] = { ":bn<CR>", "Next Buffer" },
     ["<leader>oi"] = { ":bp<CR>", "Previous Buffer" },
     ["<leader>or"] = { ":Telescope oldfiles<CR>", "Recent Buffers" },
-
     -- <leader>h Prefixed Keybinds Home Actions
     ["<leader>h"] = { name = "+EmberVim" },
     ["<leader>ho"] = { ":Alpha<CR>", "Home" },
-    ["<leader>hs"] = { ":e $HOME/.config/nvim/", "Settings"},
-    ["<leader>hk"] = { ":Telescope keymaps<CR>", "Keybinds"},
-
-
-
+    ["<leader>hs"] = { ":e $HOME/.config/nvim/", "Settings" },
+    ["<leader>hk"] = { ":Telescope keymaps<CR>", "Keybinds" },
     -- ----------- --
     -- LSP Keybinds
     -- ----------- --
@@ -75,6 +67,7 @@ wk.register({
     ["<leader>ll"] = { vim.diagnostic.goto_next, "Goto next diagnostic" },
     ["<leader>lk"] = { vim.diagnostic.goto_prev, "Goto prev diagnostic" },
     ["<leader>ls"] = { ":Telescope diagnostics<CR>", "List diagnostics" },
+    ["<leader>lf"] = { vim.lsp.buf.format, "Format" },
 }, { mode = "n" })
 
 -- Visual Mode Keybinds
@@ -87,7 +80,7 @@ wk.register({
 
 -- Insert Mode Keybinds
 wk.register({
-    ["<C-h>"] = {vim.lsp.buf.signature_help, "Signature Help"},
+    ["<C-h>"] = { vim.lsp.buf.signature_help, "Signature Help" },
 }, { mode = "i" })
 
 
@@ -96,5 +89,3 @@ wk.register({
 
 -- Get rid of this evil garbage
 vim.keymap.set("n", "Q", "<nop>")
-
-
