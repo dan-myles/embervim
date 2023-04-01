@@ -52,6 +52,11 @@ wk.register({
     ["<leader>ho"] = { ":Alpha<CR>", "Home" },
     ["<leader>hs"] = { ":e $HOME/.config/nvim/", "Settings" },
     ["<leader>hk"] = { ":Telescope keymaps<CR>", "Keybinds" },
+    -- <leader>m Prefixed Keybinds Markdown Actions
+    ["<leader>m"] = { name = "+Markdown" },
+    ["<leader>mp"] = { ":MarkdownPreview<CR>", "Start Preview" },
+    ["<leader>ms"] = { ":MarkdownPreviewStop<CR>", "Stop Preview" },
+    ["<leader>mt"] = { ":MarkdownPreviewToggle<CR>", "Toggle Preview" },
     -- ----------- --
     -- LSP Keybinds
     -- ----------- --

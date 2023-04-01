@@ -54,6 +54,14 @@ return require('packer').startup(function(use)
     -- Vim Fugitive
     use('tpope/vim-fugitive')
 
+    -- Vim Markdown
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" },
+    })
+
     -- Navic (Window Bar Code Context)
     use {
         "SmiteshP/nvim-navic",
