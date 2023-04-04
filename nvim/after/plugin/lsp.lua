@@ -28,24 +28,24 @@ lsp.set_preferences({
     sign_icons = {warn = '', error = '', hint = '', info = ''}
 })
 
-lsp.on_attach(function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds({group = augroup, buffer = bufnr})
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-                vim.lsp.buf.format({
-                    bufnr = bufnr,
-                    filter = function(client)
-                        return client.name == "null-ls"
-                    end
-                })
-            end
-        })
-    end
-end)
-
+-- Uncomment this for Format on save
+-- lsp.on_attach(function(client, bufnr)
+--     if client.supports_method("textDocument/formatting") then
+--         vim.api.nvim_clear_autocmds({group = augroup, buffer = bufnr})
+--         vim.api.nvim_create_autocmd("BufWritePre", {
+--             group = augroup,
+--             buffer = bufnr,
+--             callback = function()
+--                 vim.lsp.buf.format({
+--                     bufnr = bufnr,
+--                     filter = function(client)
+--                         return client.name == "null-ls"
+--                     end
+--                 })
+--             end
+--         })
+--     end
+-- end)
 lsp.setup()
 
 vim.diagnostic.config({virtual_text = true})
