@@ -99,17 +99,16 @@ return {
         }
     },
 
-    { "jose-elias-alvarez/null-ls.nvim" }, -- NULL LS
-    { "jay-babu/mason-null-ls.nvim" }, -- NULL LS + Mason Support
-    { "nvim-telescope/telescope-project.nvim" }, -- Telescope Projects
-    { "mbbill/undotree" }, -- Undo Tree
-    { "famiu/bufdelete.nvim" }, -- Buffer Deleter
-    { "tpope/vim-fugitive" }, -- Vim Fugitive
-    { "nvim-lualine/lualine.nvim" }, -- Lualine
+    { "jose-elias-alvarez/null-ls.nvim" },     -- NULL LS
+    { "jay-babu/mason-null-ls.nvim" },         -- NULL LS + Mason Support
+    { "mbbill/undotree" },                     -- Undo Tree
+    { "famiu/bufdelete.nvim" },                -- Buffer Deleter
+    { "tpope/vim-fugitive" },                  -- Vim Fugitive
+    { "nvim-lualine/lualine.nvim" },           -- Lualine
     { "lukas-reineke/indent-blankline.nvim" }, -- Indent Blankline
-    { "lewis6991/gitsigns.nvim" }, -- Git Signs
-    { "ThePrimeagen/harpoon" }, -- Harpoon
-    { "NvChad/nvim-colorizer.lua" }, -- Colorizer
-    { "numToStr/Comment.nvim" }, -- Commenter
-    { "joeytwiddle/sexy_scroller.vim" } -- Sexy Scroller
+    { "lewis6991/gitsigns.nvim" },             -- Git Signs
+    { "ThePrimeagen/harpoon" },                -- Harpoon
+    { "NvChad/nvim-colorizer.lua" },           -- Colorizer
+    { "numToStr/Comment.nvim" },               -- Commenter
+    { "joeytwiddle/sexy_scroller.vim" }        -- Sexy Scroller
 }

@@ -6,8 +6,8 @@ wk.register({
     ["H"] = { "gT", "Next Buffer" },
     ["L"] = { "gt", "Previous Buffer" },
     ["J"] = { "mzJ`z", "Delete line above" },
-    ["<C-d>"] = { "<C-d>zz", "Down page while centered" },
-    ["<C-u>"] = { "<C-u>zz", "Up page while centered" },
+    -- ["<C-d>"] = { "<C-d>zz", "Down page while centered" },
+    -- ["<C-u>"] = { "<C-u>zz", "Up page while centered" },
     ["<C-p>"] = { ":Telescope git_files<CR>", "Git Files" },
     -- General Bookmark CTRL Keybinds
     ["<C-c>"] = { ":lua require(\"harpoon.ui\").nav_file(1)<CR>", "Go to Bookmark 1" },

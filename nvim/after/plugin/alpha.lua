@@ -1,42 +1,41 @@
 local alpha = require('alpha')
 local dashboard = require('alpha.themes.dashboard')
 
+-- Dashboard header
 dashboard.section.header.val = {
     "                    ██         ██                          ",
     "                  ▓▓██         ██                          ",
-    "                ██████  ██      ██                          ",
-    "              ██████  ▓▓▓▓      ████                        ",
-    "              ████▓▓▒▒██        ██████                      ",
-    "            ██████  ████  ██    ████████                    ",
-    "            ██████  ████  ██▒▒    ████████                  ",
-    "            ██████  ████  ▒▒██▓▓  ▓▓████████                ",
+    "                ██████  ██      ██                         ",
+    "              ██████  ▓▓▓▓      ████                       ",
+    "              ████▓▓▒▒██        ██████                     ",
+    "            ██████  ████  ██    ████████                   ",
+    "            ██████  ████  ██▒▒    ████████                 ",
+    "            ██████  ████  ▒▒██▓▓  ▓▓████████               ",
     "           ██████  ░░██    ██████  ████████▒▒              ",
-    "        ░░  ██████    ░░██  ▓▓████░░  ████████              ",
-    "        ██▒▒██████          ▒▒██████  ████████▒▒             ",
-    "          ██████████      ██▓▓██████  ██▓▓██████  ▓▓         ",
+    "        ░░  ██████    ░░██  ▓▓████░░  ████████             ",
+    "        ██▒▒██████          ▒▒██████  ████████▒▒           ",
+    "          ██████████      ██▓▓██████  ██▓▓██████  ▓▓       ",
     "          ░░████████▒▒      ████████      ██████  ██▓▓     ",
     "      ▓▓    ██████████▒▒    ████████      ████████████▒▒   ",
-    "      ██      ██████████▓▓  ████████  ▓▓  █████████████   ",
-    "      ▓▓██      ██████████████████████▓▓  █████████▓▓██   ",
-    "        ██▓▓      ██████████▓▓████████▒▒  ███████████   ",
-    "        ▓▓██        ██████████▓▓██████  ▒▒████████▓▓ ",
-    "          ██▓▓        ████████████▒▒    ███████████ ",
+    "      ██      ██████████▓▓  ████████  ▓▓  █████████████    ",
+    "      ▓▓██      ██████████████████████▓▓  █████████▓▓██    ",
+    "        ██▓▓      ██████████▓▓████████▒▒  ███████████      ",
+    "        ▓▓██        ██████████▓▓██████  ▒▒████████▓▓       ",
+    "          ██▓▓        ████████████▒▒    ███████████        ",
 }
 
+-- Setting dashboard buttons
 dashboard.section.buttons.val = {
-    { type = "text", val = "File",          opts = { hl = "SpecialComment", position = "center" } },
     dashboard.button("n", "  > New", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("r", "󰈢  > Recent", ":Telescope oldfiles<CR>"),
+    dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
     dashboard.button("f", "  > Find", ":Telescope find_files<CR>"),
-    dashboard.button("p", "  > Projects", ":lua require'telescope'.extensions.project.project{}<CR>"),
-    { type = "text", val = " ",             opts = { hl = "SpecialComment", position = "center" } },
-    { type = "text", val = " ",             opts = { hl = "SpecialComment", position = "center" } },
-    { type = "text", val = "Configuration", opts = { hl = "SpecialComment", position = "center" } },
+    { type = "text", val = " ", opts = { hl = "SpecialComment", position = "center" } },
     dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | :e . | wincmd k | pwd<CR><CR>"),
-    dashboard.button( "u", "  > Update plugins", ":Lazy update<CR>"),
+    dashboard.button("u", "  > Update Plugins", ":Lazy update<CR>"),
     dashboard.button("q", "  > Quit", ":qa<CR>"),
 }
 
+-- When the last buffer is deleted, open the dashboard
 local alpha_on_empty = vim.api.nvim_create_augroup("alpha_on_empty", { clear = true })
 vim.api.nvim_create_autocmd("User", {
     pattern = "BDeletePost*",
@@ -53,5 +52,5 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 
-
+-- Registering the dashboard
 alpha.setup(dashboard.opts)
