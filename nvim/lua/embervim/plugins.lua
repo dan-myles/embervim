@@ -86,8 +86,6 @@ return {
             "neovim/nvim-lspconfig",             -- Required
             "williamboman/mason.nvim",           -- Optional
             "williamboman/mason-lspconfig.nvim", -- Optional
-            "jose-elias-alvarez/null-ls.nvim",   -- NULL LS Support
-            "jay-babu/mason-null-ls.nvim",       -- NULL LS + Mason Support
             -- Autocompletion
             "hrsh7th/nvim-cmp",                  -- Required
             "hrsh7th/cmp-nvim-lsp",              -- Required
@@ -101,6 +99,8 @@ return {
         }
     },
 
+    { "jose-elias-alvarez/null-ls.nvim" }, -- NULL LS
+    { "jay-babu/mason-null-ls.nvim" }, -- NULL LS + Mason Support
     { "nvim-telescope/telescope-project.nvim" }, -- Telescope Projects
     { "mbbill/undotree" }, -- Undo Tree
     { "famiu/bufdelete.nvim" }, -- Buffer Deleter
@@ -110,5 +110,6 @@ return {
     { "lewis6991/gitsigns.nvim" }, -- Git Signs
     { "ThePrimeagen/harpoon" }, -- Harpoon
     { "NvChad/nvim-colorizer.lua" }, -- Colorizer
-    { "numToStr/Comment.nvim" } -- Commenter
+    { "numToStr/Comment.nvim" }, -- Commenter
+    { "joeytwiddle/sexy_scroller.vim" } -- Sexy Scroller
 }
