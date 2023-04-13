@@ -2,6 +2,8 @@ return {
     -----------
     -- Themes
     -----------
+    -- If you want to use a theme:
+    -- Make sure to set lazy = false and priority = 1000
 
     -- VSCode Dark +
     {
@@ -13,8 +15,6 @@ return {
     -- Catppuccin
     {
         "catppuccin/nvim",
-        lazy = false,
-        priority = 1000,
         name = "catppuccin"
     },
 
@@ -22,6 +22,12 @@ return {
     {
         'rose-pine/neovim',
         name = 'rose-pine'
+    },
+
+    -- Kanagawa
+    {
+        'rebelot/kanagawa.nvim',
+        name = 'kanagawa'
     },
 
     -----------
@@ -110,5 +116,6 @@ return {
     { "ThePrimeagen/harpoon" },                -- Harpoon
     { "NvChad/nvim-colorizer.lua" },           -- Colorizer
     { "numToStr/Comment.nvim" },               -- Commenter
-    { "joeytwiddle/sexy_scroller.vim" }        -- Sexy Scroller
+    { "joeytwiddle/sexy_scroller.vim" },       -- Sexy Scroller
+    { "ThePrimeagen/vim-be-good" }             -- Vim Be Good (Vim Tutor)
 }

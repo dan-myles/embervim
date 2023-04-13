@@ -1,3 +1,6 @@
+-- All keybinds are defined here
+-- with the exception of some specific keybinds defined in lsp.lua
+
 local wk = require("which-key")
 
 -- Normal Mode Keybinds
@@ -36,7 +39,7 @@ wk.register({
     ["<leader>ga"] = { ":Telescope git_commits<CR>", "Git Commits" },
     -- <leader>b Prefixed Keybinds Buffer Actions
     ["<leader>o"] = { name = "+Buffer" },
-    ["<leader>of"] = { ":Telescope buffers<CR>", "" },
+    ["<leader>of"] = { ":Telescope buffers<CR>", "Search Buffers" },
     ["<leader>oo"] = { ":bn<CR>", "Next Buffer" },
     ["<leader>oi"] = { ":bp<CR>", "Previous Buffer" },
     ["<leader>or"] = { ":Telescope oldfiles<CR>", "Recent Buffers" },
@@ -46,6 +49,8 @@ wk.register({
     ["<leader>hs"] = { ":e $HOME/.config/nvim/", "Settings" },
     ["<leader>hk"] = { ":Telescope keymaps<CR>", "Keybinds" },
     ["<leader>ht"] = { ":Telescope colorscheme<CR>", "Themes" },
+    ["<leader>hl"] = { ":Lazy<CR>", "Lazy Plugin Manager" },
+    ["<leader>hp"] = { ":VimBeGood<CR>", "Vim Tutor" },
     -- <leader>m Prefixed Keybinds Markdown Actions
     ["<leader>m"] = { name = "+Markdown" },
     ["<leader>mp"] = { ":MarkdownPreview<CR>", "Start Preview" },
@@ -81,10 +86,6 @@ wk.register({
 wk.register({
     ["<C-h>"] = { vim.lsp.buf.signature_help, "Signature Help" },
 }, { mode = "i" })
-
-
-
-
 
 -- Get rid of this evil garbage
 vim.keymap.set("n", "Q", "<nop>")
