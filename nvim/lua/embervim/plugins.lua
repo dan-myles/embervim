@@ -117,5 +117,6 @@ return {
     { "NvChad/nvim-colorizer.lua" },           -- Colorizer
     { "numToStr/Comment.nvim" },               -- Commenter
     { "joeytwiddle/sexy_scroller.vim" },       -- Sexy Scroller
-    { "ThePrimeagen/vim-be-good" }             -- Vim Be Good (Vim Tutor)
+    { "ThePrimeagen/vim-be-good" },            -- Vim Be Good (Vim Tutor)
+    { "voldikss/vim-floaterm" }                -- Floaterm
 }

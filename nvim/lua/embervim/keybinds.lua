@@ -31,10 +31,14 @@ wk.register({
     ["<leader>pv"] = { vim.cmd.Ex, "File Explorer" },
     ["<leader>pf"] = { ":Telescope find_files<CR>", "Search File" },
     ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word" },
+    ["<leader>pr"] = { ":Telescope oldfiles<CR>", "Recent Files" },
     -- <leader>g Prefixed Keybinds GIT Actions
     ["<leader>g"] = { name = "+Git" },
     ["<leader>gd"] = { ":Telescope git_files<CR>", "Git Files" },
-    ["<leader>gs"] = { vim.cmd.Git, "Git Menu" },
+    ["<leader>gs"] = {
+        ":FloatermNew --autoclose=2 --name=LazyGit --title=LazyGit --width=0.9 --height=0.9 --position=center lazygit<CR>",
+        "Git UI"
+    },
     ["<leader>gb"] = { ":Telescope git_branches<CR>", "Git Branches" },
     ["<leader>ga"] = { ":Telescope git_commits<CR>", "Git Commits" },
     -- <leader>b Prefixed Keybinds Buffer Actions
@@ -57,6 +61,12 @@ wk.register({
     ["<leader>mp"] = { ":MarkdownPreview<CR>", "Start Preview" },
     ["<leader>ms"] = { ":MarkdownPreviewStop<CR>", "Stop Preview" },
     ["<leader>mt"] = { ":MarkdownPreviewToggle<CR>", "Toggle Preview" },
+    -- <leader>i Prefixed Keybinds Terminal Actions
+    ["<leader>i"] = { name = "+Terminal" },
+    ["<leader>ii"] = { ":FloatermNew --width=0.8 --height=0.8<CR>", "New Terminal" },
+    ["<leader>ik"] = { ":FloatermKill", "Kill Terminal" },
+    -- <leader>t Keybinds
+    ["<leader>t"] = { ":FloatermToggle<CR><C-\\><C-n>:FloatermUpdate --width=0.8 --height=0.8<CR>", "Toggle Terminal" },
     -- ----------- --
     -- LSP Keybinds
     -- ----------- --
@@ -79,14 +89,22 @@ wk.register({
 wk.register({
     ["<leader>y"] = { "\"+y", "Copy to System Clipboard" },
     ["<leader>/"] = { "<esc><cmd>lua require(\"Comment.api\").toggle.linewise(vim.fn.visualmode())<cr>", "comment" },
-    ["J"] = { ":m '>+1<CR>gv=gv", "Move Down" },
-    ["K"] = { ":m '<-2<CR>gv=gv", "Move Up" },
+    ["J"] = { ":m '>+1<CR>gv=gv", "Move Selection Down" },
+    ["K"] = { ":m '<-2<CR>gv=gv", "Move Selection Up" },
 }, { mode = "v" })
 
 -- Insert Mode Keybinds
 wk.register({
     ["<C-h>"] = { vim.lsp.buf.signature_help, "Signature Help" },
 }, { mode = "i" })
+
+-- Terminal Mode Keybinds
+wk.register({
+    ["<Esc><Esc>"] = { "<C-\\><C-n>:FloatermToggle<CR>", "Normal Mode" },
+    ["<C-h>"] = { "<C-\\><C-n>:FloatermPrev<CR>", "Previous Terminal" },
+    ["<C-l>"] = { "<C-\\><C-n>:FloatermNext<CR>", "Next Terminal" },
+    ["<C-x>"] = { "<C-\\><C-n>:FloatermKill<CR>", "Kill terminal" },
+}, { mode = "t" })
 
 -- Get rid of this evil garbage
 vim.keymap.set("n", "Q", "<nop>")

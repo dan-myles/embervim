@@ -76,10 +76,11 @@ Please make sure to install the following dependencies:
 - [Nerd Font](https://www.nerdfonts.com/)
 - [Node](https://npm.github.io/installation-setup-docs/installing/using-a-node-version-manager.html)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep) --- *Optional*
+- [LazyGit](https://github.com/jesseduffield/lazygit) --- *Optional*
 
 > The only dependency that you *really* need to use this configuration is neovim,
 however if you would like to use the full feature set, *Node* is recommended. 
-(LSP's and Formatters generally rely upon Node)  
+(LSP's and Formatters generally rely upon Node) LazyGit is use for `<leader>gs`.
 
 #### Install
 ```sh
