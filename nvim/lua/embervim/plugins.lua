@@ -4,6 +4,7 @@ return {
     -----------
     -- If you want to use a theme:
     -- Make sure to set lazy = false and priority = 1000
+    -- This will make sure that the theme is loaded before any other plugins
 
     -- VSCode Dark +
     {

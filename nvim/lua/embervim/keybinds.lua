@@ -50,7 +50,8 @@ wk.register({
     ["<leader>hk"] = { ":Telescope keymaps<CR>", "Keybinds" },
     ["<leader>ht"] = { ":Telescope colorscheme<CR>", "Themes" },
     ["<leader>hl"] = { ":Lazy<CR>", "Lazy Plugin Manager" },
-    ["<leader>hp"] = { ":VimBeGood<CR>", "Vim Tutor" },
+    ["<leader>hn"] = { ":VimBeGood<CR>", "Vim Tutor" },
+    ["<leader>hp"] = { ":Telescope commands<CR>", "Command Palette" },
     -- <leader>m Prefixed Keybinds Markdown Actions
     ["<leader>m"] = { name = "+Markdown" },
     ["<leader>mp"] = { ":MarkdownPreview<CR>", "Start Preview" },
