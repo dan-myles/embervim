@@ -110,7 +110,6 @@ return {
     { "jay-babu/mason-null-ls.nvim" },         -- NULL LS + Mason Support
     { "mbbill/undotree" },                     -- Undo Tree
     { "famiu/bufdelete.nvim" },                -- Buffer Deleter
-    { "tpope/vim-fugitive" },                  -- Vim Fugitive
     { "nvim-lualine/lualine.nvim" },           -- Lualine
     { "lukas-reineke/indent-blankline.nvim" }, -- Indent Blankline
     { "lewis6991/gitsigns.nvim" },             -- Git Signs
