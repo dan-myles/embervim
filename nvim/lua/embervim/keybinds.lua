@@ -1,53 +1,83 @@
--- All keybinds are defined here
+-- All keybinds are defined here with WhickKey
 -- with the exception of some specific keybinds defined in lsp.lua
-
 local wk = require("which-key")
 
+-- ---------------------- --
+--                        --
 -- Normal Mode Keybinds
+--                        --
+-- ---------------------- --
 wk.register({
-    -- General Keybinds
+    --
+    --
+    -- General Keybinds (No Prefix)
+    --
+    ------------------------------------------------
     ["H"] = { "gT", "Next Buffer" },
     ["L"] = { "gt", "Previous Buffer" },
     ["J"] = { "mzJ`z", "Delete line above" },
-    -- ["<C-d>"] = { "<C-d>zz", "Down page while centered" },
-    -- ["<C-u>"] = { "<C-u>zz", "Up page while centered" },
-    ["<C-p>"] = { ":Telescope git_files<CR>", "Git Files" },
-    -- General Bookmark CTRL Keybinds
+    ["gd"] = { vim.lsp.buf.definition, "Go to definition" },
+    ["K"] = { vim.lsp.buf.hover, "Hover" },
+    --
+    --
+    -- Genearl Keybinds (Prefixed: <Ctrl>)
+    --
+    ------------------------------------------------
     ["<C-c>"] = { ":lua require(\"harpoon.ui\").nav_file(1)<CR>", "Go to Bookmark 1" },
     ["<C-v>"] = { ":lua require(\"harpoon.ui\").nav_file(2)<CR>", "Go to Bookmark 2" },
     ["<C-b>"] = { ":lua require(\"harpoon.ui\").nav_file(3)<CR>", "Go to Bookmark 3" },
     ["<C-n>"] = { ":lua require(\"harpoon.ui\").nav_file(4)<CR>", "Go to Bookmark 4" },
-    -- General <leader> Keybinds
+    ["<C-p>"] = { ":Telescope git_files<CR>", "Git Files" },
+    --
+    --
+    -- General Keybinds (Prefixed: <leader>)
+    --
+    ------------------------------------------------
     ["<leader>a"] = { ":lua require(\"harpoon.mark\").add_file()<CR>", "Bookmark file" },
     ["<leader>e"] = { ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", "Open Bookmarks" },
     ["<leader>q"] = { ":Bdelete<CR>", "Close Buffer" },
     ["<leader>w"] = { ":w<CR>", "Write Buffer" },
     ["<leader>u"] = { vim.cmd.UndotreeToggle, "View Undo Tree" },
     ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Find and Replace" },
+    ["<leader>t"] = { ":FloatermToggle<CR><C-\\><C-n>:FloatermUpdate --width=0.8 --height=0.8<CR>", "Toggle Terminal" },
     ["<leader>/"] = { ":lua require(\"Comment.api\").toggle.linewise.current()<CR>", "Comment" },
-    -- <leader>p Prefixed Keybinds File Actions
+    --
+    --
+    -- File Keybinds (Prefixed: <leader>p)
+    --
+    ------------------------------------------------
     ["<leader>p"] = { name = "+File" },
-    ["<leader>pp"] = { ":lua require'telescope'.extensions.project.project{}<CR>", "Projects" },
     ["<leader>pv"] = { vim.cmd.Ex, "File Explorer" },
     ["<leader>pf"] = { ":Telescope find_files<CR>", "Search File" },
     ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word" },
     ["<leader>pr"] = { ":Telescope oldfiles<CR>", "Recent Files" },
-    -- <leader>g Prefixed Keybinds GIT Actions
+    --
+    --
+    -- Git Keybinds (Prefixed: <leader>g)
+    --
+    ------------------------------------------------
     ["<leader>g"] = { name = "+Git" },
     ["<leader>gd"] = { ":Telescope git_files<CR>", "Git Files" },
-    ["<leader>gs"] = {
-        ":FloatermNew --autoclose=2 --name=LazyGit --title=LazyGit --width=0.9 --height=0.9 --position=center lazygit<CR>",
-        "Git UI"
-    },
     ["<leader>gb"] = { ":Telescope git_branches<CR>", "Git Branches" },
     ["<leader>ga"] = { ":Telescope git_commits<CR>", "Git Commits" },
-    -- <leader>b Prefixed Keybinds Buffer Actions
+    ["<leader>gs"] = {
+        ":FloatermNew --autoclose=2 --name=LazyGit --title=LazyGit --width=0.9 --height=0.9 --position=center lazygit<CR>",
+        "Git UI" },
+    --
+    --
+    -- Buffer Keybinds (Prefixed: <leader>b)
+    --
+    ------------------------------------------------
     ["<leader>o"] = { name = "+Buffer" },
     ["<leader>of"] = { ":Telescope buffers<CR>", "Search Buffers" },
     ["<leader>oo"] = { ":bn<CR>", "Next Buffer" },
     ["<leader>oi"] = { ":bp<CR>", "Previous Buffer" },
     ["<leader>or"] = { ":Telescope oldfiles<CR>", "Recent Buffers" },
-    -- <leader>h Prefixed Keybinds Home Actions
+    --
+    --
+    -- Embervim Keybinds (Prefixed: <leader>h)
+    --
+    ------------------------------------------------
     ["<leader>h"] = { name = "+EmberVim" },
     ["<leader>ho"] = { ":Alpha<CR>", "Home" },
     ["<leader>hs"] = { ":e $HOME/.config/nvim/", "Settings" },
@@ -56,24 +86,28 @@ wk.register({
     ["<leader>hl"] = { ":Lazy<CR>", "Lazy Plugin Manager" },
     ["<leader>hn"] = { ":VimBeGood<CR>", "Vim Tutor" },
     ["<leader>hp"] = { ":Telescope commands<CR>", "Command Palette" },
-    -- <leader>m Prefixed Keybinds Markdown Actions
+    --
+    --
+    -- Markdown Keybinds (Prefixed: <leader>m)
+    --
+    ------------------------------------------------
     ["<leader>m"] = { name = "+Markdown" },
     ["<leader>mp"] = { ":MarkdownPreview<CR>", "Start Preview" },
     ["<leader>ms"] = { ":MarkdownPreviewStop<CR>", "Stop Preview" },
     ["<leader>mt"] = { ":MarkdownPreviewToggle<CR>", "Toggle Preview" },
-    -- <leader>i Prefixed Keybinds Terminal Actions
+    --
+    --
+    -- Terminal Keybinds (Prefixed: <leader>i)
+    --
+    ------------------------------------------------
     ["<leader>i"] = { name = "+Terminal" },
     ["<leader>ii"] = { ":FloatermNew --width=0.8 --height=0.8<CR>", "New Terminal" },
     ["<leader>ik"] = { ":FloatermKill", "Kill Terminal" },
-    -- <leader>t Keybinds
-    ["<leader>t"] = { ":FloatermToggle<CR><C-\\><C-n>:FloatermUpdate --width=0.8 --height=0.8<CR>", "Toggle Terminal" },
-    -- ----------- --
-    -- LSP Keybinds
-    -- ----------- --
-    -- General Keybinds
-    ["gd"] = { vim.lsp.buf.definition, "Go to definition" },
-    ["K"] = { vim.lsp.buf.hover, "Hover" },
-    -- <leader>l Prefixed Keybinds
+    --
+    --
+    -- LSP Keybinds (Prefixed: <leader>l)
+    --
+    ------------------------------------------------
     ["<leader>l"] = { name = "+LSP" },
     ["<leader>lr"] = { vim.lsp.buf.rename, "Rename" },
     ["<leader>ld"] = { vim.lsp.buf.definition, "Definition" },
@@ -85,7 +119,12 @@ wk.register({
     ["<leader>lf"] = { vim.lsp.buf.format, "Format" },
 }, { mode = "n" })
 
+
+-- ---------------------- --
+--                        --
 -- Visual Mode Keybinds
+--                        --
+-- ---------------------- --
 wk.register({
     ["<leader>y"] = { "\"+y", "Copy to System Clipboard" },
     ["<leader>/"] = { "<esc><cmd>lua require(\"Comment.api\").toggle.linewise(vim.fn.visualmode())<cr>", "comment" },
@@ -93,12 +132,22 @@ wk.register({
     ["K"] = { ":m '<-2<CR>gv=gv", "Move Selection Up" },
 }, { mode = "v" })
 
+
+-- ---------------------- --
+--                        --
 -- Insert Mode Keybinds
+--                        --
+-- ---------------------- --
 wk.register({
     ["<C-h>"] = { vim.lsp.buf.signature_help, "Signature Help" },
 }, { mode = "i" })
 
+
+-- ---------------------- --
+--                        --
 -- Terminal Mode Keybinds
+--                        --
+-- ---------------------- --
 wk.register({
     ["<Esc><Esc>"] = { "<C-\\><C-n>:FloatermToggle<CR>", "Normal Mode" },
     ["<C-h>"] = { "<C-\\><C-n>:FloatermPrev<CR>", "Previous Terminal" },
