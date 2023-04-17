@@ -23,10 +23,10 @@ wk.register({
     -- Genearl Keybinds (Prefixed: <Ctrl>)
     --
     ------------------------------------------------
-    ["<C-c>"] = { ":lua require(\"harpoon.ui\").nav_file(1)<CR>", "Go to Bookmark 1" },
-    ["<C-v>"] = { ":lua require(\"harpoon.ui\").nav_file(2)<CR>", "Go to Bookmark 2" },
-    ["<C-b>"] = { ":lua require(\"harpoon.ui\").nav_file(3)<CR>", "Go to Bookmark 3" },
-    ["<C-n>"] = { ":lua require(\"harpoon.ui\").nav_file(4)<CR>", "Go to Bookmark 4" },
+    -- ["<C-c>"] = { ":lua require(\"harpoon.ui\").nav_file(1)<CR>", "Go to Bookmark 1" },
+    -- ["<C-v>"] = { ":lua require(\"harpoon.ui\").nav_file(2)<CR>", "Go to Bookmark 2" },
+    -- ["<C-b>"] = { ":lua require(\"harpoon.ui\").nav_file(3)<CR>", "Go to Bookmark 3" },
+    -- ["<C-n>"] = { ":lua require(\"harpoon.ui\").nav_file(4)<CR>", "Go to Bookmark 4" },
     ["<C-p>"] = { ":Telescope git_files<CR>", "Git Files" },
     --
     --

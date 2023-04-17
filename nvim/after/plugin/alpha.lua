@@ -1,8 +1,8 @@
 local alpha = require('alpha')
 local dashboard = require('alpha.themes.dashboard')
 
--- Dashboard header
-dashboard.section.header.val = {
+-- Dashboard headers
+local flame = {
     "                    ██         ██                          ",
     "                  ▓▓██         ██                          ",
     "                ██████  ██      ██                         ",
@@ -23,6 +23,33 @@ dashboard.section.header.val = {
     "        ▓▓██        ██████████▓▓██████  ▒▒████████▓▓       ",
     "          ██▓▓        ████████████▒▒    ███████████        ",
 }
+
+local dragon = {
+    ' `""*$b..',
+    '      ""*$o.',
+    '          "$$o.',
+    '            "*$$o.',
+    '               "$$$o.',
+    '                 "$$$$bo...       ..o:',
+    '                   "$$$$$$$$booocS$$$    ..    ,.',
+    '                ".    "*$$$$SP     V$o..o$$. .$$$b',
+    '                 "$$o. .$$$$$o. ...A$$$$$$$$$$$$$$b',
+    '           ""bo.   "*$$$$$$$$$$$$$$$$$$$$P*$$$$$$$$:',
+    '              "$$.    V$$$$$$$$$P"**""*""   VP  * "l',
+    '                "$$$o.4$$$$$$$$X',
+    '                 "*$$$$$$$$$$$$$AoA$o..oooooo..           .b',
+    '                        .X$$$$$$$$$$$P""     ""*oo,,     ,$P',
+    '                       $$P""V$$$$$$$:    .        ""*****"',
+    '                     .*"    A$$$$$$$$o.4;      .',
+    '                          .oP""   "$$$$$$b.  .$;',
+    '                                   A$$$$$$$$$$P',
+    '                                   "  "$$$$$P"',
+    '                                       $$P*"',
+    '                                      .$"',
+    '                                      "',
+}
+
+dashboard.section.header.val = dragon
 
 -- Setting dashboard buttons
 dashboard.section.buttons.val = {
