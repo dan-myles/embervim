@@ -1,3 +1,12 @@
+-- LSP comes pre-configured with a lot of sensible defaults, if you would like
+-- to change things, you can do so by passing a table to the setup function.
+--
+-- The most important part of this file is the format_on_save function.
+-- This will be where you configure which filetypes you want to format on save,
+-- and which LSP servers you want to use for formatting. Keep in mind if
+-- you are using a Null-LS language server (ie. prettier) you will need to
+-- set the filetype under "Null LS".
+
 local lsp = require('lsp-zero').preset({
     name = 'recommended',
     set_lsp_keymaps = true,
