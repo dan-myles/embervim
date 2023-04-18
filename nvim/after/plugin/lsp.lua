@@ -7,6 +7,9 @@
 -- you are using a Null-LS language server (ie. prettier) you will need to
 -- set the filetype under "Null LS".
 
+-- Setting up Neodev LUA LSP Server **before** setting up LSPZero
+require("neodev").setup()
+
 local lsp = require('lsp-zero').preset({
     name = 'recommended',
     set_lsp_keymaps = true,
@@ -19,7 +22,16 @@ lsp.nvim_workspace()
 
 -- Fix Undefined global 'vim'
 lsp.configure('lua-language-server',
-    { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } })
+    {
+        settings = {
+            Lua = {
+                completion = {
+                    callSnippet = 'Replace'
+                },
+                diagnostics = { globals = { 'vim' } }
+            }
+        }
+    })
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }

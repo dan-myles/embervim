@@ -54,8 +54,9 @@ dashboard.section.header.val = dragon
 -- Setting dashboard buttons
 dashboard.section.buttons.val = {
     dashboard.button("n", "  > New", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
+    dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
     dashboard.button("f", "  > Find", ":Telescope find_files<CR>"),
+    dashboard.button("e", "  > Explorer", ":Ex<CR>"),
     { type = "text", val = " ", opts = { hl = "SpecialComment", position = "center" } },
     dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | :e . | wincmd k | pwd<CR><CR>"),
     dashboard.button("u", "  > Update Plugins", ":Lazy update<CR>"),

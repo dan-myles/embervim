@@ -86,6 +86,7 @@ wk.register({
     ["<leader>hl"] = { ":Lazy<CR>", "Lazy Plugin Manager" },
     ["<leader>hn"] = { ":VimBeGood<CR>", "Vim Tutor" },
     ["<leader>hp"] = { ":Telescope commands<CR>", "Command Palette" },
+    ["<leader>hr"] = { ":Telescope reloader<CR>", "Module Reloader" },
     --
     --
     -- Markdown Keybinds (Prefixed: <leader>m)

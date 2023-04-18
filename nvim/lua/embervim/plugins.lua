@@ -118,5 +118,11 @@ return {
     { "numToStr/Comment.nvim" },               -- Commenter
     { "joeytwiddle/sexy_scroller.vim" },       -- Sexy Scroller
     { "ThePrimeagen/vim-be-good" },            -- Vim Be Good (Vim Tutor)
-    { "voldikss/vim-floaterm" }                -- Floaterm
+    { "voldikss/vim-floaterm" },               -- Floaterm
+    { "folke/neodev.nvim" },                   -- NeoDev LSP
+
+    -- {
+    --     name = "bufferlist",
+    --     dir = "/home/dan/Personal/bufferlist/branches/main"
+    -- },
 }
