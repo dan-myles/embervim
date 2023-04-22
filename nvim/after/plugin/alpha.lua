@@ -49,6 +49,7 @@ local dragon = {
     '                                      "',
 }
 
+-- Actually setting the dashboard here
 dashboard.section.header.val = dragon
 
 -- Setting dashboard buttons

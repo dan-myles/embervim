@@ -56,6 +56,7 @@ lsp.format_on_save({
     servers = {
         ['lua_ls'] = { 'lua' },
         ['rust_analyzer'] = { 'rust' },
+        ['jdtls'] = { 'java' },
         ['null-ls'] = {
             'javacript',
             'typescript',

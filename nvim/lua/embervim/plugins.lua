@@ -1,3 +1,5 @@
+-- TODO: integrate lspaga
+
 return {
     -----------
     -- Themes
@@ -120,6 +122,7 @@ return {
     { "ThePrimeagen/vim-be-good" },            -- Vim Be Good (Vim Tutor)
     { "voldikss/vim-floaterm" },               -- Floaterm
     { "folke/neodev.nvim" },                   -- NeoDev LSP
+    { "nvim-telescope/telescope-file-browser.nvim" },
 
     -- {
     --     name = "bufferlist",

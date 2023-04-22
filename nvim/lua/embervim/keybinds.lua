@@ -20,13 +20,9 @@ wk.register({
     ["K"] = { vim.lsp.buf.hover, "Hover" },
     --
     --
-    -- Genearl Keybinds (Prefixed: <Ctrl>)
+    -- General Keybinds (Prefixed: <Ctrl>)
     --
     ------------------------------------------------
-    -- ["<C-c>"] = { ":lua require(\"harpoon.ui\").nav_file(1)<CR>", "Go to Bookmark 1" },
-    -- ["<C-v>"] = { ":lua require(\"harpoon.ui\").nav_file(2)<CR>", "Go to Bookmark 2" },
-    -- ["<C-b>"] = { ":lua require(\"harpoon.ui\").nav_file(3)<CR>", "Go to Bookmark 3" },
-    -- ["<C-n>"] = { ":lua require(\"harpoon.ui\").nav_file(4)<CR>", "Go to Bookmark 4" },
     ["<C-p>"] = { ":Telescope git_files<CR>", "Git Files" },
     --
     --
@@ -41,6 +37,10 @@ wk.register({
     ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Find and Replace" },
     ["<leader>t"] = { ":FloatermToggle<CR><C-\\><C-n>:FloatermUpdate --width=0.8 --height=0.8<CR>", "Toggle Terminal" },
     ["<leader>/"] = { ":lua require(\"Comment.api\").toggle.linewise.current()<CR>", "Comment" },
+    ["<leader>1"] = { ":lua require(\"harpoon.ui\").nav_file(1)<CR>", "Go to Bookmark 1" },
+    ["<leader>2"] = { ":lua require(\"harpoon.ui\").nav_file(2)<CR>", "Go to Bookmark 2" },
+    ["<leader>3"] = { ":lua require(\"harpoon.ui\").nav_file(3)<CR>", "Go to Bookmark 3" },
+    ["<leader>4"] = { ":lua require(\"harpoon.ui\").nav_file(4)<CR>", "Go to Bookmark 4" },
     --
     --
     -- File Keybinds (Prefixed: <leader>p)
@@ -118,6 +118,37 @@ wk.register({
     ["<leader>lk"] = { vim.diagnostic.goto_prev, "Goto prev diagnostic" },
     ["<leader>ls"] = { ":Telescope diagnostics<CR>", "List diagnostics" },
     ["<leader>lf"] = { vim.lsp.buf.format, "Format" },
+    ["<leader>ri"] = { function()
+        local buffer = vim.api.nvim_create_buf(false, false)
+        local columns = vim.o.columns
+        local lines = vim.o.lines
+
+        local width = math.floor(columns * 0.5)
+        local height = math.floor(lines * 0.6)
+
+        local col = 0.5
+        local row = 0.45
+
+        local window = vim.api.nvim_open_win(buffer, true, {
+            border = "solid",
+            style = "minimal",
+            relative = "editor",
+            width = width,
+            height = height,
+            -- center-ish math is hard
+            row = (lines - height) * row,
+            col = (columns - width) * col,
+            title = { { " Explore ", "TelescopePromptTitle" } },
+            title_pos = "center",
+        })
+
+        vim.cmd.Explore()
+        vim.keymap.set("n", "q", function()
+            vim.api.nvim_win_close(window, true)
+            vim.api.nvim_buf_delete(buffer, { force = true })
+        end, { desc = "Quit.", buffer = buffer, silent = true })
+    end,
+        "test" },
 }, { mode = "n" })
 
 
