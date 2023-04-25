@@ -16,8 +16,10 @@ wk.register({
     ["H"] = { "gT", "Next Buffer" },
     ["L"] = { "gt", "Previous Buffer" },
     ["J"] = { "mzJ`z", "Delete line above" },
-    ["gd"] = { vim.lsp.buf.definition, "Go to definition" },
-    ["K"] = { vim.lsp.buf.hover, "Hover" },
+    ["gd"] = { ":Lspsaga goto_definition<CR>zz", "Go to definition" },
+    ["K"] = { ":Lspsaga hover_doc ++keep<CR>", "Hover" },
+    ["[e"] = { ":Lspsaga diagnostic_jump_prev<CR>", "Previous Diagnostic" },
+    ["]e"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
     --
     --
     -- General Keybinds (Prefixed: <Ctrl>)
@@ -29,6 +31,7 @@ wk.register({
     -- General Keybinds (Prefixed: <leader>)
     --
     ------------------------------------------------
+    ["<leader>o"] = { ":Lspsaga outline<CR>", "Toggle Code Outline" },
     ["<leader>a"] = { ":lua require(\"harpoon.mark\").add_file()<CR>", "Bookmark file" },
     ["<leader>e"] = { ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", "Open Bookmarks" },
     ["<leader>q"] = { ":Bdelete<CR>", "Close Buffer" },
@@ -47,13 +50,19 @@ wk.register({
     --
     ------------------------------------------------
     ["<leader>p"] = { name = "+File" },
-    ["<leader>pv"] = { vim.cmd.Ex, "File Explorer" },
     ["<leader>pf"] = { ":Telescope find_files<CR>", "Search File" },
     ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word in CWD" },
     ["<leader>pr"] = { ":Telescope oldfiles<CR>", "Recent Files" },
     ["<leader>pw"] = {
-        ":lua require('telescope.builtin').current_buffer_fuzzy_find({previewer=false})<CR>",
+        ":lua require('telescope.builtin').current_buffer_fuzzy_find({ previewer=false, layout_config = { height = 20, width = 65, }, })<CR>",
         "Search Word in Current Buffer"
+    },
+    ["<leader>pv"] = {
+        -- ":lua require('telescope').extensions.file_browser.file_browser({ previewer = false, layout_config = { height = 30, width = 100, }, })<CR>",
+        [[
+        :lua require('telescope').extensions.file_browser.file_browser({previewer=false, layout_config={height=25, width=85}})<CR>
+        ]],
+        "File Explorer"
     },
     --
     --
@@ -72,11 +81,11 @@ wk.register({
     -- Buffer Keybinds (Prefixed: <leader>b)
     --
     ------------------------------------------------
-    ["<leader>o"] = { name = "+Buffer" },
-    ["<leader>of"] = { ":Telescope buffers<CR>", "Search Buffers" },
-    ["<leader>oo"] = { ":bn<CR>", "Next Buffer" },
-    ["<leader>oi"] = { ":bp<CR>", "Previous Buffer" },
-    ["<leader>or"] = { ":Telescope oldfiles<CR>", "Recent Buffers" },
+    ["<leader>b"] = { name = "+Buffer" },
+    ["<leader>bf"] = { ":Telescope buffers<CR>", "Search Buffers" },
+    ["<leader>bn"] = { ":bn<CR>", "Next Buffer" },
+    ["<leader>bp"] = { ":bp<CR>", "Previous Buffer" },
+    ["<leader>br"] = { ":Telescope oldfiles<CR>", "Recent Buffers" },
     --
     --
     -- Embervim Keybinds (Prefixed: <leader>h)
@@ -115,13 +124,13 @@ wk.register({
     --
     ------------------------------------------------
     ["<leader>l"] = { name = "+LSP" },
-    ["<leader>lr"] = { vim.lsp.buf.rename, "Rename" },
-    ["<leader>ld"] = { vim.lsp.buf.definition, "Definition" },
-    ["<leader>li"] = { vim.lsp.buf.references, "References" },
-    ["<leader>la"] = { vim.lsp.buf.code_action, "Code Action" },
-    ["<leader>ll"] = { vim.diagnostic.goto_next, "Goto next diagnostic" },
-    ["<leader>lk"] = { vim.diagnostic.goto_prev, "Goto prev diagnostic" },
-    ["<leader>ls"] = { ":Telescope diagnostics<CR>", "List diagnostics" },
+    ["<leader>lq"] = { ":Lspsaga lsp_finder<CR>", "Definition & References" },
+    ["<leader>lr"] = { ":Lspsaga rename ++project<CR>", "Rename" },
+    ["<leader>ld"] = { ":Lspsaga peek_definition<CR>", "Peek Definition" },
+    ["<leader>lt"] = { ":Lspsaga peek_type_definition<CR>", "Peek Type Definition" },
+    ["<leader>lb"] = { ":Lspsaga show_buf_diagnostics<CR>", "Buffer Diagnostics" },
+    ["<leader>lw"] = { ":Lspsaga show_workspace_diagnostics<CR>", "Workspace Diagnostics" },
+    ["<leader>la"] = { ":Lspsaga code_action<CR>", "Code Action" },
     ["<leader>lf"] = { vim.lsp.buf.format, "Format" },
     --
     --

@@ -1,5 +1,3 @@
--- TODO: integrate lspaga
-
 return {
     -----------
     -- Themes
@@ -82,7 +80,10 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.1",
-        dependencies = { "nvim-lua/plenary.nvim" }
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-file-browser.nvim",
+        }
     },
 
     -- LSP Zero
@@ -114,6 +115,7 @@ return {
     { "theHamsta/nvim-dap-virtual-text" },     -- DAP Virtual Text
     { "nvim-telescope/telescope-dap.nvim" },   -- DAP Telescope
     { "jay-babu/mason-nvim-dap.nvim" },        -- DAP + Mason Support
+    { "glepnir/lspsaga.nvim" },                -- Better LSP UI
     { "folke/neodev.nvim" },                   -- NeoDev LSP
     { "mbbill/undotree" },                     -- Undo Tree
     { "famiu/bufdelete.nvim" },                -- Buffer Deleter

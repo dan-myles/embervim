@@ -57,7 +57,10 @@ dashboard.section.buttons.val = {
     dashboard.button("n", "  > New", ":ene <BAR> startinsert <CR>"),
     dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
     dashboard.button("f", "  > Find", ":Telescope find_files<CR>"),
-    dashboard.button("e", "  > Explorer", ":Ex<CR>"),
+    dashboard.button("e", "  > Explorer",
+        [[
+        :lua require('telescope').extensions.file_browser.file_browser({previewer=false, layout_config={height=25, width=85}})<CR>
+        ]]),
     { type = "text", val = " ", opts = { hl = "SpecialComment", position = "center" } },
     dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | :e . | wincmd k | pwd<CR><CR>"),
     dashboard.button("u", "  > Update Plugins", ":Lazy update<CR>"),
@@ -76,7 +79,8 @@ vim.api.nvim_create_autocmd("User", {
 
         if fallback_on_empty then
             vim.cmd("Alpha")
-            vim.cmd(event.buf .. "bwipeout")
+            vim.cmd("only")
+            -- vim.cmd(event.buf .. "bwipeout")
         end
     end,
 })
