@@ -13,11 +13,10 @@ wk.register({
     -- General Keybinds (No Prefix)
     --
     ------------------------------------------------
-    ["H"] = { "gT", "Next Buffer" },
-    ["L"] = { "gt", "Previous Buffer" },
     ["J"] = { "mzJ`z", "Delete line above" },
-    ["gd"] = { ":Lspsaga goto_definition<CR>zz", "Go to definition" },
     ["K"] = { ":Lspsaga hover_doc ++keep<CR>", "Hover" },
+    ["L"] = { ":Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
+    ["gd"] = { ":Lspsaga goto_definition<CR>zz", "Go to definition" },
     ["[e"] = { ":Lspsaga diagnostic_jump_prev<CR>", "Previous Diagnostic" },
     ["]e"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
     --
@@ -53,16 +52,10 @@ wk.register({
     ["<leader>pf"] = { ":Telescope find_files<CR>", "Search File" },
     ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word in CWD" },
     ["<leader>pr"] = { ":Telescope oldfiles<CR>", "Recent Files" },
+    ["<leader>pv"] = { ":Telescope file_browser<CR>", "File Explorer" },
     ["<leader>pw"] = {
         ":lua require('telescope.builtin').current_buffer_fuzzy_find({ previewer=false, layout_config = { height = 20, width = 65, }, })<CR>",
         "Search Word in Current Buffer"
-    },
-    ["<leader>pv"] = {
-        -- ":lua require('telescope').extensions.file_browser.file_browser({ previewer = false, layout_config = { height = 30, width = 100, }, })<CR>",
-        [[
-        :lua require('telescope').extensions.file_browser.file_browser({previewer=false, layout_config={height=25, width=85}})<CR>
-        ]],
-        "File Explorer"
     },
     --
     --

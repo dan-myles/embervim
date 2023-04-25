@@ -57,12 +57,9 @@ dashboard.section.buttons.val = {
     dashboard.button("n", "  > New", ":ene <BAR> startinsert <CR>"),
     dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
     dashboard.button("f", "  > Find", ":Telescope find_files<CR>"),
-    dashboard.button("e", "  > Explorer",
-        [[
-        :lua require('telescope').extensions.file_browser.file_browser({previewer=false, layout_config={height=25, width=85}})<CR>
-        ]]),
+    dashboard.button("e", "  > Explorer", ":Telescope file_browser<CR>"),
     { type = "text", val = " ", opts = { hl = "SpecialComment", position = "center" } },
-    dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | :e . | wincmd k | pwd<CR><CR>"),
+    dashboard.button("s", "  > Settings", ":Telescope file_browser path=$HOME/.config/nvim/<CR>"),
     dashboard.button("u", "  > Update Plugins", ":Lazy update<CR>"),
     dashboard.button("q", "  > Quit", ":qa<CR>"),
 }
