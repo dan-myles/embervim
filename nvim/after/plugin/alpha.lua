@@ -77,7 +77,6 @@ vim.api.nvim_create_autocmd("User", {
         if fallback_on_empty then
             vim.cmd("Alpha")
             vim.cmd("only")
-            -- vim.cmd(event.buf .. "bwipeout")
         end
     end,
 })

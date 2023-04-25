@@ -21,17 +21,38 @@ local lsp = require('lsp-zero').preset({
 lsp.nvim_workspace()
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server',
-    {
-        settings = {
-            Lua = {
-                completion = {
-                    callSnippet = 'Replace'
-                },
-                diagnostics = { globals = { 'vim' } }
-            }
+lsp.configure('lua-language-server', {
+    settings = {
+        Lua = {
+            completion = {
+                callSnippet = 'Replace'
+            },
+            diagnostics = { globals = { 'vim' } }
         }
-    })
+    }
+})
+
+-- Fix Offset Encodings for NULL-LS
+lsp.configure('clangd', {
+    cmd = {
+        "clangd",
+        "--all-scopes-completion",
+        "--suggest-missing-includes",
+        "--background-index",
+        "--pch-storage=disk",
+        "--cross-file-rename",
+        "--log=info",
+        "--completion-style=detailed",
+        "--enable-config",          -- clangd 11+ supports reading from .clangd configuration file
+        "--clang-tidy",
+        "--offset-encoding=utf-16", --temporary fix for null-ls
+        -- "--clang-tidy-checks=-*,llvm-*,clang-analyzer-*,modernize-*,-modernize-use-trailing-return-type",
+        -- "--fallback-style=Google",
+        -- "--header-insertion=never",
+        -- "--query-driver=<list-of-white-listed-complers>"
+    },
+    filetypes = { 'c', 'cpp', 'objc', 'objcpp' }
+})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -66,6 +87,8 @@ lsp.format_on_save({
         }
     }
 })
+
+lsp.skip_server_setup({ 'jdtls' })
 
 lsp.setup()
 

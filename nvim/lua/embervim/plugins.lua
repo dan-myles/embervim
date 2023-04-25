@@ -86,7 +86,7 @@ return {
         }
     },
 
-    -- LSP Zero
+    -- LSP/Intellisense
     {
         "VonHeikemen/lsp-zero.nvim",
         branch = "v1.x",
@@ -104,19 +104,21 @@ return {
             "hrsh7th/cmp-nvim-lua",              -- Optional
             -- Snippets
             "L3MON4D3/LuaSnip",                  -- Required
-            "rafamadriz/friendly-snippets"       -- Optional
+            "rafamadriz/friendly-snippets",      -- Optional
+            --Custom
+            "jose-elias-alvarez/null-ls.nvim",   -- NULL LS
+            "jay-babu/mason-null-ls.nvim",       -- NULL LS + Mason Support
+            "glepnir/lspsaga.nvim",              -- Better LSP UI
+            "mfussenegger/nvim-dap",             -- DAP
+            "rcarriga/nvim-dap-ui",              -- DAP UI
+            "theHamsta/nvim-dap-virtual-text",   -- DAP Virtual Text
+            "nvim-telescope/telescope-dap.nvim", -- DAP Telescope
+            "jay-babu/mason-nvim-dap.nvim",      -- DAP + Mason Support
+            "folke/neodev.nvim",                 -- NeoDev LSP
+            "mfussenegger/nvim-jdtls",           -- Java LSP
         }
     },
 
-    { "jose-elias-alvarez/null-ls.nvim" },     -- NULL LS
-    { "jay-babu/mason-null-ls.nvim" },         -- NULL LS + Mason Support
-    { "mfussenegger/nvim-dap" },               -- DAP
-    { "rcarriga/nvim-dap-ui" },                -- DAP UI
-    { "theHamsta/nvim-dap-virtual-text" },     -- DAP Virtual Text
-    { "nvim-telescope/telescope-dap.nvim" },   -- DAP Telescope
-    { "jay-babu/mason-nvim-dap.nvim" },        -- DAP + Mason Support
-    { "glepnir/lspsaga.nvim" },                -- Better LSP UI
-    { "folke/neodev.nvim" },                   -- NeoDev LSP
     { "mbbill/undotree" },                     -- Undo Tree
     { "famiu/bufdelete.nvim" },                -- Buffer Deleter
     { "nvim-lualine/lualine.nvim" },           -- Lualine

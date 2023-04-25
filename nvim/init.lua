@@ -14,6 +14,10 @@
 -- located in lua/embervim/set.lua
 --
 -- To configure specific plugins, you can add said lua file to after/plugin
+--
+-- The directory /plugin is special as it is for filetype specific autocmds
+-- Usually you would use ftplugin to set this up, however creating an autocmd
+-- lets you have more control over what is exectued, ie. a callback not file.
 
 require("embervim")
 
