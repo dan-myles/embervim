@@ -49,8 +49,12 @@ wk.register({
     ["<leader>p"] = { name = "+File" },
     ["<leader>pv"] = { vim.cmd.Ex, "File Explorer" },
     ["<leader>pf"] = { ":Telescope find_files<CR>", "Search File" },
-    ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word" },
+    ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word in CWD" },
     ["<leader>pr"] = { ":Telescope oldfiles<CR>", "Recent Files" },
+    ["<leader>pw"] = {
+        ":lua require('telescope.builtin').current_buffer_fuzzy_find({previewer=false})<CR>",
+        "Search Word in Current Buffer"
+    },
     --
     --
     -- Git Keybinds (Prefixed: <leader>g)
@@ -87,6 +91,7 @@ wk.register({
     ["<leader>hn"] = { ":VimBeGood<CR>", "Vim Tutor" },
     ["<leader>hp"] = { ":Telescope commands<CR>", "Command Palette" },
     ["<leader>hr"] = { ":Telescope reloader<CR>", "Module Reloader" },
+    ["<leader>hm"] = { ":Mason<CR>", "Mason Package Manager" },
     --
     --
     -- Markdown Keybinds (Prefixed: <leader>m)
@@ -118,37 +123,25 @@ wk.register({
     ["<leader>lk"] = { vim.diagnostic.goto_prev, "Goto prev diagnostic" },
     ["<leader>ls"] = { ":Telescope diagnostics<CR>", "List diagnostics" },
     ["<leader>lf"] = { vim.lsp.buf.format, "Format" },
-    ["<leader>ri"] = { function()
-        local buffer = vim.api.nvim_create_buf(false, false)
-        local columns = vim.o.columns
-        local lines = vim.o.lines
-
-        local width = math.floor(columns * 0.5)
-        local height = math.floor(lines * 0.6)
-
-        local col = 0.5
-        local row = 0.45
-
-        local window = vim.api.nvim_open_win(buffer, true, {
-            border = "solid",
-            style = "minimal",
-            relative = "editor",
-            width = width,
-            height = height,
-            -- center-ish math is hard
-            row = (lines - height) * row,
-            col = (columns - width) * col,
-            title = { { " Explore ", "TelescopePromptTitle" } },
-            title_pos = "center",
-        })
-
-        vim.cmd.Explore()
-        vim.keymap.set("n", "q", function()
-            vim.api.nvim_win_close(window, true)
-            vim.api.nvim_buf_delete(buffer, { force = true })
-        end, { desc = "Quit.", buffer = buffer, silent = true })
-    end,
-        "test" },
+    --
+    --
+    -- Debug Keybinds (Prefixed: <leader>d)
+    --
+    ------------------------------------------------
+    ["<leader>d"] = { name = "+Debug" },
+    ["<leader>dc"] = { ":lua require('dap').continue()<CR>", "Continue" },
+    ["<leader>db"] = { ":lua require('dap').toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+    ["<leader>do"] = { ":lua require('dap').step_over()<CR>", "Step Over" },
+    ["<leader>di"] = { ":lua require('dap').step_into()<CR>", "Step Into" },
+    ["<leader>de"] = { ":lua require('dap').step_out()<CR>", "Step Out" },
+    ["<leader>dr"] = { ":lua require('dap').repl.open()<CR>", "Open REPL" },
+    ["<leader>dl"] = { ":lua require('dap').run_last()<CR>", "Run Last" },
+    ["<leader>dk"] = { ":lua require('dap.ui.widgets').hover()<CR>", "Hover" },
+    ["<leader>dp"] = { ":lua require('dap.ui.widgets').preview()<CR>", "Preview" },
+    ["<leader>du"] = { name = "+UI" },
+    ["<leader>dui"] = { ":lua require('dapui').open()<CR>", "Open UI" },
+    ["<leader>dun"] = { ":lua require('dapui').toggle()<CR>", "Toggle UI" },
+    ["<leader>duc"] = { ":lua require('dapui').close()<CR>", "Close UI" },
 }, { mode = "n" })
 
 

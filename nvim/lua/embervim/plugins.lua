@@ -40,8 +40,7 @@ return {
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
-        build =
-        ":TSUpdate"
+        build = ":TSUpdate"
     },
 
     -- Copilot
@@ -75,7 +74,7 @@ return {
         "folke/which-key.nvim",
         config = function()
             vim.o.timeout = true
-            vim.o.timeoutlen = 300
+            vim.o.timeoutlen = 500
         end
     },
 
@@ -110,6 +109,12 @@ return {
 
     { "jose-elias-alvarez/null-ls.nvim" },     -- NULL LS
     { "jay-babu/mason-null-ls.nvim" },         -- NULL LS + Mason Support
+    { "mfussenegger/nvim-dap" },               -- DAP
+    { "rcarriga/nvim-dap-ui" },                -- DAP UI
+    { "theHamsta/nvim-dap-virtual-text" },     -- DAP Virtual Text
+    { "nvim-telescope/telescope-dap.nvim" },   -- DAP Telescope
+    { "jay-babu/mason-nvim-dap.nvim" },        -- DAP + Mason Support
+    { "folke/neodev.nvim" },                   -- NeoDev LSP
     { "mbbill/undotree" },                     -- Undo Tree
     { "famiu/bufdelete.nvim" },                -- Buffer Deleter
     { "nvim-lualine/lualine.nvim" },           -- Lualine
@@ -121,8 +126,6 @@ return {
     { "joeytwiddle/sexy_scroller.vim" },       -- Sexy Scroller
     { "ThePrimeagen/vim-be-good" },            -- Vim Be Good (Vim Tutor)
     { "voldikss/vim-floaterm" },               -- Floaterm
-    { "folke/neodev.nvim" },                   -- NeoDev LSP
-    { "nvim-telescope/telescope-file-browser.nvim" },
 
     -- {
     --     name = "bufferlist",

@@ -8,6 +8,11 @@ require("mason-null-ls").setup({
     handlers = {},
 })
 
+require("mason-nvim-dap").setup({
+    ensure_installed = { 'js' },
+    handlers = {},
+})
+
 require("null-ls").setup({
     sources = {
         -- Anything not supported by mason.
