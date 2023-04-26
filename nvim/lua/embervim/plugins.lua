@@ -80,10 +80,7 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.1",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-file-browser.nvim",
-        }
+        dependencies = { "nvim-lua/plenary.nvim" }
     },
 
     -- LSP/Intellisense
@@ -105,7 +102,7 @@ return {
             -- Snippets
             "L3MON4D3/LuaSnip",                  -- Required
             "rafamadriz/friendly-snippets",      -- Optional
-            --Custom
+            -- Custom
             "jose-elias-alvarez/null-ls.nvim",   -- NULL LS
             "jay-babu/mason-null-ls.nvim",       -- NULL LS + Mason Support
             "glepnir/lspsaga.nvim",              -- Better LSP UI
@@ -119,6 +116,7 @@ return {
         }
     },
 
+    { "stevearc/oil.nvim" },                   -- File Manager
     { "mbbill/undotree" },                     -- Undo Tree
     { "famiu/bufdelete.nvim" },                -- Buffer Deleter
     { "nvim-lualine/lualine.nvim" },           -- Lualine

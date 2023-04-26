@@ -52,7 +52,7 @@ wk.register({
     ["<leader>pf"] = { ":Telescope find_files<CR>", "Search File" },
     ["<leader>ps"] = { ":Telescope live_grep<CR>", "Search Word in CWD" },
     ["<leader>pr"] = { ":Telescope oldfiles<CR>", "Recent Files" },
-    ["<leader>pv"] = { ":Telescope file_browser<CR>", "File Explorer" },
+    ["<leader>pv"] = { ":Oil --float<CR>", "File Explorer" },
     ["<leader>pw"] = {
         ":lua require('telescope.builtin').current_buffer_fuzzy_find({ previewer=false, layout_config = { height = 20, width = 65, }, })<CR>",
         "Search Word in Current Buffer"

@@ -81,8 +81,8 @@ lsp.format_on_save({
         ['null-ls'] = {
             'javacript',
             'typescript',
-            'tsx',
-            'jsx',
+            'typescriptreact',
+            'javascriptreact',
             'json'
         }
     }
