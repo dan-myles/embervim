@@ -116,6 +116,7 @@ return {
         }
     },
 
+    { "folke/zen-mode.nvim" },                 -- Zen Mode
     { "stevearc/oil.nvim" },                   -- File Manager
     { "mbbill/undotree" },                     -- Undo Tree
     { "famiu/bufdelete.nvim" },                -- Buffer Deleter
