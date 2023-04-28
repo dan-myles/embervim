@@ -35,6 +35,7 @@ wk.register({
     ["<leader>e"] = { ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", "Open Bookmarks" },
     ["<leader>q"] = { ":Bdelete<CR>", "Close Buffer" },
     ["<leader>w"] = { ":w<CR>", "Write Buffer" },
+    ["<leader>z"] = { ":ZenMode<CR>", "Toggle Zen Mode" },
     ["<leader>u"] = { vim.cmd.UndotreeToggle, "View Undo Tree" },
     ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Find and Replace" },
     ["<leader>t"] = { ":FloatermToggle<CR><C-\\><C-n>:FloatermUpdate --width=0.8 --height=0.8<CR>", "Toggle Terminal" },

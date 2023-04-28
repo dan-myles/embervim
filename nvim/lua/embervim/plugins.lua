@@ -116,6 +116,7 @@ return {
         }
     },
 
+    { "xiyaowong/transparent.nvim" },          -- Transparent Toggle
     { "folke/zen-mode.nvim" },                 -- Zen Mode
     { "stevearc/oil.nvim" },                   -- File Manager
     { "mbbill/undotree" },                     -- Undo Tree
