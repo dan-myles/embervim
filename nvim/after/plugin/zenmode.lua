@@ -16,7 +16,7 @@ require("zen-mode").setup({
         tmux = { enabled = true },
         kitty = {
             enabled = true,
-            font = "+20",
+            font = "7",
         },
     },
     on_open = function(win)
