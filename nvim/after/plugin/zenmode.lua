@@ -14,10 +14,6 @@ require("zen-mode").setup({
             ruler = false,
         },
         tmux = { enabled = true },
-        kitty = {
-            enabled = true,
-            font = "7",
-        },
     },
     on_open = function(win)
         vim.cmd("set colorcolumn=0")
