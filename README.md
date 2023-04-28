@@ -1,26 +1,26 @@
 <h1 align="center">embervim</h1>
 
-<div align="center"> 
-   <a href="https://github.com/danlikestocode/embervim#Info">
-   Info
-   </a> 
-   <span> • </span>
-
-   <a href="https://github.com/danlikestocode/embervim#Install">
-   Install
-   </a> 
-   <span> • </span>
-
-   <a href="https://github.com/danlikestocode/embervim#Usage">
-   Usage
-   </a> 
-   <span> • </span>
-
-   <a href="https://dotfyle.com/danlikestocode/embervim-nvim">
-   Plugin List
-   </a>
-</div>
-
+<!-- <div align="center">  -->
+<!--    <a href="https://github.com/danlikestocode/embervim#Info"> -->
+<!--    Info -->
+<!--    </a>  -->
+<!--    <span> • </span> -->
+<!---->
+<!--    <a href="https://github.com/danlikestocode/embervim#Install"> -->
+<!--    Install -->
+<!--    </a>  -->
+<!--    <span> • </span> -->
+<!---->
+<!--    <a href="https://github.com/danlikestocode/embervim#Usage"> -->
+<!--    Usage -->
+<!--    </a>  -->
+<!--    <span> • </span> -->
+<!---->
+<!--    <a href="https://dotfyle.com/danlikestocode/embervim-nvim"> -->
+<!--    Plugin List -->
+<!--    </a> -->
+<!-- </div> -->
+<!---->
 
 <div align="center">
  
@@ -73,7 +73,7 @@ lowers the startup time for older machines.
 Please make sure to install the following dependencies:
 
 - [Neovim](https://github.com/neovim/neovim)
-- [Nerd Font](https://www.nerdfonts.com/)
+- [Any Nerd Font](https://www.nerdfonts.com/)
 - [Node](https://npm.github.io/installation-setup-docs/installing/using-a-node-version-manager.html)
 - [Ripgrep](https://github.com/BurntSushi/ripgrep) --- *Optional*
 - [LazyGit](https://github.com/jesseduffield/lazygit) --- *Optional*
@@ -110,5 +110,6 @@ Some helpful commands:
 While embervim is generally a work in progress, it is **not** a framework, so breaking
 changes will not affect the user. The recommended use for embervim is to copy the configuration
 and use it as a *starting point* for your *own* configuration. Thanks for coming by
-and checking this project out! :heart:
+and checking this project out! Also if anything is missing from the docs, feel free
+to submit an issue or a PR to get it sorted. :heart:
 
