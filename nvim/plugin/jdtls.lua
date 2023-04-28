@@ -1,3 +1,6 @@
+-- Will be called on `BufEnter` for Java files
+-- JDTLS Autocommand Logic and Setup
+
 local java_cmds = vim.api.nvim_create_augroup('java_cmds', { clear = true })
 local cache_vars = {}
 
@@ -169,8 +172,8 @@ local function jdtls_setup(event)
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
         '-Declipse.product=org.eclipse.jdt.ls.core.product',
-        '-Dlog.protocol=true',
-        '-Dlog.level=ALL',
+        -- '-Dlog.protocol=true',
+        -- '-Dlog.level=ALL',
         '-javaagent:' .. path.java_agent,
         '-Xms1g',
         '--add-modules=ALL-SYSTEM',

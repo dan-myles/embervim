@@ -119,7 +119,7 @@ return {
     { "stevearc/oil.nvim" },                   -- File Manager
     { "mbbill/undotree" },                     -- Undo Tree
     { "famiu/bufdelete.nvim" },                -- Buffer Deleter
-    { "nvim-lualine/lualine.nvim" },           -- Lualine
+    { "nvim-lualine/lualine.nvim" },           -- Statusline
     { "lukas-reineke/indent-blankline.nvim" }, -- Indent Blankline
     { "lewis6991/gitsigns.nvim" },             -- Git Signs
     { "ThePrimeagen/harpoon" },                -- Harpoon

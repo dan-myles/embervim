@@ -1,3 +1,8 @@
+-- This is the main "Themes" file, where specific theme settings can be setup
+-- ie. transparent, italic comments, etc.
+-- This file will also **set** the colorschem!
+
+
 local c = require('vscode.colors').get_colors()
 require('vscode').setup({
     transparent = false,
@@ -11,4 +16,6 @@ require('vscode').setup({
     },
 })
 
-require('vscode').load()
+
+-- vim.cmd('colorscheme kanagawa-dragon')
+vim.cmd('colorscheme vscode')

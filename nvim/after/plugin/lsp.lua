@@ -78,6 +78,7 @@ lsp.format_on_save({
         ['lua_ls'] = { 'lua' },
         ['rust_analyzer'] = { 'rust' },
         ['jdtls'] = { 'java' },
+        ['lemminx'] = { 'fxml' },
         ['null-ls'] = {
             'javacript',
             'typescript',
