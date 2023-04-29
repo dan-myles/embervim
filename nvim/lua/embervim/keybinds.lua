@@ -17,8 +17,30 @@ wk.register({
     ["K"] = { ":Lspsaga hover_doc ++keep<CR>", "Hover" },
     ["L"] = { ":Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
     ["gd"] = { ":Lspsaga goto_definition<CR>zz", "Go to definition" },
-    ["[e"] = { ":Lspsaga diagnostic_jump_prev<CR>", "Previous Diagnostic" },
-    ["]e"] = { ":Lspsaga diagnostic_jump_next<CR>", "Next Diagnostic" },
+    ["[e"] = {
+        [[:lua require("lspsaga.diagnostic"):goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>]],
+        "Previous Diagnostic"
+    },
+    ["]e"] = {
+        [[:lua require("lspsaga.diagnostic"):goto_next({severity=vim.diagnostic.severity.ERROR})<CR>]],
+        "Previous Diagnostic"
+    },
+    ["[w"] = {
+        [[:lua require("lspsaga.diagnostic"):goto_prev({severity=vim.diagnostic.severity.WARN})<CR>]],
+        "Previous Diagnostic"
+    },
+    ["]w"] = {
+        [[:lua require("lspsaga.diagnostic"):goto_next({severity=vim.diagnostic.severity.WARN})<CR>]],
+        "Previous Diagnostic"
+    },
+    ["[r"] = {
+        [[:lua require("lspsaga.diagnostic"):goto_prev()<CR>]],
+        "Previous Diagnostic"
+    },
+    ["]r"] = {
+        [[:lua require("lspsaga.diagnostic"):goto_next()<CR>]],
+        "Previous Diagnostic"
+    },
     --
     --
     -- General Keybinds (Prefixed: <Ctrl>)

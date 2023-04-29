@@ -106,10 +106,18 @@ Some helpful commands:
 - :Mason --- *Opens up LSP install menu*
 - :Lazy --- *Opens up Plugin menu*
 
+## :white_check_mark: To-Do
+- [x] Move to Lazy instead of Packer 
+- [x] Move to Oil for filesystem actions 
+- [x] Implement null-ls for prettier/general formatting support
+- [ ] Make setup/walkthrough video
+- [ ] Integrate some sort of color changing statusline
+- [ ] Implement debugging with DAP (Currently Broken)
+
 ## :newspaper: Notes
 While embervim is generally a work in progress, it is **not** a framework, so breaking
 changes will not affect the user. The recommended use for embervim is to copy the configuration
 and use it as a *starting point* for your *own* configuration. Thanks for coming by
 and checking this project out! Also if anything is missing from the docs, feel free
-to submit an issue or a PR to get it sorted. :heart:
+to submit an issue or a PR to get it sorted. :heart:    
 

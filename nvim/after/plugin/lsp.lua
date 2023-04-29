@@ -93,4 +93,7 @@ lsp.skip_server_setup({ 'jdtls' })
 
 lsp.setup()
 
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({
+    virtual_text = false,
+    underline = true,
+})

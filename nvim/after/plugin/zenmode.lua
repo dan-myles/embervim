@@ -5,7 +5,6 @@ require("zen-mode").setup({
         width = 80,
         options = {
             cursorcolumn = false,
-            signcolumn = "no",
         },
     },
     plugins = {
@@ -20,7 +19,7 @@ require("zen-mode").setup({
         vim.cmd("TransparentEnable")
     end,
     on_close = function(win)
-        vim.cmd("TransparentDisable")
         vim.cmd("set colorcolumn=80")
+        vim.cmd("TransparentDisable")
     end,
 })
