@@ -20,4 +20,7 @@ require("oil").setup({
         ["~"] = "actions.tcd",
         ["g."] = "actions.toggle_hidden",
     },
+    view_options = {
+        show_hidden = true,
+    },
 })
