@@ -157,25 +157,6 @@ wk.register({
   ["<leader>la"] = { ":Lspsaga code_action<CR>", "Code Action" },
   ["<leader>lm"] = { ":e<CR>", "Restart Language Server" },
   ["<leader>lf"] = { vim.lsp.buf.format, "Format" },
-  --
-  --
-  -- Debug Keybinds (Prefixed: <leader>d)
-  --
-  ------------------------------------------------
-  ["<leader>d"] = { name = "+Debug" },
-  ["<leader>dc"] = { ":lua require('dap').continue()<CR>", "Continue" },
-  ["<leader>db"] = { ":lua require('dap').toggle_breakpoint()<CR>", "Toggle Breakpoint" },
-  ["<leader>do"] = { ":lua require('dap').step_over()<CR>", "Step Over" },
-  ["<leader>di"] = { ":lua require('dap').step_into()<CR>", "Step Into" },
-  ["<leader>de"] = { ":lua require('dap').step_out()<CR>", "Step Out" },
-  ["<leader>dr"] = { ":lua require('dap').repl.open()<CR>", "Open REPL" },
-  ["<leader>dl"] = { ":lua require('dap').run_last()<CR>", "Run Last" },
-  ["<leader>dk"] = { ":lua require('dap.ui.widgets').hover()<CR>", "Hover" },
-  ["<leader>dp"] = { ":lua require('dap.ui.widgets').preview()<CR>", "Preview" },
-  ["<leader>du"] = { name = "+UI" },
-  ["<leader>dui"] = { ":lua require('dapui').open()<CR>", "Open UI" },
-  ["<leader>dun"] = { ":lua require('dapui').toggle()<CR>", "Toggle UI" },
-  ["<leader>duc"] = { ":lua require('dapui').close()<CR>", "Close UI" },
 }, { mode = "n" })
 
 

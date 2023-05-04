@@ -106,14 +106,10 @@ return {
       "jose-elias-alvarez/null-ls.nvim",   -- NULL LS
       "jay-babu/mason-null-ls.nvim",       -- NULL LS + Mason Support
       "glepnir/lspsaga.nvim",              -- Better LSP UI
-      "mfussenegger/nvim-dap",             -- DAP
-      "rcarriga/nvim-dap-ui",              -- DAP UI
-      "theHamsta/nvim-dap-virtual-text",   -- DAP Virtual Text
-      "nvim-telescope/telescope-dap.nvim", -- DAP Telescope
-      "jay-babu/mason-nvim-dap.nvim",      -- DAP + Mason Support
       "folke/neodev.nvim",                 -- NeoDev LSP
       "mfussenegger/nvim-jdtls",           -- Java LSP
       "windwp/nvim-autopairs",             -- Autopairs
+      "lukas-reineke/lsp-format.nvim"      -- Autoformat on Save ASYNC
     }
   },
 

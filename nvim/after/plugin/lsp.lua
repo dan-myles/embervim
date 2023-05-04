@@ -73,7 +73,9 @@ lsp.set_preferences({
 lsp.format_on_save({
   format_opts = {
     timeout_ms = 10000,
+    async = true,
   },
+
   servers = {
     ['lua_ls'] = { 'lua' },
     ['rust_analyzer'] = { 'rust' },
