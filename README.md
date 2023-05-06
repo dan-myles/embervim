@@ -30,14 +30,53 @@
 </div>
 
 ## :camera: Showcase
-![Showcase](./assets/showcase/sc1.png)
-![Showcase](./assets/showcase/sc2.png)
-![Showcase](./assets/showcase/sc3.png)
+![Homepage](./assets/showcase/sc-dashboard.png)
+
+### 🔥 Full Showcase 🔥
+<details className=>
+<summary>Extended Embervim Showcase</summary>
+
+<h4>Keybind Reference 😖</h4>
+<div>Just incase you forget a keybind!</div>
+<br>
+<img src="./assets/showcase/sc-keybind-reference.png">
+
+<h4>Zen-Mode 😌</h4>
+<div>Get rid of the distractions, live a better life.</div>
+<br>
+<img src="./assets/showcase/sc-zen-mode.png">
+
+<h4>Markdown Preview 😎</h4>
+<div>Write beautiful markdown documents.</div>
+<br>
+<img src="./assets/showcase/sc-markdown-preview.png">
+
+<h4>LSP Wizardry 🧙</h4>
+<div>Make your life easier, a step at a time.</div>
+<br>
+<img src="./assets/showcase/sc-lsp-finder.png">
+
+<h4>File Explorer 🤓</h4>
+<div>Edit your filesystem just like a buffer!</div>
+<br>
+<img src="./assets/showcase/sc-file-explorer.png">
+
+<h4>Fuzzy File Finder 🔭</h4>
+<div>Move through your codebase like a ninja.</div>
+<br>
+<img src="./assets/showcase/sc-fuzzy-file-find.png">
+
+<h4>Package Mangement 🧳</h4>
+<div>One keystroke installs of LSPs/Formatters.</div>
+<br>
+<img src="./assets/showcase/sc-mason.png">
+</details>
+
 
 
 ## :mag: Info
 
-embervim is yet again another neovim configuration designed to make it easy
+Embervim is yet again another neovim configuration designed to make it easy
 for users not familiar with neovim to expand their own configuration. Time and 
 time again I found myself switching between VSCode and neovim. I loved neovim
 for its extensibility, but found that setting up LSP+Linting+Formatting was
@@ -50,11 +89,20 @@ in mind. Files are organized in a sensible fashion, without too much overhead.
 Configuration files are split into a different folder for ease of use. Embervim
 does not use any custom lua directory loading or any fancy handling of plugins. 
 This **isn't meant to be a framework**, rather a configuration that users can build
-upon. And since I'm coming from VSCode, we ship the VSCode Dark+ theme by *default*.  
-  
-Embervim also uses lazy loading by default, meaning that plugins will not be loaded unless
-they are required by the specific filetype you are working on. This dramatically
-lowers the startup time for older machines.
+upon. 
+
+While switching back and forth between VSCode and neovim I found myself missing some
+features of VSCode... such as the file tree. I kept installing different neovim
+plugins to try to emulate that file tree behavior. Embervim does *not* ship with 
+a traditional "file-tree" and that is for a good reason. It just *doesn't* work with
+neovim. The way neovim is laid out with its tab structures makes implementing
+a file tree that sticks on top of your screen a non-trivial task. Moreover, after
+looking for different ways of doing things I found that a lot of neovim users navigate
+files by sort of "bookmarking" them. The way you can navigate a codebase with fuzzy-finding
+and bookmarking is just *superior* to a file tree. It almost makes a file tree seem
+like an anti-pattern. So for that reason, embervim will *not* include a file tree, and
+I believe that if you are subscribing to neovim you should also subscribe to doing things
+the "neovim" way and not try to make neovim into VSCode.
 
 #### Features
 - Windows + MacOS + Linux cross-compatiblity
@@ -80,16 +128,18 @@ Please make sure to install the following dependencies:
 
 > The only dependency that you *really* need to use this configuration is neovim,
 however if you would like to use the full feature set, *Node* is recommended. 
-(LSP's and Formatters generally rely upon Node) LazyGit is use for `<leader>gs`.
+(LSP's and Formatters generally rely upon Node) LazyGit is used for `<leader>gs`.
 
 #### Install
-```sh
-git clone https://github.com/danlikestocode/embervim ~/embervim && cp -R ~/embervim/nvim ~/.config/embervim/nvim && rm -rdf ~/embervim
-```
-> Keep in mind this one liner will install to `~/.config/nvim`. If you already
-have a configuration there or would like to manually install embervim you may
-do so by: Cloning this repo and replacing your ~/.config/nvim with the nvim
-folder in the embervim repository.
+Embervim does not provide any installation scripts or programs that will install
+this configuration for you. Configuration directories often live in different places
+for different operating systems. Fret not, embervim is *really* easy to install:
+
+    1. Navigate to `$XDG_CONFIG_HOME/nvim`
+    2. Replace the `nvim` (if it exists) with the one in this repository
+    3. Launch neovim and install plugins
+
+Thats it, you're ready to go!
 
 ## :gear: Usage
 Configuration with embervim is generally *really* simple. The file structure is
@@ -110,6 +160,7 @@ Some helpful commands:
 - [x] Move to Lazy instead of Packer 
 - [x] Move to Oil for filesystem actions 
 - [x] Implement null-ls for prettier/general formatting support
+- [x] Move away from sexyscroller (lots of issues)
 - [ ] Implement null-ls/LSP format on save asynchronously
 - [ ] Make setup/walkthrough video
 - [ ] Integrate some sort of color changing statusline
@@ -121,4 +172,8 @@ changes will not affect the user. The recommended use for embervim is to copy th
 and use it as a *starting point* for your *own* configuration. Thanks for coming by
 and checking this project out! Also if anything is missing from the docs, feel free
 to submit an issue or a PR to get it sorted. :heart:    
+
+## 👮 DISCLAIMER
+Embervim is heavily inspired by [this](https://www.youtube.com/watch?v=f8h0iHg1wDg).
+I am not a lawyer and this is not legal advice.
 

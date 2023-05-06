@@ -4,11 +4,9 @@ require('lualine').setup({
     theme = 'auto',
     component_separators = '|',
     section_separators = { left = '', right = '' },
-    disabled_filetype = {
+    disabled_filetypes = {
       statusline = {
-        'TelescopePrompt',
-        'Oil',
-        'Alpha',
+        'alpha',
       },
       winbar = {},
     },
