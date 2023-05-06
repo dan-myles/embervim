@@ -16,18 +16,24 @@ return {
   -- Catppuccin
   {
     "catppuccin/nvim",
+    lazy = false,
+    priority = 1000,
     name = "catppuccin"
   },
 
   -- Rose Pine
   {
     'rose-pine/neovim',
+    lazy = false,
+    priority = 1000,
     name = 'rose-pine'
   },
 
   -- Kanagawa
   {
     'rebelot/kanagawa.nvim',
+    lazy = false,
+    priority = 1000,
     name = 'kanagawa'
   },
 
@@ -113,6 +119,7 @@ return {
     }
   },
 
+  { "tpope/vim-surround" },                  -- Vim Surround
   { "xiyaowong/transparent.nvim" },          -- Transparent Toggle
   { "folke/zen-mode.nvim" },                 -- Zen Mode
   { "stevearc/oil.nvim" },                   -- File Manager
@@ -127,9 +134,4 @@ return {
   { "joeytwiddle/sexy_scroller.vim" },       -- Sexy Scroller
   { "ThePrimeagen/vim-be-good" },            -- Vim Be Good (Vim Tutor)
   { "voldikss/vim-floaterm" },               -- Floaterm
-
-  -- {
-  --     name = "bufferlist",
-  --     dir = "/home/dan/Personal/bufferlist/branches/main"
-  -- },
 }
