@@ -99,23 +99,27 @@ return {
       "williamboman/mason.nvim",           -- Optional
       "williamboman/mason-lspconfig.nvim", -- Optional
       -- Autocompletion
-      "yioneko/nvim-cmp",                  -- Required
-      "hrsh7th/cmp-nvim-lsp",              -- Required
-      "hrsh7th/cmp-buffer",                -- Optional
-      "hrsh7th/cmp-path",                  -- Optional
-      "saadparwaiz1/cmp_luasnip",          -- Optional
-      "hrsh7th/cmp-nvim-lua",              -- Optional
+      -- We are using this fork of nvim-cmp because it has better support for
+      -- tailwind LSP. The original nvim-cmp repo has a PR open for this but
+      -- has not been implemented yet. Tailwind LSP slowdown issues are fixed
+      -- by this fork!
+      "yioneko/nvim-cmp",                -- Required
+      "hrsh7th/cmp-nvim-lsp",            -- Required
+      "hrsh7th/cmp-buffer",              -- Optional
+      "hrsh7th/cmp-path",                -- Optional
+      "saadparwaiz1/cmp_luasnip",        -- Optional
+      "hrsh7th/cmp-nvim-lua",            -- Optional
       -- Snippets
-      "L3MON4D3/LuaSnip",                  -- Required
-      "rafamadriz/friendly-snippets",      -- Optional
+      "L3MON4D3/LuaSnip",                -- Required
+      "rafamadriz/friendly-snippets",    -- Optional
       -- Custom
-      "jose-elias-alvarez/null-ls.nvim",   -- NULL LS
-      "jay-babu/mason-null-ls.nvim",       -- NULL LS + Mason Support
-      "glepnir/lspsaga.nvim",              -- Better LSP UI
-      "folke/neodev.nvim",                 -- NeoDev LSP
-      "mfussenegger/nvim-jdtls",           -- Java LSP
-      "windwp/nvim-autopairs",             -- Autopairs
-      "lukas-reineke/lsp-format.nvim"      -- Autoformat on Save ASYNC
+      "jose-elias-alvarez/null-ls.nvim", -- NULL LS
+      "jay-babu/mason-null-ls.nvim",     -- NULL LS + Mason Support
+      "glepnir/lspsaga.nvim",            -- Better LSP UI
+      "folke/neodev.nvim",               -- NeoDev LSP
+      "mfussenegger/nvim-jdtls",         -- Java LSP
+      "windwp/nvim-autopairs",           -- Autopairs
+      "lukas-reineke/lsp-format.nvim"    -- Autoformat on Save ASYNC
     }
   },
 
