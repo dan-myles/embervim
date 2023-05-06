@@ -55,6 +55,7 @@ wk.register({
   --
   ------------------------------------------------
   ["<C-p>"] = { ":Telescope git_files<CR>", "Git Files" },
+  ["<C-e>"] = { ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", "Open Bookmarks" },
   --
   --
   -- General Keybinds (Prefixed: <leader>)
@@ -62,7 +63,6 @@ wk.register({
   ------------------------------------------------
   ["<leader>o"] = { ":Lspsaga outline<CR>", "Toggle Code Outline" },
   ["<leader>a"] = { ":lua require(\"harpoon.mark\").add_file()<CR>", "Bookmark file" },
-  ["<leader>e"] = { ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", "Open Bookmarks" },
   ["<leader>q"] = { ":Bdelete<CR>", "Close Buffer" },
   ["<leader>w"] = { ":w<CR>", "Write Buffer" },
   ["<leader>z"] = { ":ZenMode<CR>", "Toggle Zen Mode" },

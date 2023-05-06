@@ -99,7 +99,7 @@ return {
       "williamboman/mason.nvim",           -- Optional
       "williamboman/mason-lspconfig.nvim", -- Optional
       -- Autocompletion
-      "hrsh7th/nvim-cmp",                  -- Required
+      "yioneko/nvim-cmp",                  -- Required
       "hrsh7th/cmp-nvim-lsp",              -- Required
       "hrsh7th/cmp-buffer",                -- Optional
       "hrsh7th/cmp-path",                  -- Optional
@@ -131,7 +131,7 @@ return {
   { "ThePrimeagen/harpoon" },                -- Harpoon
   { "NvChad/nvim-colorizer.lua" },           -- Colorizer
   { "numToStr/Comment.nvim" },               -- Commenter
-  { "joeytwiddle/sexy_scroller.vim" },       -- Sexy Scroller
+  { "declancm/cinnamon.nvim" },              -- Smooth Scrolling 🔥
   { "ThePrimeagen/vim-be-good" },            -- Vim Be Good (Vim Tutor)
   { "voldikss/vim-floaterm" },               -- Floaterm
 }
