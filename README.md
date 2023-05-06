@@ -110,6 +110,7 @@ Some helpful commands:
 - [x] Move to Lazy instead of Packer 
 - [x] Move to Oil for filesystem actions 
 - [x] Implement null-ls for prettier/general formatting support
+- [ ] Implement null-ls/LSP format on save asynchronously
 - [ ] Make setup/walkthrough video
 - [ ] Integrate some sort of color changing statusline
 - [ ] Implement debugging with DAP (Currently Broken)
