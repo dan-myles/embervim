@@ -137,7 +137,7 @@ for different operating systems. Fret not, embervim is *really* easy to install:
 
 1. Navigate to `$XDG_CONFIG_HOME/nvim`
 2. Replace the `nvim` directory (if it exists) with the one in this repository
-3. Launch neovim and install plugins
+3. Launch neovim
 
 Thats it, you're ready to go!
 
