@@ -66,10 +66,15 @@
 <br>
 <img src="./assets/showcase/sc-fuzzy-file-find.png">
 
-<h4>Floating Terminal ☁️</h4>
+<h4>Floating Terminal ☁️<</h4>
 <div>A terminal that is just one keybind away.</div>
 <br>
 <img src="./assets/showcase/sc-floating-terminal.png">
+
+<h4>Sleek UI 👽</h4>
+<div>A neovim commandline that doesn't compromise.</div>
+<br>
+<img src="./assets/showcase/sc-moden-commandline.png">
 
 <h4>Package Mangement 🧳</h4>
 <div>One keystroke installs of LSPs/Formatters.</div>
