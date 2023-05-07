@@ -33,8 +33,13 @@
 ![Homepage](./assets/showcase/sc-dashboard.png)
 
 ### 🔥 Full Showcase 🔥
-<details className=>
+<details>
 <summary>Extended Embervim Showcase</summary>
+
+<h4>Buttery Scrolling 🧈</h4>
+<div>Your eyes will thank you for this one!</div>
+<br>
+<video src="https://i.imgur.com/7Wh1fQf.mp4"></video>
 
 <h4>Keybind Reference 😖</h4>
 <div>Just incase you forget a keybind!</div>
