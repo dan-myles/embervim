@@ -122,7 +122,10 @@ wk.register({
   ["<leader>ht"] = { ":Telescope colorscheme<CR>", "Themes" },
   ["<leader>hl"] = { ":Lazy<CR>", "Lazy Plugin Manager" },
   ["<leader>hn"] = { ":VimBeGood<CR>", "Vim Tutor" },
-  ["<leader>hp"] = { ":Telescope commands<CR>", "Command Palette" },
+  ["<leader>hp"] = {
+    ":lua require('telescope.builtin').commands({ previewer=false, layout_config = { height = 20, width = 100, }, })<CR>",
+    "Command Palette"
+  },
   ["<leader>hr"] = { ":Telescope reloader<CR>", "Module Reloader" },
   ["<leader>hm"] = { ":Mason<CR>", "Mason Package Manager" },
   --
