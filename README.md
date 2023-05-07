@@ -76,6 +76,11 @@
 <br>
 <img src="./assets/showcase/sc-moden-commandline.png">
 
+<h4>Theme Switcher 🎨</h4>
+<div>Swap your clown barf to other clown barf.</div>
+<br>
+<img src="./assets/showcase/sc-theme-switcher.png">
+
 <h4>Package Mangement 🧳</h4>
 <div>One keystroke installs of LSPs/Formatters.</div>
 <br>
