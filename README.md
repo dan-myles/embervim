@@ -30,26 +30,29 @@
 </div>
 
 ## :camera: Showcase
+#### Dashboard 🌿
+Organic & GMO-Free (Holisitic).
+  
 ![Homepage](./assets/showcase/sc-dashboard.png)
-![ButterScroll](https://i.imgur.com/7Wh1fQf.mp4)
 
-### 🔥 Full Showcase 🔥
-<details>
-<summary>Extended Embervim Showcase</summary>
-
-<h4>Buttery Scrolling 🧈</h4>
-<div>Your eyes will thank you for this one!</div>
-<br>
-
-<h4>Keybind Reference 😖</h4>
-<div>Just incase you forget a keybind!</div>
-<br>
-<img src="./assets/showcase/sc-keybind-reference.png">
+#### Butter Scrolling 🧈
+Your eyes can thank you later.  
+  
+![ButterScroll](./assets/showcase/gif-butterscroll-goodness.gif)
 
 <h4>Zen-Mode 😌</h4>
 <div>Get rid of the distractions, live a better life.</div>
 <br>
 <img src="./assets/showcase/sc-zen-mode.png">
+
+### 🔥 Full Showcase 🔥
+<details>
+<summary>Extended Embervim Showcase</summary>
+
+<h4>Keybind Reference 😖</h4>
+<div>Just incase you forget a keybind!</div>
+<br>
+<img src="./assets/showcase/sc-keybind-reference.png">
 
 <h4>Markdown Preview 😎</h4>
 <div>Write beautiful markdown documents.</div>
