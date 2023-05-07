@@ -129,7 +129,7 @@ the "neovim" way and not try to make neovim into VSCode.
 
 #### Features
 - Windows + MacOS + Linux cross-compatiblity
-- Lazy loaded capabilities
+- Lazy loading capabilities
 - Github Co-pilot integration
 - Modern UI
 - Modern Animations
