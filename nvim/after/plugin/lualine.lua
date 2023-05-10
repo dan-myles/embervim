@@ -2,7 +2,7 @@ require('lualine').setup({
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = '|',
+    component_separators = ' ⏽ ',
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {
@@ -22,12 +22,10 @@ require('lualine').setup({
     lualine_b = {
       {
         'filename',
-        separator = { right = '  ' },
         color = { gui = 'bold' }
       },
-      'diff',
     },
-    lualine_c = { 'diagnostics' },
+    lualine_c = { 'diff', 'diagnostics' },
     lualine_x = {
       {
         function()
@@ -51,7 +49,7 @@ require('lualine').setup({
     lualine_y = {
       {
         'filetype',
-        separator = { left = '  ' },
+        separator = { left = '  ', right = '  ' },
       }
     },
     lualine_z = { 'branch' },

@@ -54,7 +54,19 @@ wk.register({
   -- General Keybinds (Prefixed: <Ctrl>)
   --
   ------------------------------------------------
-  ["<C-p>"] = { ":Telescope git_files<CR>", "Git Files" },
+  -- Find Git files if inside a git repo, otherwise find files
+  ["<C-p>"] = {
+    function()
+      local opts = {} -- define here if you want to define something
+      vim.fn.system('git rev-parse --is-inside-work-tree')
+      if vim.v.shell_error == 0 then
+        require "telescope.builtin".git_files(opts)
+      else
+        require "telescope.builtin".find_files(opts)
+      end
+    end,
+    "Find File"
+  },
   ["<C-e>"] = { ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", "Open Bookmarks" },
   --
   --
