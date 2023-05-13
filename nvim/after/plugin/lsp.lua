@@ -78,15 +78,17 @@ lsp.format_on_save({
 
   servers = {
     ['lua_ls'] = { 'lua' },
-    ['rust_analyzer'] = { 'rust' },
     ['jdtls'] = { 'java' },
     ['lemminx'] = { 'fxml' },
+    ['prismals'] = { 'prisma' },
     ['null-ls'] = {
       'javacript',
       'typescript',
       'typescriptreact',
       'javascriptreact',
-      'json'
+      'json',
+      'rust',
+      'go'
     }
   }
 })

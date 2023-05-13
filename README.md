@@ -59,6 +59,11 @@ Your eyes can thank you later.
 <br>
 <img src="./assets/showcase/sc-markdown-preview.png">
 
+<h4>Mermaid Support (And More!) 🧜</h4>
+<div>Throw some graphs in there!</div>
+<br>
+<img src="./assets/showcase/sc-mermaid.png">
+
 <h4>LSP Wizardry 🧙</h4>
 <div>Make your life easier, a step at a time.</div>
 <br>
