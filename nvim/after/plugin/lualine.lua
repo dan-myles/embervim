@@ -2,26 +2,27 @@ require('lualine').setup({
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = ' ⏽ ',
+    globalstatus = true,
+    component_separators = '⏽',
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {
+        'oil',
         'alpha',
+        'TelescopePrompt'
       },
       winbar = {},
     },
   },
   sections = {
     lualine_a = {
-      {
-        'mode',
-        separator = { left = '', right = ' ' },
-        right_padding = 2,
-      },
+      function()
+        return "embervim"
+      end,
     },
     lualine_b = {
       {
-        'filename',
+        'branch',
         color = { gui = 'bold' }
       },
     },
@@ -49,10 +50,10 @@ require('lualine').setup({
     lualine_y = {
       {
         'filetype',
-        separator = { left = '  ', right = '  ' },
+        separator = { left = ' ', right = '' },
       }
     },
-    lualine_z = { 'branch' },
+    lualine_z = { 'location' },
   },
   inactive_sections = {
     lualine_a = { 'filename' },

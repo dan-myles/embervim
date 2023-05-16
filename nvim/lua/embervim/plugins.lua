@@ -82,6 +82,32 @@ return {
     end
   },
 
+  -- Show TODO Comments & More!
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
+
+  -- Window Manager (Auto-Resize)
+  {
+    "anuvyklack/windows.nvim",
+    dependencies = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim"
+    }
+  },
+
+  -- Breadcrumbs
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+  },
+
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",

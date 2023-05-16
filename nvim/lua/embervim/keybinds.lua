@@ -17,35 +17,39 @@ wk.register({
   ["K"] = { ":Lspsaga hover_doc<CR>", "Hover" },
   ["L"] = { ":Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
   ["gd"] = { ":Lspsaga goto_definition<CR>zz", "Go to definition" },
+  -- Filter ERROR Diagnostics
   ["[e"] = {
     [[:lua require("lspsaga.diagnostic"):goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>]],
-    "Previous Diagnostic"
+    "Previous Error"
   },
   ["]e"] = {
     [[:lua require("lspsaga.diagnostic"):goto_next({severity=vim.diagnostic.severity.ERROR})<CR>]],
-    "Previous Diagnostic"
+    "Previous Error"
   },
+  -- Filter WARN Diagnostics
   ["[w"] = {
     [[:lua require("lspsaga.diagnostic"):goto_prev({severity=vim.diagnostic.severity.WARN})<CR>]],
-    "Previous Diagnostic"
+    "Previous Warning"
   },
   ["]w"] = {
     [[:lua require("lspsaga.diagnostic"):goto_next({severity=vim.diagnostic.severity.WARN})<CR>]],
-    "Previous Diagnostic"
+    "Previous Warning"
   },
-  ["[r"] = {
-    [[:lua require("lspsaga.diagnostic"):goto_prev({severity=vim.diagnostic.severity.HINT})<CR>]],
-    "Previous Diagnostic"
-  },
-  ["]r"] = {
-    [[:lua require("lspsaga.diagnostic"):goto_next({severity=vim.diagnostic.severity.HINT})<CR>]],
-    "Previous Diagnostic"
-  },
+  -- Filter TODO Comments
   ["[t"] = {
+    [[:lua require("todo-comments").jump_prev()<CR>]],
+    "Next Todo Comment"
+  },
+  ["]t"] = {
+    [[:lua require("todo-comments").jump_next()<CR>]],
+    "Previous Todo Comment"
+  },
+  -- Filter ALL Diagnostics
+  ["[a"] = {
     [[:lua require("lspsaga.diagnostic"):goto_prev()<CR>]],
     "Previous Diagnostic"
   },
-  ["]t"] = {
+  ["]a"] = {
     [[:lua require("lspsaga.diagnostic"):goto_next()<CR>]],
     "Previous Diagnostic"
   },
