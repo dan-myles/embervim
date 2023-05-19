@@ -58,7 +58,7 @@ local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select)
+  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
 })
 
 cmp_mappings['<Tab>'] = nil
@@ -77,7 +77,7 @@ lsp.format_on_save({
   },
 
   servers = {
-    ['lua_ls'] = { 'lua' },
+    -- ['lua_ls'] = { 'lua' },
     ['jdtls'] = { 'java' },
     ['lemminx'] = { 'fxml' },
     ['prismals'] = { 'prisma' },

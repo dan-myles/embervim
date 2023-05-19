@@ -14,7 +14,7 @@ wk.register({
   --
   ------------------------------------------------
   ["J"] = { "mzJ`z", "Concatenate from line below" },
-  ["K"] = { ":Lspsaga hover_doc<CR>", "Hover" },
+  ["K"] = { vim.lsp.buf.hover(), "Hover" },
   ["L"] = { ":Lspsaga show_line_diagnostics<CR>", "Show Line Diagnostics" },
   ["gd"] = { ":Lspsaga goto_definition<CR>zz", "Go to definition" },
   -- Filter ERROR Diagnostics
@@ -53,6 +53,11 @@ wk.register({
     [[:lua require("lspsaga.diagnostic"):goto_next()<CR>]],
     "Previous Diagnostic"
   },
+  -- Window Remaps with Animations
+  ["<C-w>f"] = { ":WindowsMaximize<CR>", "Fullscreen Window" },
+  ["<C-w>_"] = { ":WindowsMaximizeVertically<CR>", "Maximize Window Vertically" },
+  ["<C-w>|"] = { ":WindowsMaximizeHorizontally<CR>", "Maximize Window Horizontally" },
+  ["<C-w>="] = { ":WindowsEqualize<CR>", "Equialize All Windows" },
   --
   --
   -- General Keybinds (Prefixed: <Ctrl>)

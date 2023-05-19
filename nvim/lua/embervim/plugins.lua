@@ -78,7 +78,7 @@ return {
     "folke/which-key.nvim",
     config = function()
       vim.o.timeout = true
-      vim.o.timeoutlen = 500
+      vim.o.timeoutlen = 1200
     end
   },
 
@@ -90,7 +90,7 @@ return {
 
   -- Window Manager (Auto-Resize)
   {
-    "anuvyklack/windows.nvim",
+    "danlikestocode/windows.nvim",
     dependencies = {
       "anuvyklack/middleclass",
       "anuvyklack/animation.nvim"
@@ -164,4 +164,5 @@ return {
   { "declancm/cinnamon.nvim" },              -- Smooth Scrolling 🔥
   { "ThePrimeagen/vim-be-good" },            -- Vim Be Good (Vim Tutor)
   { "voldikss/vim-floaterm" },               -- Floaterm
+  { "folke/drop.nvim" }                      -- Dashboard Screensaver
 }
