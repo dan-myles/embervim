@@ -115,6 +115,17 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" }
   },
 
+  -- Neo Tree (File Explorer)
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+  },
+
   -- LSP/Intellisense
   {
     "VonHeikemen/lsp-zero.nvim",
@@ -152,7 +163,6 @@ return {
   { "tpope/vim-surround" },                  -- Vim Surround
   { "xiyaowong/transparent.nvim" },          -- Transparent Toggle
   { "folke/zen-mode.nvim" },                 -- Zen Mode
-  { "stevearc/oil.nvim" },                   -- File Manager
   { "mbbill/undotree" },                     -- Undo Tree
   { "famiu/bufdelete.nvim" },                -- Buffer Deleter
   { "nvim-lualine/lualine.nvim" },           -- Statusline
@@ -164,5 +174,4 @@ return {
   { "declancm/cinnamon.nvim" },              -- Smooth Scrolling 🔥
   { "ThePrimeagen/vim-be-good" },            -- Vim Be Good (Vim Tutor)
   { "voldikss/vim-floaterm" },               -- Floaterm
-  { "folke/drop.nvim" }                      -- Dashboard Screensaver
 }

@@ -77,7 +77,7 @@ lsp.format_on_save({
   },
 
   servers = {
-    -- ['lua_ls'] = { 'lua' },
+    ['lua_ls'] = { 'lua' },
     ['jdtls'] = { 'java' },
     ['lemminx'] = { 'fxml' },
     ['prismals'] = { 'prisma' },

@@ -59,7 +59,7 @@ dashboard.section.buttons.val = {
   dashboard.button("f", "  > Find", ":Telescope find_files<CR>"),
   dashboard.button("e", "  > Explorer", ":Oil --float<CR>"),
   { type = "text", val = " ", opts = { hl = "SpecialComment", position = "center" } },
-  dashboard.button("s", "  > Settings", ":e $MYVIMRC | :tcd %:p:h | :Oil --float<CR>"),
+  dashboard.button("s", "  > Settings", ":e $MYVIMRC | :tcd %:p:h<CR>"),
   dashboard.button("u", "  > Update Plugins", ":Lazy update<CR>"),
   dashboard.button("q", "  > Quit", ":qa<CR>"),
 }
