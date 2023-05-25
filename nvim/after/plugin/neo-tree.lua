@@ -58,7 +58,7 @@ require("neo-tree").setup({
         renamed   = "", -- this can only be used in the git_status source
         -- Status type
         untracked = "",
-        ignored   = "",
+        ignored   = "",
         unstaged  = "",
         staged    = "",
         conflict  = "",
@@ -71,7 +71,7 @@ require("neo-tree").setup({
   commands = {},
   window = {
     position = "left",
-    width = 40,
+    width = 30,
     mapping_options = {
       noremap = true,
       nowait = true,

@@ -31,7 +31,11 @@ autocmd("BufWinEnter", {
       return
     end
 
-    vim.cmd("Neotree show")
+    if vim.bo.filetype == "lspsagafinder" then
+      return
+    end
+
+    vim.cmd("Neotree show left")
   end,
   group = general,
   desc = "Open NvimTree on open file",
@@ -39,7 +43,7 @@ autocmd("BufWinEnter", {
 
 autocmd("TermLeave", {
   callback = function()
-    vim.cmd("Neotree show")
+    vim.cmd("Neotree show left")
   end,
   group = general,
   desc = "Update neotree on terminal exit"

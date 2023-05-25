@@ -4,6 +4,7 @@ require("barbecue").setup({
   theme = "auto",
   exclude_filetypes = {
     "oil",
-    "alpha"
+    "alpha",
+    "netrw",
   },
 })
