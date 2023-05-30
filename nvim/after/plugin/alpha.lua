@@ -92,7 +92,7 @@ local dragon = {
 }
 
 -- Actually setting the dashboard here
-dashboard.section.header.val = hydra2
+dashboard.section.header.val = hydra
 
 -- Setting dashboard buttons
 dashboard.section.buttons.val = {

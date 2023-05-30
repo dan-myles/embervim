@@ -6,5 +6,6 @@ require("barbecue").setup({
     "oil",
     "alpha",
     "netrw",
+    "neo-tree",
   },
 })

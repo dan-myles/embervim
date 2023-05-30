@@ -160,6 +160,7 @@ return {
     }
   },
 
+  { "stevearc/stickybuf.nvim" },             -- Pin Buffers
   { "tpope/vim-surround" },                  -- Vim Surround
   { "xiyaowong/transparent.nvim" },          -- Transparent Toggle
   { "folke/zen-mode.nvim" },                 -- Zen Mode

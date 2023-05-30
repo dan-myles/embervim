@@ -5,7 +5,6 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local general = augroup("General Settings", { clear = true })
 
--- Getting rid of newline comments
 autocmd("BufEnter", {
   callback = function()
     vim.opt.formatoptions:remove { "c", "r", "o" }
@@ -14,37 +13,10 @@ autocmd("BufEnter", {
   desc = "Disable New Line Comment",
 })
 
--- Keep nvim tree open always
-autocmd("BufWinEnter", {
-  callback = function(data)
-    local real_file = vim.fn.filereadable(data.file) == 1
-
-    if not real_file then
-      return
-    end
-
-    if vim.bo.filetype == "alpha" then
-      return
-    end
-
-    if vim.bo.filetype == "Neotree" then
-      return
-    end
-
-    if vim.bo.filetype == "lspsagafinder" then
-      return
-    end
-
-    vim.cmd("Neotree show left")
-  end,
-  group = general,
-  desc = "Open NvimTree on open file",
-})
-
-autocmd("TermLeave", {
-  callback = function()
-    vim.cmd("Neotree show left")
-  end,
-  group = general,
-  desc = "Update neotree on terminal exit"
-})
+-- autocmd("TermLeave", {
+--   callback = function()
+--     vim.cmd("Neotree show left")
+--   end,
+--   group = general,
+--   desc = "Update neotree on terminal exit"
+-- })
