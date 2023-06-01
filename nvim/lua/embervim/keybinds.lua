@@ -84,7 +84,6 @@ wk.register({
   ------------------------------------------------
   ["<leader>o"] = { ":Lspsaga outline<CR>", "Toggle Code Outline" },
   ["<leader>a"] = { ":lua require(\"harpoon.mark\").add_file()<CR>", "Bookmark file" },
-  ["<leader>e"] = { ":Neotree<CR>", "Open File Tree" },
   ["<leader>q"] = { ":Bdelete<CR>", "Close Buffer" },
   ["<leader>w"] = { ":w<CR>", "Write Buffer" },
   ["<leader>z"] = { ":ZenMode<CR>", "Toggle Zen Mode" },
@@ -95,6 +94,16 @@ wk.register({
   ["<leader>2"] = { ":lua require(\"harpoon.ui\").nav_file(2)<CR>", "Go to Bookmark 2" },
   ["<leader>3"] = { ":lua require(\"harpoon.ui\").nav_file(3)<CR>", "Go to Bookmark 3" },
   ["<leader>4"] = { ":lua require(\"harpoon.ui\").nav_file(4)<CR>", "Go to Bookmark 4" },
+  ["<leader>e"] = {
+    function()
+      if vim.bo.filetype == "neo-tree" then
+        vim.cmd("wincmd p")
+      else
+        vim.cmd("Neotree")
+      end
+    end,
+    "Open File Tree",
+  },
   --
   --
   -- File Keybinds (Prefixed: <leader>p)

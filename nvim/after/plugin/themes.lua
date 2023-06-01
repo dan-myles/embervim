@@ -17,4 +17,4 @@ require('vscode').setup({
 })
 
 
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme "kanagawa"
