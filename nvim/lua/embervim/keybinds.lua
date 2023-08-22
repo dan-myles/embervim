@@ -128,7 +128,7 @@ wk.register({
   ["<leader>gb"] = { ":Telescope git_branches<CR>", "Git Branches" },
   ["<leader>ga"] = { ":Telescope git_commits<CR>", "Git Commits" },
   ["<leader>gs"] = {
-    ":FloatermNew --autoclose=2 --name=LazyGit --title=LazyGit --width=0.9 --height=0.9 --position=center lazygit | :Neotree toggle<CR>",
+    ":FloatermNew --autoclose=2 --name=LazyGit --title=LazyGit --width=0.9 --height=0.9 --position=center lazygit<CR>",
     "Git UI" },
   --
   --
