@@ -1,23 +1,30 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+
 
 read -r -p "Old NeoVim configuration files will be deleted. Are you sure you want to proceed? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
 then
     echo "Cloning repository..."
-    git clone https://github.com/danlikestocode/embervim
-    echo "Changing directory..."
-    cd embervim
-    echo "Installing new configuration files..."
+    git clone --branch install-script https://github.com/jvegaf/embervim 
+    # git clone https://github.com/jvegaf/embervim 
     echo "Removing old configuration files..."
     echo "WARN: Old configuration files will be deleted!"
-    rm -rd ~/.config/nvim/
+    rm -rf $HOME/.config/nvim
+    rm -rf $HOME/.cache/nvim
+    rm -rf $HOME/.local/share/nvim
+    rm -rf $HOME/.local/state/nvim
     echo "Copying new configuration files..."
-    cp -R ./nvim/ ~/.config/nvim/
+    mv ./embervim/nvim $HOME/.config
+    echo "Cleaning...."
+    rm -rf ./embervim
     echo "Finished!"
-    echo "Make sure to clean up the created Git repository!"
 else
     echo "Stopped installation!"
 fi
+
+exit 0
 
 
 
