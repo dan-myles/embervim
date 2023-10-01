@@ -1,36 +1,7 @@
 -- EmberVim
 -- Author: danlikestocode
--- ---------------------
--- This is the main entry point for any neovim configuration, it is just
--- requiring the file located in lua/embervim/init.lua
---
--- To install additional plugins, you can add them to the plugins.lua file
--- located in lua/embervim/plugins.lua
---
--- To add custom keybinds, you can add them to the keybinds.lua file
--- located in lua/embervim/keybinds.lua
---
--- To add custom settings, you can add them to the set.lua file
--- located in lua/embervim/set.lua
---
--- To configure specific plugins, you can add said lua file to after/plugin
---
--- The directory /plugin is special as it is for filetype specific autocmds
--- Usually you would use ftplugin to set this up, however creating an autocmd
--- lets you have more control over what is exectued, ie. a callback not file.
+-- ---------------
+-- This is the main entrypoint for embervim. Simply requiring the embervim
+-- lua file will load all of the required dependencies.
 
 require("embervim")
-
---         .                            .                      .
--- .                  .             -)------+====+       .
---                          -)----====    ,'   ,'   .                 .
---             .                  `.  `.,;___,'                .
---                                  `, |____l_\
---                   _,.....------c==]""______ |,,,,,,.....____ _
---   .      .       "-:______________  |____l_|]'''''''''''       .     .
---                                 ,'"",'.   `.
---        .                 -)-----====   `.   `.
---                    .            -)-------+====+       .            .
---            .                               .
---            .             .             .
--- Incom's T-65B X-wing Space Superiority Starfighter

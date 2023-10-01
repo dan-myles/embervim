@@ -41,3 +41,8 @@ vim.g.netrw_winsize = 25
 
 -- Fold Settings
 vim.o.foldenable = false
+
+-- Window Settings
+vim.o.winwidth = 10
+vim.o.winminwidth = 10
+vim.o.equalalways = false

@@ -3,5 +3,5 @@
 -- and then requiring it here.
 require("embervim.set")
 require("embervim.lazy")
-require("embervim.keybinds")
 require("embervim.autocommands")
+require("embervim.keybinds")

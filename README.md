@@ -31,19 +31,9 @@
 
 ## :camera: Showcase
 #### Dashboard 🌿
-Organic & GMO-Free (Holisitic).
+Organic & GMO-Free (Holistic).
   
 ![Homepage](./assets/showcase/sc-dashboard.png)
-
-#### Butter Scrolling 🧈
-Your eyes can thank you later.  
-  
-![ButterScroll](./assets/showcase/gif-butterscroll-goodness.gif)
-
-<h4>Zen-Mode 😌</h4>
-<div>Get rid of the distractions, live a better life.</div>
-<br>
-<img src="./assets/showcase/sc-zen-mode.png">
 
 ### 🔥 Full Showcase 🔥
 <details>
@@ -68,11 +58,6 @@ Your eyes can thank you later.
 <div>Make your life easier, a step at a time.</div>
 <br>
 <img src="./assets/showcase/sc-lsp-finder.png">
-
-<h4>File Explorer 🤓</h4>
-<div>Edit your filesystem just like a buffer!</div>
-<br>
-<img src="./assets/showcase/sc-file-explorer.png">
 
 <h4>Fuzzy File Finder 🔭</h4>
 <div>Move through your codebase like a ninja.</div>
@@ -103,6 +88,20 @@ Your eyes can thank you later.
 
 
 ## :mag: Info
+
+### UPDATE:
+
+Hello! Embervim has been re-written from the ground up. The main inspiration for this
+was the archival of Null-LS, which is our backbone for linting and formatting.
+I've found some good replacements for those plugins and they offer great
+functionality! We are now **lazy-loading** everything, for a faster startup experience.
+
+A lot of plugins/keybinds have been removed in favor of simplicity. There was a lot
+of bloat that embervim had currently and we'll update the releases accordingly.
+
+Thank you so much!
+
+---
 
 Embervim is yet again another neovim configuration designed to make it easy
 for users not familiar with neovim to expand their own configuration. Time and 
