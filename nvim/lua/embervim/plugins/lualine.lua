@@ -10,34 +10,50 @@ return {
 					icons_enabled = true,
 					theme = 'auto',
 					globalstatus = true,
-					component_separators = '⏽',
-					section_separators = { left = '', right = '' },
+          component_separators = { left = '', right = '' },
+					section_separators = { left = ' ', right = ' ' },
 					disabled_filetypes = {
 						statusline = {
-							'oil',
-							'alpha',
-							'TelescopePrompt'
 						},
-						winbar = {},
+						winbar = {
+              'netrw'
+            },
 					},
 				},
 				sections = {
 					lualine_a = {
-						function()
-							return "embervim"
-						end,
 					},
 					lualine_b = {
+            {
+              function()
+                return "[embervim]"
+              end,
+              separator = "~",
+            },
 						{
 							'branch',
-							color = { gui = 'bold' }
+              separator = { left = '', right = '' },
+              icon = '',
 						},
 					},
-					lualine_c = { 'diff', 'diagnostics' },
+					lualine_c = { 
+            {
+              'diff',
+              separator = "-",
+            }, 
+            {
+              'diagnostics',
+              symbols = {error = 'E:', warn = 'W:', info = 'I:', hint = 'H:'},
+            } 
+          },
 					lualine_x = {
+            {
+              'location',
+              separator= "",
+            },
 						{
 							function()
-								local msg = 'No Active Lsp'
+								local msg = ''
 								local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
 								local clients = vim.lsp.get_active_clients()
 								if next(clients) == nil then
@@ -48,33 +64,29 @@ return {
                   local filetypes = client.config.filetypes
                   if client.name ~= 'null-ls' and client.name ~= 'copilot' then
                     if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                      return client.name
+                      return '[lsp]: ' .. client.name
                     end
                   end
                 end
 								return msg
 							end,
-							icon = ' LSP:',
 						}
 					},
 					lualine_y = {
-						{
-							'filetype',
-							separator = { left = ' ', right = '' },
-						}
+            {
+              'encoding',
+              separator = "",
+            },
+            {
+              'fileformat',
+              icons_enabled = false,
+            },
 					},
-					lualine_z = { 'location' },
+					lualine_z = {
+          },
 				},
-				inactive_sections = {
-					lualine_a = { 'filename' },
-					lualine_b = {},
-					lualine_c = {},
-					lualine_x = {},
-					lualine_y = {},
-					lualine_z = { 'location' },
-				},
-				tabline = {},
-				extensions = {},
+        tabline = {},
+        extensions = {},
 			})
 		end
 	}

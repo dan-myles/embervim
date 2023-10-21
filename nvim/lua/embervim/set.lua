@@ -46,3 +46,4 @@ vim.o.foldenable = false
 vim.o.winwidth = 10
 vim.o.winminwidth = 10
 vim.o.equalalways = false
+vim.opt.winbar = "%t %m"

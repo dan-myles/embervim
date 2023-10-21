@@ -1,30 +1,35 @@
 -- Global Auto Commands to be defined here
 -- Filetype specific autocommands go in plugin/*.lua
-local fn = vim.fn
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local general = augroup("General Settings", { clear = true })
 
---autocmd("BufEnter", {
---  callback = function()
---    vim.opt.formatoptions:remove { "c", "r", "o" }
---  end,
---  group = general,
---  desc = "Disable New Line Comment",
---})
-
-autocmd("VimEnter", {
-	callback = function()
-		vim.cmd "Neotree show"
-	end,
-	group = general,
-	desc = "Open Neotree on Startup"
+-- Disable new line comment
+autocmd("BufEnter", {
+  callback = function()
+    vim.opt.formatoptions:remove { "c", "r", "o" }
+  end,
+  group = general,
+  desc = "Disable New Line Comment",
 })
 
+-- Lint
 autocmd("BufWritePost", {
-	callback = function()
-		require("lint").try_lint()
-	end,
-	group = general,
-	desc = "Lint on File Save"
+  callback = function()
+    require("lint").try_lint()
+  end,
+  group = general,
+  desc = "Lint on File Save"
+})
+
+-- Disable winbar in netrw
+autocmd("FileType", {
+  callback = function()
+    vim.opt_local.winbar = "netrw"
+    vim.opt_local.fillchars:append { eob = " " }
+    vim.opt_local.colorcolumn = ""
+  end,
+  pattern = "netrw",
+  group = general,
+  desc = "Disable Winbar in NetRW",
 })

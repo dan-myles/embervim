@@ -17,29 +17,30 @@ return {
 			    vscDarkYellow = '#aaaaaa',
 		    },
 	    })
-
-	    vim.cmd.colorscheme "vscode"
     end,
   },
 
   -- Catppuccin
   {
 	  "catppuccin/nvim",
-	  lazy = true,
+	  lazy = false,
     name = "catppuccin"
   },
 
   -- Rose Pine
   {
     'rose-pine/neovim',
-    lazy = true,
-    name = 'rose-pine'
+    lazy = false,
+    name = 'rose-pine',
+    config = function()
+      vim.cmd('colorscheme rose-pine')
+    end,
   },
 
   -- Kanagawa
   {
     'rebelot/kanagawa.nvim',
-    lazy = true,
+    lazy = false,
     name = 'kanagawa'
   },
 }

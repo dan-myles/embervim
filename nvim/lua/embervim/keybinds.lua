@@ -13,36 +13,37 @@ bind("n", "<leader>lm", "<cmd>LspRestart<CR>", { noremap = true, silent = true, 
 bind("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true, desc = "Hover" })
 bind("n", "L", vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Show diagnostics" })
 bind("n", "<leader>lf", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format" })
+bind("n", "<leader>pv", vim.cmd.Ex, { noremap = true, silent = true, desc = "NetRW" })
 
-bind("n", "[e", function() 
+bind("n", "[e", function()
 	vim.diagnostic.goto_prev({
 		severity = vim.diagnostic.severity.ERROR,
 	})
 end, { noremap = true, silent = true, desc = "Go to definition" })
 
-bind("n", "]e", function() 
+bind("n", "]e", function()
 	vim.diagnostic.goto_next({
 		severity = vim.diagnostic.severity.ERROR,
 	})
 end, { noremap = true, silent = true, desc = "Go to definition" })
 
-bind("n", "[w", function() 
+bind("n", "[w", function()
 	vim.diagnostic.goto_prev({
 		severity = vim.diagnostic.severity.WARN,
 	})
 end, { noremap = true, silent = true, desc = "Go to definition" })
 
-bind("n", "]w", function() 
+bind("n", "]w", function()
 	vim.diagnostic.goto_next({
 		severity = vim.diagnostic.severity.WARN,
 	})
 end, { noremap = true, silent = true, desc = "Go to definition" })
 
-bind("n", "[q", function() 
+bind("n", "[q", function()
 	vim.diagnostic.goto_prev()
 end, { noremap = true, silent = true, desc = "Go to definition" })
 
-bind("n", "]q", function() 
+bind("n", "]q", function()
 	vim.diagnostic.goto_next()
 end, { noremap = true, silent = true, desc = "Go to definition" })
 

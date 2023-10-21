@@ -61,13 +61,6 @@ return {
 			-- This is where all the LSP shenanigans will live
 			local lsp_zero = require('lsp-zero')
 
-			lsp_zero.set_sign_icons({
-				warn = '',
-				error = '',
-				hint = '',
-				info = ''
-			})
-
 			lsp_zero.extend_lspconfig()
 			lsp_zero.on_attach(function(client, bufnr)
 				-- see :help lsp-zero-keybindings
@@ -89,7 +82,7 @@ return {
 			})
 
 			vim.diagnostic.config({
-				virtual_text = false,
+				virtual_text = true,
 				underline = false,
 			})
 		end
@@ -128,16 +121,6 @@ return {
 					show_code_action = false,
 				}
 			})
-		end
-	},
-
-	-- Autopairing
-	{ 
-		"windwp/nvim-autopairs",
-		lazy = true,
-		event = { "InsertEnter" },
-		config = function() 
-			require("nvim-autopairs").setup()
 		end
 	},
 
