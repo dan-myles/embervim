@@ -47,10 +47,10 @@ return {
             } 
           },
 					lualine_x = {
-            {
-              'location',
-              separator= "",
-            },
+            -- {
+            --   'location',
+            --   separator= "",
+            -- },
 						{
 							function()
 								local msg = ''

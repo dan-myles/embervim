@@ -22,7 +22,9 @@ return {
 				["<leader>p"] = { name = "+File" },
 				["<leader>g"] = { name = "+Git" },
 				["<leader>m"] = { name = "+Markdown" },
-				["<leader>l"] = { name = "+LSP" }
+				["<leader>l"] = { name = "+LSP" },
+        ["<leader>b"] = { name = "+Buffer" },
+        ["<leader>h"] = { name = "+Help" }
 			})
 		end
 	}
