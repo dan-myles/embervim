@@ -30,61 +30,7 @@
 </div>
 
 ## :camera: Showcase
-#### Dashboard 🌿
-Organic & GMO-Free (Holistic).
-  
-![Homepage](./assets/showcase/sc-dashboard.png)
-
-### 🔥 Full Showcase 🔥
-<details>
-<summary>Extended Embervim Showcase</summary>
-
-<h4>Keybind Reference 😖</h4>
-<div>Just incase you forget a keybind!</div>
-<br>
-<img src="./assets/showcase/sc-keybind-reference.png">
-
-<h4>Markdown Preview 😎</h4>
-<div>Write beautiful markdown documents.</div>
-<br>
-<img src="./assets/showcase/sc-markdown-preview.png">
-
-<h4>Mermaid Support (And More!) 🧜</h4>
-<div>Throw some graphs in there!</div>
-<br>
-<img src="./assets/showcase/sc-mermaid.png">
-
-<h4>LSP Wizardry 🧙</h4>
-<div>Make your life easier, a step at a time.</div>
-<br>
-<img src="./assets/showcase/sc-lsp-finder.png">
-
-<h4>Fuzzy File Finder 🔭</h4>
-<div>Move through your codebase like a ninja.</div>
-<br>
-<img src="./assets/showcase/sc-fuzzy-file-find.png">
-
-<h4>Floating Terminal ☁️<</h4>
-<div>A terminal that is just one keybind away.</div>
-<br>
-<img src="./assets/showcase/sc-floating-terminal.png">
-
-<h4>Sleek UI 👽</h4>
-<div>A neovim commandline that doesn't compromise.</div>
-<br>
-<img src="./assets/showcase/sc-moden-commandline.png">
-
-<h4>Theme Switcher 🎨</h4>
-<div>Swap your clown barf to other clown barf.</div>
-<br>
-<img src="./assets/showcase/sc-theme-switcher.png">
-
-<h4>Package Mangement 🧳</h4>
-<div>One keystroke installs of LSPs/Formatters.</div>
-<br>
-<img src="./assets/showcase/sc-mason.png">
-</details>
-
+> New showcase will be coming soon as Null-LS archival meant a rewrite... learn more below!
 
 
 ## :mag: Info
