@@ -70,4 +70,6 @@ bind("t", "<Esc><Esc>", "<C-\\n><C-n>", { noremap = true, silent = true, desc = 
 -- Get rid of this evil garbage
 bind("n", "Q", "<nop>")
 bind("n", "q:", "<nop>")
+bind("n", "q/", "<nop>")
+bind("n", "q?", "<nop>")
 
