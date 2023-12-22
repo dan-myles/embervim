@@ -14,7 +14,7 @@ autocmd("BufEnter", {
 })
 
 -- Lint
-autocmd("BufWritePost", {
+autocmd("TextChanged", {
   callback = function()
     require("lint").try_lint()
   end,

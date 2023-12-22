@@ -38,6 +38,8 @@ vim.opt.cursorline = false
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 0
 vim.g.netrw_winsize = 25
+vim.g.netrw_liststyle = 3
+vim.g.netrw_bufsettings = "noma nomod rnu nobl nowrap ro"
 
 -- Fold Settings
 vim.o.foldenable = false
@@ -46,4 +48,4 @@ vim.o.foldenable = false
 vim.o.winwidth = 10
 vim.o.winminwidth = 10
 vim.o.equalalways = false
-vim.opt.winbar = "%t %m"
+vim.opt.winbar = "%{expand('%:.')} %m"

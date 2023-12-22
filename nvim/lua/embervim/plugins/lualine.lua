@@ -62,7 +62,7 @@ return {
 
                 for _, client in ipairs(clients) do
                   local filetypes = client.config.filetypes
-                  if client.name ~= 'tailwindcss' and client.name ~= 'copilot' then
+                  if client.name ~= 'tailwindcss' and client.name ~= 'copilot' and client.name ~= 'eslint' then
                     if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
                       return '[lsp]: ' .. client.name
                     end
