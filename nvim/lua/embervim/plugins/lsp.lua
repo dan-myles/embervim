@@ -27,6 +27,7 @@ return {
     event = 'InsertEnter',
     dependencies = {
       { 'L3MON4D3/LuaSnip' },
+      { 'hrsh7th/cmp-nvim-lsp-signature-help' },
     },
     config = function()
       -- Here is where you configure the autocompletion settings.
@@ -36,13 +37,16 @@ return {
       local cmp = require('cmp')
       local cmp_action = lsp_zero.cmp_action()
       cmp.setup({
+        sources = {
+          { name = 'nvim_lsp' },
+          { name = 'nvim_lsp_signature_help' },
+        },
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
-          -- ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-d>'] = cmp.mapping.scroll_docs(4),
-          ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-          ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+            ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+            ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+            ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+            ["<C-Space>"] = cmp.mapping.complete(),
         })
       })
     end
@@ -123,7 +127,7 @@ return {
       { "<leader>ld", "<cmd>Lspsaga peek_definition<CR>",            desc = "Peek Definition" },
       { "<leader>lt", "<cmd>Lspsaga peek_type_definition<CR>",       desc = "Peek Type Definition" },
       { "<leader>lb", "<cmd>Lspsaga show_buf_diagnostics<CR>",       desc = "Buffer Diagnostics" },
-      { "<leader>lw", "<cmd>Lspsaga show_workspace_diagnostics<CR>", desc = "Workspace Diagnostics" },
+      { "<leader>lw", "<cmd>Lspsaga show_workspace_diagnostics ++float<CR>", desc = "Workspace Diagnostics" },
       { "<leader>la", "<cmd>Lspsaga code_action<CR>",                desc = "Code Action" },
       { "[e", "<cmd>lua require('lspsaga.diagnostic'):goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>", desc = "Previous Error" },
       { "]e", "<cmd>lua require('lspsaga.diagnostic'):goto_next({severity=vim.diagnostic.severity.ERROR})<CR>", desc = "Next Error" },
@@ -166,8 +170,10 @@ return {
         },
         formatters_by_ft = {
           -- cpp = { "clang_format" },
+          go = { "gofumpt", "gci" },
+          rust = { "rustfmt" },
           typescript = { "prettierd" },
-          typescriptreact = { "prettierd", "eslint_d" },
+          typescriptreact = { "prettierd" },
           javascript = { "prettierd" },
           javascriptreact = { "prettierd" }
         }

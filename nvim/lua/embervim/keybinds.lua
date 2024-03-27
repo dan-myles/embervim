@@ -11,7 +11,8 @@ bind("n", "J", "mzJ`z", { noremap = true, silent = true, desc = "Concatenate fro
 bind("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true, silent = true, desc = "Find and Replace" })
 bind("n", "<leader>lm", "<cmd>LspRestart<CR>", { noremap = true, silent = true, desc = "Restart LSP" })
 bind("n", "<leader>lf", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format" })
-bind("n", "<leader>pv", "<Plug>VinegarUp", { noremap = true, silent = true, desc = "NetRW" })
+bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
+bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
 
 --
 -- Visual Mode Keybinds

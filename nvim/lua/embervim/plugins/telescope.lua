@@ -2,7 +2,7 @@ return {
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
-		lazy = true,
+		lazy = false,
 		keys = {
 			{ "<leader>pf", ":Telescope find_files<CR>", desc = "Search file" },
 			{ "<leader>ps", ":Telescope live_grep<CR>", desc = "Search Word in Current Buffer" },
@@ -41,7 +41,6 @@ return {
 
 
 		},
-		tag = "0.1.1",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("telescope").setup({})

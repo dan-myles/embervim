@@ -14,12 +14,12 @@ autocmd("BufEnter", {
 })
 
 -- Lint
-autocmd("TextChanged", {
+autocmd({"TextChanged", "BufWritePost"}, {
   callback = function()
     require("lint").try_lint()
   end,
   group = general,
-  desc = "Lint on File Save"
+  desc = "Lint on File Save/Text Change",
 })
 
 -- Disable winbar in netrw

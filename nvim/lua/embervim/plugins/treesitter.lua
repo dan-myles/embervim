@@ -4,6 +4,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		lazy = false,
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
 		config = function() 
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
@@ -33,7 +34,7 @@ return {
 						enable = true,
 						set_jumps = true,
 						goto_next_start = {
-							["]r"] = "@function.outer",
+							["]f"] = "@function.outer",
 							["]]"] = "@class.outer"
 						},
 						goto_next_end = {
@@ -41,7 +42,7 @@ return {
 							["]["] = "@class.outer"
 						},
 						goto_previous_start = {
-							["[r"] = "@function.outer",
+							["[f"] = "@function.outer",
 							["[["] = "@class.outer"
 						},
 						goto_previous_end = {
