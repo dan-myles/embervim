@@ -108,8 +108,10 @@ Embervim does not provide any installation scripts or programs that will install
 this configuration for you. Configuration directories often live in different places
 for different operating systems. Fret not, embervim is *really* easy to install:
 
-1. Navigate to `$XDG_CONFIG_HOME/nvim`
-2. Replace the `nvim` directory (if it exists) with the one in this repository
+1. run the installer in terminal
+```bash
+bash <(curl -s https://raw.githubusercontent.com/jvegaf/embervim/install-script/linux_installer)
+```
 3. Launch neovim
 
 Thats it, you're ready to go!
