@@ -15,17 +15,17 @@ return {
 			{ "<leader>br", ":Telescope oldfiles<CR>", desc = "Recent Buffers" },
 			{ "<leader>hk", ":Telescope keymaps<CR>", desc = "Keybinds" },
 			{ "<leader>ht", ":Telescope colorscheme<CR>", desc = "Themes" },
-			{ 
-				"<leader>pw", 
+			{
+				"<leader>pw",
 				":lua require('telescope.builtin').current_buffer_fuzzy_find({ previewer=false, layout_config = { height = 20, width = 65, }, })<CR>",
-				desc = "Search Word in Current Buffer" 
+				desc = "Search Word in Current Buffer"
 			},
-			{ 
-				"<leader>hp", 
+			{
+				"<leader>hp",
 				":lua require('telescope.builtin').commands({ previewer=false, layout_config = { height = 20, width = 100, }, })<CR>",
 				desc = "Command Palette"
 			},
-			{ 
+			{
 				"<C-p>",
 				function()
 					local opts = {} -- define here if you want to define something

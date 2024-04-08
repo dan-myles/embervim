@@ -5,7 +5,7 @@ return {
 		build = ":TSUpdate",
 		lazy = false,
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-		config = function() 
+		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
 					"vim",
@@ -54,10 +54,10 @@ return {
 			})
 		end
 	},
-	
-	-- Context 
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		lazy = false
-	}
+
+	-- Context
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter-context",
+	-- 	lazy = false
+	-- }
 }

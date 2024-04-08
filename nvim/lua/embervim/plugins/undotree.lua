@@ -1,6 +1,6 @@
 return {
 	-- Undo Tree
-	{ 
+	{
 		"mbbill/undotree",
 		lazy = true,
 		keys = {

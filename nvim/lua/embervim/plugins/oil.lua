@@ -67,7 +67,7 @@ return {
         ["g?"] = "actions.show_help",
         ["<CR>"] = "actions.select",
         ["<C-s>"] = "actions.select_vsplit",
-        ["<C-h>"] = "actions.select_split",
+        ["<C-h>"] = false,
         ["<C-t>"] = false,
         ["<C-i>"] = "actions.preview",
         ["<C-p>"] = false,

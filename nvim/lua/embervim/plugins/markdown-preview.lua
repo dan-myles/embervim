@@ -8,8 +8,8 @@ return {
       { "<leader>ms", "<cmd>MarkdownPreviewStop<CR>", desc = "Stop Preview" },
     },
     build = "cd app && npm install",
-    init = function() 
-      vim.g.mkdp_filetypes = { "markdown" } 
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
     end
   },
 }

@@ -17,7 +17,7 @@ bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up
 --
 -- Visual Mode Keybinds
 --
-bind("v", "<leader>y", "\"+y", { noremap = true, silent = true, desc = "Copy to System Clipboard" })
+bind("v", "<C-c>", "\"+y", { noremap = true, silent = true, desc = "Copy to System Clipboard" })
 bind("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move Selection Down" })
 bind("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move Selection Up" })
 
@@ -26,12 +26,15 @@ bind("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move
 -- Insert Mode Keybinds
 --
 bind("i", "<C-h>", vim.lsp.buf.signature_help, { noremap = true, silent = true, desc = "Signature Help" })
+bind("i", "<C-v>", "<C-r>+", { noremap = true, silent = true, desc = "Paste from System Clipboard" })
 
 
 --
 -- Terminal Mode Keybinds
 --
-bind("t", "<Esc><Esc>", "<C-\\n><C-n>", { noremap = true, silent = true, desc = "Leave Insert Mode" })
+bind("t", "<Esc>", [[<C-\><C-n>]], { remap = true, silent = true, desc = "Leave Insert Mode" })
+bind("t", "<C-w>", [[<C-\><C-n><C-w>]], { remap = true, silent = true, desc = "Close Terminal" })
+bind("t", "<C-t>", [[<C-\><C-n>:lua require('toggleterm').toggle()<CR>]], { remap = true, silent = true, desc = "Toggle Terminal" })
 
 -- Get rid of this evil garbage
 bind("n", "Q", "<nop>")

@@ -94,7 +94,7 @@ return {
                 "--completion-style=detailed",
                 "--enable-config", -- clangd 11+ supports reading from .clangd configuration file
                 "--clang-tidy",
-                "--offset-encoding=utf-16", 
+                "--offset-encoding=utf-16",
                 -- "--clang-tidy-checks=-*,llvm-*,clang-analyzer-*,modernize-*,-modernize-use-trailing-return-type",
                 -- "--fallback-style=Google",
                 -- "--header-insertion=never",
@@ -107,7 +107,7 @@ return {
 
       vim.diagnostic.config({
         virtual_text = true,
-        underline = false,
+        underline = true,
       })
     end
   },
@@ -172,8 +172,8 @@ return {
           -- cpp = { "clang_format" },
           go = { "gofumpt", "gci" },
           rust = { "rustfmt" },
-          typescript = { "prettierd" },
-          typescriptreact = { "prettierd" },
+          typescript = { "prettierd", "eslint_d" },
+          typescriptreact = { "prettierd", "eslint_d" },
           javascript = { "prettierd" },
           javascriptreact = { "prettierd" }
         }
