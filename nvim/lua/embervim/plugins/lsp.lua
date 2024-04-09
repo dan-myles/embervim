@@ -43,9 +43,12 @@ return {
         },
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
-            ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-            ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+            ['<C-p>'] = cmp.mapping.select_prev_item(),
+            ['<C-n>'] = cmp.mapping.select_next_item(),
             ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+            ['<C-e>'] = cmp.mapping.close(),
+            ["<CR>"] = cmp.mapping.confirm({ select = true }),
+            ["<Tab>"] = cmp.mapping.confirm({ select = true }),
             ["<C-Space>"] = cmp.mapping.complete(),
         })
       })

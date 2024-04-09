@@ -14,18 +14,55 @@ return {
 			    Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true }
 		    },
 		    color_overrides = {
-			    vscDarkYellow = '#aaaaaa',
-		    },
-	    })
+          vscDarkYellow = '#aaaaaa',
+        },
+      })
     end,
   },
 
   -- Catppuccin
   {
-	  "catppuccin/nvim",
-	  lazy = false,
+    "catppuccin/nvim",
+    lazy = false,
     priority = 1000,
-    name = "catppuccin"
+    name = "catppuccin",
+    opts = {
+      integrations = {
+        aerial = true,
+        alpha = true,
+        cmp = true,
+        dashboard = true,
+        flash = true,
+        gitsigns = true,
+        headlines = true,
+        illuminate = true,
+        indent_blankline = { enabled = true },
+        leap = true,
+        lsp_trouble = true,
+        mason = true,
+        markdown = true,
+        mini = true,
+        native_lsp = {
+          enabled = true,
+          underlines = {
+            errors = { "undercurl" },
+            hints = { "undercurl" },
+            warnings = { "undercurl" },
+            information = { "undercurl" },
+          },
+        },
+        navic = { enabled = true, custom_bg = "lualine" },
+        neotest = true,
+        neotree = true,
+        noice = true,
+        notify = true,
+        semantic_tokens = true,
+        telescope = true,
+        treesitter = true,
+        treesitter_context = true,
+        which_key = true,
+      },
+    },
   },
 
   -- Rose Pine
@@ -49,9 +86,5 @@ return {
     'loctvl842/monokai-pro.nvim',
     lazy = false,
     priority = 1000,
-    config = function()
-      require('monokai-pro').setup()
-      vim.cmd('colorscheme monokai-pro')
-    end,
   },
 }
