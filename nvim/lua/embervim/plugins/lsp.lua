@@ -84,6 +84,12 @@ return {
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
           end,
+          glsl_analyzer = function()
+            require('lspconfig').glsl_analyzer.setup({
+              root_dir = require('lspconfig').util.root_pattern('.git', '.root', '.project', '.hg'),
+              fileypes = { 'glsl', 'vert', 'frag', 'geom', 'comp' },
+            })
+          end,
           clangd = function()
             require('lspconfig').clangd.setup({
               cmd = {

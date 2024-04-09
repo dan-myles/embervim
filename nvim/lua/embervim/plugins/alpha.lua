@@ -46,6 +46,9 @@ return {
         { type = "text", val = " ", opts = { hl = "SpecialComment", position = "center" } },
         dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | :Oil<CR>"),
         dashboard.button("u", "  > Update Plugins", ":Lazy update<CR>"),
+        dashboard.button("l", "󰽈  > Lazy", ":Lazy<CR>"),
+        dashboard.button("m", "󱌢  > Mason", ":Mason<CR>"),
+        { type = "text", val = " ", opts = { hl = "SpecialComment", position = "center" } },
         dashboard.button("q", "  > Quit", ":qa<CR>"),
       }
 
