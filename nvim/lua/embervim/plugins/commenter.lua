@@ -1,4 +1,5 @@
 return {
+  -- Commenter plugin
   {
     "numToStr/Comment.nvim" ,
     lazy = true,

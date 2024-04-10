@@ -88,8 +88,6 @@ autocmd("User", {
     local fallback_on_empty = fallback_name == "" and fallback_ft == ""
 
     if fallback_on_empty then
-      vim.cmd("Alpha")
-      vim.cmd(event.buf .. "bwipeout")
     end
   end,
   group = general,

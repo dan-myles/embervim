@@ -11,8 +11,8 @@ bind("n", "J", "mzJ`z", { noremap = true, silent = true, desc = "Concatenate fro
 bind("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true, silent = true, desc = "Find and Replace" })
 bind("n", "<leader>lm", "<cmd>LspRestart<CR>", { noremap = true, silent = true, desc = "Restart LSP" })
 bind("n", "<leader>lf", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format" })
-bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
-bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
+-- bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
+-- bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
 
 --
 -- Visual Mode Keybinds
@@ -34,7 +34,6 @@ bind("i", "<C-v>", "<C-r>+", { noremap = true, silent = true, desc = "Paste from
 --
 bind("t", "<Esc>", [[<C-\><C-n>]], { remap = true, silent = true, desc = "Leave Insert Mode" })
 bind("t", "<C-w>", [[<C-\><C-n><C-w>]], { remap = true, silent = true, desc = "Close Terminal" })
-bind("t", "<C-t>", [[<C-\><C-n>:lua require('toggleterm').toggle()<CR>]], { remap = true, silent = true, desc = "Toggle Terminal" })
 
 -- Get rid of this evil garbage
 bind("n", "Q", "<nop>")
