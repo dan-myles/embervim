@@ -30,7 +30,7 @@
 </div>
 
 ## :mag: Info
-Currently being re-written! Check back soon!
+Currently being re-written! Check back soon <3
 
 
 
