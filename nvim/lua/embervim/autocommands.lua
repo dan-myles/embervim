@@ -79,7 +79,7 @@ autocmd("BufWritePre", {
   desc = "Remove trailing whitespace on save",
 })
 
--- Highlight on yank
+-- Highlight on yank (with timeout)
 autocmd("TextYankPost", {
   pattern = { "*" },
   command = [[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]],
