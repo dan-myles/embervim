@@ -24,12 +24,12 @@ autocmd({"TextChanged", "BufWritePost"}, {
 
 -- Disable winbar in netrw
 autocmd("FileType", {
+  pattern = "netrw",
   callback = function()
     vim.opt_local.winbar = "netrw"
     vim.opt_local.fillchars:append { eob = " " }
     vim.opt_local.colorcolumn = ""
   end,
-  pattern = "netrw",
   group = general,
   desc = "Disable Winbar in NetRW",
 })
@@ -48,12 +48,12 @@ autocmd("FileType", {
 
 -- Disable winbar in toggleterm
 autocmd("FileType", {
+  pattern = "toggleterm",
   callback = function()
     vim.opt_local.winbar = " "
     vim.opt_local.fillchars:append { eob = " " }
     vim.opt_local.colorcolumn = ""
   end,
-  pattern = "toggleterm",
   group = general,
   desc = "Disable Winbar in NetRW",
 })
@@ -72,24 +72,18 @@ autocmd("User", {
 })
 
 -- Remove trailing whitespace on save
-autocmd({ "BufWritePre" }, {
+autocmd("BufWritePre", {
   pattern = { "*" },
   command = [[%s/\s\+$//e]],
   group = general,
   desc = "Remove trailing whitespace on save",
 })
 
--- Make sure alpha opens when buffers are cleared
-autocmd("User", {
-  pattern = "BDeletePost*",
-  callback = function(event)
-    local fallback_name = vim.api.nvim_buf_get_name(event.buf)
-    local fallback_ft = vim.api.nvim_buf_get_option(event.buf, "filetype")
-    local fallback_on_empty = fallback_name == "" and fallback_ft == ""
-
-    if fallback_on_empty then
-    end
-  end,
+-- Highlight on yank
+autocmd("TextYankPost", {
+  pattern = { "*" },
+  command = [[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]],
   group = general,
+  desc = "Highlight on yank",
 })
 

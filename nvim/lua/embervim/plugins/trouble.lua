@@ -3,7 +3,9 @@ return {
   event = { "BufReadPre" },
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
-    { "<leader>q", "<cmd>lua require('trouble').toggle()<CR>", desc = "Toggle quickfix list" },
+    { "<C-t>", "<cmd>lua require('trouble').toggle()<CR>", desc = "Toggle trouble" },
+    { "<C-j>", "<cmd>lua require('trouble').next({jump=true})<CR>", desc = "Next trouble item" },
+    { "<C-k>", "<cmd>lua require('trouble').previous({jump=true})<CR>", desc = "Next trouble item" },
   },
   opts = {
     icons = false,

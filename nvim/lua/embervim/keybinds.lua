@@ -11,8 +11,8 @@ bind("n", "J", "mzJ`z", { noremap = true, silent = true, desc = "Concatenate fro
 bind("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { noremap = true, silent = true, desc = "Find and Replace" })
 bind("n", "<leader>lm", "<cmd>LspRestart<CR>", { noremap = true, silent = true, desc = "Restart LSP" })
 bind("n", "<leader>lf", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format" })
--- bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
--- bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
+bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
+bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
 
 --
 -- Visual Mode Keybinds
@@ -20,7 +20,6 @@ bind("n", "<leader>lf", vim.lsp.buf.format, { noremap = true, silent = true, des
 bind("v", "<C-c>", "\"+y", { noremap = true, silent = true, desc = "Copy to System Clipboard" })
 bind("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move Selection Down" })
 bind("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move Selection Up" })
-
 
 --
 -- Insert Mode Keybinds
@@ -40,4 +39,11 @@ bind("n", "Q", "<nop>")
 bind("n", "q:", "<nop>")
 bind("n", "q/", "<nop>")
 bind("n", "q?", "<nop>")
+
+-- Dont use arrow keys!!!
+bind("i", "<Left>", "<nop>")
+bind("i", "<Right>", "<nop>")
+bind("i", "<Up>", "<nop>")
+bind("i", "<Down>", "<nop>")
+
 

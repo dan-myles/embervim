@@ -43,13 +43,11 @@ return {
         },
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
-            ['<C-p>'] = cmp.mapping.select_prev_item(),
-            ['<C-n>'] = cmp.mapping.select_next_item(),
-            ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-            ['<C-e>'] = cmp.mapping.close(),
-            ["<CR>"] = cmp.mapping.confirm({ select = true }),
-            ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-            ["<C-Space>"] = cmp.mapping.complete(),
+            ['<C-p>'] = cmp.mapping.select_prev_item(), -- Previous item
+            ['<C-n>'] = cmp.mapping.select_next_item(), -- Next item
+            ["<C-s>"] = cmp.mapping.complete(), -- Start completion
+            ['<C-e>'] = cmp.mapping.close(), -- Close completion
+            ["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Complete
         })
       })
     end

@@ -4,7 +4,10 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		lazy = false,
-    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      "windwp/nvim-ts-autotag",
+    },
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
@@ -29,6 +32,9 @@ return {
 						node_decremental = "<S-Tab>"
 					}
 				},
+        autotag = {
+          enable = true,
+        },
 				textobjects = {
 					move = {
 						enable = true,
