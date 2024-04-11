@@ -6,3 +6,5 @@
 
 require("embervim")
 
+-- test
+
