@@ -6,5 +6,3 @@
 
 require("embervim")
 
--- test
-
