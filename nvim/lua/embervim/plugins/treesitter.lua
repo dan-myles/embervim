@@ -62,8 +62,8 @@ return {
 	},
 
 	-- Context
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		lazy = false
-	}
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter-context",
+	-- 	lazy = false
+	-- }
 }

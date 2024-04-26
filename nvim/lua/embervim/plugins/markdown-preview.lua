@@ -1,13 +1,15 @@
 return {
-  "iamcco/markdown-preview.nvim",
+  "toppair/peek.nvim",
   lazy = true,
   ft = { "markdown" },
   keys = {
-    { "<leader>mp", "<cmd>MarkdownPreview<CR>", desc = "Start Preview" },
-    { "<leader>ms", "<cmd>MarkdownPreviewStop<CR>", desc = "Stop Preview" },
+    { "<leader>mp", "<cmd>PeekOpen<CR>", desc = "Start Preview" },
+    { "<leader>ms", "<cmd>PeekClose<CR>", desc = "Stop Preview" },
   },
-  build = "cd app && npm install",
-  init = function()
-    vim.g.mkdp_filetypes = { "markdown" }
-  end
+  build = "deno task --quiet build:fast",
+  config = function()
+    require("peek").setup()
+    vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+    vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+  end,
 }
