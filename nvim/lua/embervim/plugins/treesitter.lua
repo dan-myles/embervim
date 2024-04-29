@@ -4,10 +4,10 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		lazy = false,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      "windwp/nvim-ts-autotag",
-    },
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+			"windwp/nvim-ts-autotag",
+		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
@@ -18,6 +18,8 @@ return {
 					"typescript",
 					"javascript",
 					"cpp",
+					"go",
+					"rust",
 				},
 
 				auto_install = true,
@@ -29,36 +31,36 @@ return {
 						init_selection = "<CR>",
 						node_incremental = "<CR>",
 						scope_incremental = "<TAB>",
-						node_decremental = "<S-Tab>"
-					}
+						node_decremental = "<S-Tab>",
+					},
 				},
-        autotag = {
-          enable = true,
-        },
+				autotag = {
+					enable = true,
+				},
 				textobjects = {
 					move = {
 						enable = true,
 						set_jumps = true,
 						goto_next_start = {
 							["]f"] = "@function.outer",
-							["]]"] = "@class.outer"
+							["]]"] = "@class.outer",
 						},
 						goto_next_end = {
 							["]M"] = "@function.outer",
-							["]["] = "@class.outer"
+							["]["] = "@class.outer",
 						},
 						goto_previous_start = {
 							["[f"] = "@function.outer",
-							["[["] = "@class.outer"
+							["[["] = "@class.outer",
 						},
 						goto_previous_end = {
 							["[M"] = "@function.outer",
-							["[]"] = "@class.outer"
-						}
-					}
-				}
+							["[]"] = "@class.outer",
+						},
+					},
+				},
 			})
-		end
+		end,
 	},
 
 	-- Context

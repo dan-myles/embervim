@@ -14,76 +14,38 @@ local general = augroup("General Settings", { clear = true })
 -- })
 
 -- Lint
-autocmd({"TextChanged", "BufWritePost"}, {
-  callback = function()
-    require("lint").try_lint()
-  end,
-  group = general,
-  desc = "Lint on File Save/Text Change",
+autocmd({ "TextChanged", "BufWritePost" }, {
+	callback = function()
+		require("lint").try_lint()
+	end,
+	group = general,
+	desc = "Lint on File Save/Text Change",
 })
 
 -- Disable winbar in netrw
 autocmd("FileType", {
-  pattern = "netrw",
-  callback = function()
-    vim.opt_local.winbar = "netrw"
-    vim.opt_local.fillchars:append { eob = " " }
-    vim.opt_local.colorcolumn = ""
-  end,
-  group = general,
-  desc = "Disable Winbar in NetRW",
-})
-
--- Disable winbar in alpha
-autocmd("FileType", {
-  callback = function()
-    vim.opt_local.winbar = " "
-    vim.opt_local.fillchars:append { eob = " " }
-    vim.opt_local.colorcolumn = ""
-  end,
-  pattern = "alpha",
-  group = general,
-  desc = "Disable Winbar in NetRW",
-})
-
--- Disable winbar in toggleterm
-autocmd("FileType", {
-  pattern = "toggleterm",
-  callback = function()
-    vim.opt_local.winbar = " "
-    vim.opt_local.fillchars:append { eob = " " }
-    vim.opt_local.colorcolumn = ""
-  end,
-  group = general,
-  desc = "Disable Winbar in NetRW",
-})
-
--- Not sure how i feel about this
-autocmd("User", {
-  pattern = { "SessionLoadPost" },
-  callback = function()
-      local timer = vim.uv.new_timer()
-      timer:start(150, 0, vim.schedule_wrap(function()
-        vim.cmd("Oil")
-      end))
-    end,
-  group = general,
-  desc = "Open Oil after Session Load",
+	pattern = "netrw",
+	callback = function()
+		vim.opt_local.winbar = "netrw"
+		vim.opt_local.fillchars:append({ eob = " " })
+		vim.opt_local.colorcolumn = ""
+	end,
+	group = general,
+	desc = "Disable Winbar in NetRW",
 })
 
 -- Remove trailing whitespace on save
 autocmd("BufWritePre", {
-  pattern = { "*" },
-  command = [[%s/\s\+$//e]],
-  group = general,
-  desc = "Remove trailing whitespace on save",
+	pattern = { "*" },
+	command = [[%s/\s\+$//e]],
+	group = general,
+	desc = "Remove trailing whitespace on save",
 })
 
 -- Highlight on yank (with timeout)
 autocmd("TextYankPost", {
-  pattern = { "*" },
-  command = [[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]],
-  group = general,
-  desc = "Highlight on yank",
+	pattern = { "*" },
+	command = [[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]],
+	group = general,
+	desc = "Highlight on yank",
 })
-
