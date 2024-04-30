@@ -4,10 +4,10 @@ return {
 	lazy = true,
 	event = { "WinNew" },
 	keys = {
-		{ "<C-w>f", "<cmd>WindowsMaximize<CR>", desc = "Fullscreen Window" },
-		{ "<C-w>_", "<cmd>WindowsMaximizeVertically<CR>", desc = "Maximize Window Vertically" },
-		{ "<C-w>|", "<cmd>WindowsMaximizeHorizontally<CR>", desc = "Maximize Window Horizontally" },
-		{ "<C-w>=", "<cmd>WindowsEqualize<CR>", desc = "Equalize Windows" },
+		{ "<C-w>f", "<CMD>WindowsMaximize<CR>", desc = "Fullscreen Window" },
+		{ "<C-w>_", "<CMD>WindowsMaximizeVertically<CR>", desc = "Maximize Window Vertically" },
+		{ "<C-w>|", "<CMD>WindowsMaximizeHorizontally<CR>", desc = "Maximize Window Horizontally" },
+		{ "<C-w>=", "<CMD>WindowsEqualize<CR>", desc = "Equalize Windows" },
 	},
 	dependencies = {
 		"anuvyklack/middleclass",

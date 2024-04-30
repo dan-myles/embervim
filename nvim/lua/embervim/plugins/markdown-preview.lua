@@ -3,8 +3,8 @@ return {
 	lazy = true,
 	ft = { "markdown" },
 	keys = {
-		{ "<leader>mp", "<cmd>PeekOpen<CR>", desc = "Start Preview" },
-		{ "<leader>ms", "<cmd>PeekClose<CR>", desc = "Stop Preview" },
+		{ "<leader>mp", "<CMD>PeekOpen<CR>", desc = "Start Preview" },
+		{ "<leader>ms", "<CMD>PeekClose<CR>", desc = "Stop Preview" },
 	},
 	build = "deno task --quiet build:fast",
 	config = function()

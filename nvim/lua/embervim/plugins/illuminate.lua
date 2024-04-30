@@ -1,6 +1,10 @@
 return {
 	"RRethy/vim-illuminate",
 	event = "BufReadPre",
+	keys = {
+		{ "]]", desc = "Next Reference" },
+		{ "[[", desc = "Prev Reference" },
+	},
 	opts = {
 		delay = 200,
 		large_file_cutoff = 2000,
@@ -29,8 +33,4 @@ return {
 			end,
 		})
 	end,
-	keys = {
-		{ "]]", desc = "Next Reference" },
-		{ "[[", desc = "Prev Reference" },
-	},
 }

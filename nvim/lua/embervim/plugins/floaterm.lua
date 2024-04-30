@@ -4,7 +4,7 @@ return {
 	keys = {
 		{
 			"<leader>gs",
-			"<cmd>FloatermNew --autoclose=2 --name=LazyGit --title=LazyGit --width=0.9 --height=0.9 --position=center lazygit<CR>",
+			"<CMD>FloatermNew --autoclose=2 --name=LazyGit --title=LazyGit --width=0.9 --height=0.9 --position=center lazygit<CR>",
 			desc = "LazyGit",
 		},
 	},

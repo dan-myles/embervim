@@ -1,8 +1,8 @@
 return {
 	"stevearc/oil.nvim",
 	keys = {
-		{ "<leader>pv", "<cmd>Oil<CR>", desc = "Open file explorer" },
-		{ "-", "<cmd>Oil<CR>", desc = "Open file explorer" },
+		{ "<leader>pv", "<CMD>Oil<CR>", desc = "Open file explorer" },
+		{ "-", "<CMD>Oil<CR>", desc = "Open file explorer" },
 	},
 	lazy = false,
 	config = function()

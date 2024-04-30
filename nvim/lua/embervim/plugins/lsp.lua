@@ -198,29 +198,45 @@ return {
 		lazy = true,
 		event = { "LspAttach" },
 		keys = {
-			{ "K", "<cmd>Lspsaga hover_doc<CR>", desc = "Hover" },
-			{ "L", "<cmd>Lspsaga show_line_diagnostics<CR>", desc = "Show Line Diagnostics" },
-			{ "gd", "<cmd>Lspsaga goto_definition<CR>zz", desc = "Go to Definition" },
-			{ "<leader>o", "<cmd>Lspsaga outline<CR>", desc = "Toggle Code Outline" },
-			{ "<leader>lq", "<cmd>Lspsaga finder<CR>", desc = "Definition & References" },
-			{ "<leader>lr", "<cmd>Lspsaga rename ++project<CR>", desc = "Rename" },
-			{ "<leader>ld", "<cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
-			{ "<leader>lt", "<cmd>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
-			{ "<leader>lb", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "Buffer Diagnostics" },
-			{ "<leader>lw", "<cmd>Lspsaga show_workspace_diagnostics ++float<CR>", desc = "Workspace Diagnostics" },
-			{ "<leader>la", "<cmd>Lspsaga code_action<CR>", desc = "Code Action" },
+			{ "K", "<CMD>Lspsaga hover_doc<CR>", desc = "Hover" },
+			{ "L", "<CMD>Lspsaga show_line_diagnostics<CR>", desc = "Show Line Diagnostics" },
+			{ "gd", "<CMD>Lspsaga goto_definition<CR>zz", desc = "Go to Definition" },
+			{ "<leader>o", "<CMD>Lspsaga outline<CR>", desc = "Toggle Code Outline" },
+			{ "<leader>lq", "<CMD>Lspsaga finder<CR>", desc = "Definition & References" },
+			{ "<leader>lr", "<CMD>Lspsaga rename ++project<CR>", desc = "Rename" },
+			{ "<leader>ld", "<CMD>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+			{ "<leader>lt", "<CMD>Lspsaga peek_type_definition<CR>", desc = "Peek Type Definition" },
+			{ "<leader>lb", "<CMD>Lspsaga show_buf_diagnostics<CR>", desc = "Buffer Diagnostics" },
+			{ "<leader>lw", "<CMD>Lspsaga show_workspace_diagnostics ++float<CR>", desc = "Workspace Diagnostics" },
+			{ "<leader>la", "<CMD>Lspsaga code_action<CR>", desc = "Code Action" },
 			{
 				"[e",
-				"<cmd>lua require('lspsaga.diagnostic'):goto_prev({severity=vim.diagnostic.severity.ERROR})<CR>",
+				function()
+					require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+				end,
 				desc = "Previous Error",
 			},
 			{
 				"]e",
-				"<cmd>lua require('lspsaga.diagnostic'):goto_next({severity=vim.diagnostic.severity.ERROR})<CR>",
+				function()
+					require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+				end,
 				desc = "Next Error",
 			},
-			{ "[d", "<cmd>lua require('lspsaga.diagnostic'):goto_prev()<CR>", desc = "Previous Diagnostic" },
-			{ "]d", "<cmd>lua require('lspsaga.diagnostic'):goto_next()<CR>", desc = "Next Diagnostic" },
+			{
+				"[d",
+				function()
+					require("lspsaga.diagnostic"):goto_prev()
+				end,
+				desc = "Previous Diagnostic",
+			},
+			{
+				"]d",
+				function()
+					require("lspsaga.diagnostic"):goto_next()
+				end,
+				desc = "Next Diagnostic",
+			},
 		},
 		config = function()
 			require("lspsaga").setup({
