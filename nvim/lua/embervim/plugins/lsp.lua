@@ -134,18 +134,20 @@ return {
 		dependencies = {
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "williamboman/mason-lspconfig.nvim" },
+			{ "folke/neodev.nvim" },
 		},
 		config = function()
-			-- This is where all the LSP shenanigans will live
-			local lsp_zero = require("lsp-zero")
+			-- Neodev Setup (Has to be done before LSP Zero Setup)
+			require("neodev").setup({})
 
+			-- LSP Zero Setup
+			local lsp_zero = require("lsp-zero")
 			lsp_zero.extend_lspconfig()
 			lsp_zero.on_attach(function(client, bufnr)
-				-- see :help lsp-zero-keybindings
-				-- to learn the available actions
 				lsp_zero.default_keymaps({ buffer = bufnr })
 			end)
 
+			-- LSP Config Setup w/ Mason integration
 			require("mason-lspconfig").setup({
 				ensure_installed = {},
 				handlers = {
@@ -161,25 +163,23 @@ return {
 							fileypes = { "glsl", "vert", "frag", "geom", "comp" },
 						})
 					end,
-					clangd = function()
-						require("lspconfig").clangd.setup({
-							cmd = {
-								"clangd",
-								"--all-scopes-completion",
-								"--suggest-missing-includes",
-								"--background-index",
-								"--pch-storage=disk",
-								"--cross-file-rename",
-								"--log=info",
-								"--completion-style=detailed",
-								"--enable-config", -- clangd 11+ supports reading from .clangd configuration file
-								"--clang-tidy",
-								"--offset-encoding=utf-16",
-								-- "--clang-tidy-checks=-*,llvm-*,clang-analyzer-*,modernize-*,-modernize-use-trailing-return-type",
-								-- "--fallback-style=Google",
-								-- "--header-insertion=never",
-								-- "--query-driver=<list-of-white-listed-complers>"
+					tsserver = function()
+						require("lspconfig").tsserver.setup({
+							filetypes = {
+								"javascript",
+								"javascriptreact",
+								"javascript.jsx",
+								"typescript",
+								"typescriptreact",
+								"typescript.tsx",
+								"markdown.mdx",
+								"mdx",
 							},
+						})
+					end,
+					mdx_analyzer = function()
+						require("lspconfig").mdx_analyzer.setup({
+							filetypes = { "markdown.mdx", "mdx" },
 						})
 					end,
 				},

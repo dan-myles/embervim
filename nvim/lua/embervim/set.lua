@@ -32,7 +32,7 @@ vim.opt.isfname:append("@-@")
 
 -- Time
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "100"
+-- vim.opt.colorcolumn = "100"
 vim.opt.cursorline = true
 
 -- NetRW
@@ -55,6 +55,6 @@ vim.opt.winbar = "%{expand('%:.')} %m"
 -- Special MDX Settings
 vim.filetype.add({
 	extension = {
-		mdx = "markdown.mdx",
+		mdx = "mdx",
 	},
 })
