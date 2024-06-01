@@ -78,6 +78,7 @@ return {
 
 					-- Formatters & Linters
 					"prettierd",
+					"prettier",
 					"eslint_d",
 					"golangci-lint",
 					"gofumpt",

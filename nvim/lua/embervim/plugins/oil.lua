@@ -72,7 +72,7 @@ return {
 				["<C-i>"] = "actions.preview",
 				["<C-p>"] = false,
 				["<C-c>"] = "actions.close",
-				["<C-l>"] = "actions.refresh",
+				["<C-l>"] = false,
 				["-"] = "actions.parent",
 				["_"] = "actions.open_cwd",
 				["`"] = "actions.cd",
