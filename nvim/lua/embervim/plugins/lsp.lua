@@ -72,6 +72,7 @@ return {
 					"yaml-language-server",
 					"vue-language-server",
 					"tailwindcss-language-server",
+					"astro-language-server",
 					"bash-language-server",
 					"terraform-ls",
 					"pyright",
