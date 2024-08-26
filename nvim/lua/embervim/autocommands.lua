@@ -14,13 +14,13 @@ local general = augroup("General Settings", { clear = true })
 -- })
 
 -- Lint
-autocmd({ "TextChanged", "BufWritePost" }, {
-	callback = function()
-		require("lint").try_lint()
-	end,
-	group = general,
-	desc = "Lint on File Save/Text Change",
-})
+-- autocmd({ "TextChanged", "BufWritePost" }, {
+-- 	callback = function()
+-- 		require("lint").try_lint()
+-- 	end,
+-- 	group = general,
+-- 	desc = "Lint on File Save/Text Change",
+-- })
 
 -- Disable winbar in netrw
 autocmd("FileType", {

@@ -102,7 +102,7 @@ return {
 			desc = "Previous Bookmark",
 		},
 		{
-			"<leader>m",
+			"<leader>a",
 			function()
 				require("harpoon.mark").add_file()
 			end,
