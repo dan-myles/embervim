@@ -1,8 +1,14 @@
 return {
-	-- Undo Tree
-	"mbbill/undotree",
-	lazy = true,
-	keys = {
-		{ "<leader>u", "<CMD>UndoTreeToggle<CR>", desc = "View Undo Tree" },
+	"jiaoshijie/undotree",
+	dependencies = "nvim-lua/plenary.nvim",
+	config = true,
+	keys = { -- load the plugin only when using it's keybinding:
+		{
+			"<leader>u",
+			function()
+				require("undotree").toggle()
+			end,
+			desc = "Toggle Undo Tree",
+		},
 	},
 }

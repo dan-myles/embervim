@@ -51,10 +51,3 @@ vim.o.winminwidth = 10
 vim.o.equalalways = false
 vim.o.guifont = "CaskaydiaCove Nerd Font:h15"
 vim.opt.winbar = "%{expand('%:.')} %m"
-
--- Special MDX Settings
-vim.filetype.add({
-	extension = {
-		mdx = "mdx",
-	},
-})

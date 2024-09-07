@@ -19,6 +19,7 @@ return {
 					g = false,
 				},
 			},
+			delay = 2000,
 		})
 
 		local wk = require("which-key")

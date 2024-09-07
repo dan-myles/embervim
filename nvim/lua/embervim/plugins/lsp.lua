@@ -12,46 +12,6 @@ return {
 		end,
 	},
 
-	-- Formatting
-	{
-		"stevearc/conform.nvim",
-		lazy = true,
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("conform").setup({
-				format_after_save = {
-					lsp_fallback = false,
-				},
-				formatters_by_ft = {
-					lua = { "stylua" },
-					go = { "gofumpt", "gci" },
-					rust = { "rustfmt" },
-					typescript = { "prettierd", "eslint_d" },
-					typescriptreact = { "prettierd", "eslint_d" },
-					javascript = { "prettierd" },
-					javascriptreact = { "prettierd" },
-					json = { "fixjson" },
-				},
-			})
-		end,
-	},
-
-	-- Linting
-	{
-		"mfussenegger/nvim-lint",
-		lazy = true,
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("lint").linters_by_ft = {
-				typescript = { "eslint_d" },
-				typescriptreact = { "eslint_d" },
-				javascript = { "eslint_d" },
-				javascriptreact = { "eslint_d" },
-				go = { "golangcilint" },
-			}
-		end,
-	},
-
 	-- Mason (Package Manager)
 	{
 		"williamboman/mason.nvim",
@@ -67,26 +27,20 @@ return {
 					"rust-analyzer",
 					"typescript-language-server",
 					"gopls",
-					"mdx-analyzer",
 					"lua-language-server",
 					"yaml-language-server",
-					"vue-language-server",
 					"tailwindcss-language-server",
-					"astro-language-server",
-					"bash-language-server",
-					"terraform-ls",
-					"pyright",
 
-					-- Formatters & Linters
+					-- Formatters
 					"prettierd",
-					"prettier",
-					"eslint_d",
-					"golangci-lint",
-					"gofumpt",
-					"gci",
-					"rustfmt",
+					"goimports",
+					"golines",
 					"stylua",
 					"fixjson",
+
+					-- Linters
+					"golangci-lint",
+					"eslint_d",
 				},
 				auto_update = true,
 				run_on_start = true,
@@ -194,7 +148,7 @@ return {
 		end,
 	},
 
-	-- LSPSaga
+	-- LSP Saga
 	{
 		"nvimdev/lspsaga.nvim",
 		lazy = true,

@@ -20,7 +20,6 @@ return {
 					"cpp",
 					"go",
 					"rust",
-					"astro",
 				},
 
 				auto_install = true,
