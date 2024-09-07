@@ -30,7 +30,40 @@
 </div>
 
 ## :mag: Info
-Currently being re-written! Check back soon <3
+A completely GMO-free neovim configuration written with cross-compatability in mind.
+Have you ever wanted an organic typing experience? Try out embervim! We always push
+breaking changes and always reconfigure plugins. There is no better experience out there.
 
+This is meant to be used as a baseline for your own configuration! All you have to do
+is clone this repo, and smack that `nvim` folder into `~/.config`. Have a configuration
+there already? Just go ahead and `rm -rf ~/.config` and you'll be good to go!
+
+**Features**
+- LSP
+- Autocomplete
+- Treesitter/Telescope and other staples
+- Lazygit in your editor 🤗
+- Code screenshotting
+- Doesn't break on WSL/Windows/Mac/Linux
+- Much more!
+
+**Dependencies**
+I honestly forgot everything this depends on. I know you will probably need `node`
+for some LSPs and `silicon` for code screenshotting. Oh and probably install `lazygit`
+if you want to use that. Other than that, if something breaks, read the error message. :o
+
+## License
+```
+DO WHATEVER YOU WANT TO PUBLIC LICENSE
+                  Version 2, December 2004
+Copyright (C) 2024 avvo-na
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document, and changing it is allowed as long
+as the name is changed.
+
+           DO WHATEVER YOU WANT TO PUBLIC LICENSE
+  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+  0. Literally nothing
+```
 
 
