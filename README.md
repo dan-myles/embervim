@@ -47,10 +47,9 @@ there already? Just go ahead and `rm -rf ~/.config` and you'll be good to go!
 - Doesn't break on WSL/Windows/Mac/Linux
 - Much more!
 
-**Dependencies**
-I honestly forgot everything this depends on. I know you will probably need `node`
+> P.S. I honestly forgot everything this depends on. I know you will probably need `node`
 for some LSPs and `silicon` for code screenshotting. Oh and probably install `lazygit`
-if you want to use that. Other than that, if something breaks, read the error message. :o
+if you want to use that. Other than that, if something breaks, my bad.
 
 ## License
 ```
