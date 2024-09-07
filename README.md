@@ -51,6 +51,9 @@ there already? Just go ahead and `rm -rf ~/.config` and you'll be good to go!
 for some LSPs and `silicon` for code screenshotting. Oh and probably install `lazygit`
 if you want to use that. Other than that, if something breaks, my bad.
 
+> P.S. P.S. Cloning this repo is over like 100MBs, so yeah... thats my bad. I may or
+may not have stored some large image files here for a showcase once.
+
 ## License
 ```
 DO WHATEVER YOU WANT TO PUBLIC LICENSE
