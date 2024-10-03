@@ -1,17 +1,4 @@
 return {
-	-- LSP Zero
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
-		lazy = true,
-		config = false,
-		init = function()
-			-- Disable automatic setup, we are doing it manually
-			vim.g.lsp_zero_extend_cmp = 0
-			vim.g.lsp_zero_extend_lspconfig = 0
-		end,
-	},
-
 	-- Mason (Package Manager)
 	{
 		"williamboman/mason.nvim",
@@ -20,12 +7,12 @@ return {
 			{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 		},
 		config = function()
-			require("mason").setup()
+			require("mason").setup({})
 			require("mason-tool-installer").setup({
 				ensure_installed = {
 					-- LSPs
+					"ts_ls",
 					"rust-analyzer",
-					"typescript-language-server",
 					"gopls",
 					"lua-language-server",
 					"yaml-language-server",
@@ -50,6 +37,18 @@ return {
 		end,
 	},
 
+	-- LSP Zero
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+		lazy = true,
+		config = false,
+		init = function()
+			vim.g.lsp_zero_extend_cmp = 0
+			vim.g.lsp_zero_extend_lspconfig = 0
+		end,
+	},
+
 	-- Autocompletion
 	{
 		"hrsh7th/nvim-cmp",
@@ -57,20 +56,47 @@ return {
 		dependencies = {
 			{ "L3MON4D3/LuaSnip" },
 			{ "hrsh7th/cmp-nvim-lsp-signature-help" },
+			{ "brenoprata10/nvim-highlight-colors" },
 		},
 		config = function()
+			require("nvim-highlight-colors").setup({})
+			vim.opt.termguicolors = true
 			-- Here is where you configure the autocompletion settings.
 			local lsp_zero = require("lsp-zero")
 			lsp_zero.extend_cmp()
 			-- And you can configure cmp even more, if you want to.
 			local cmp = require("cmp")
-			local cmp_action = lsp_zero.cmp_action()
 			cmp.setup({
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
 				sources = {
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lsp_signature_help" },
 				},
-				formatting = lsp_zero.cmp_format(),
+
+				formatting = {
+					format = function(entry, item)
+						-- Apply nvim-highlight-colors first to get color-specific modifications
+						local color_item = require("nvim-highlight-colors").format(entry, { kind = item.kind })
+
+						-- Apply lsp_zero.cmp_format to format the item
+						item = lsp_zero
+							.cmp_format({
+								-- any lsp_zero format settings here (e.g., max_width, details, etc.)
+							})
+							.format(entry, item)
+
+						-- If nvim-highlight-colors applied any custom highlights, apply them back
+						if color_item.abbr_hl_group then
+							item.kind_hl_group = color_item.abbr_hl_group
+							item.kind = color_item.abbr -- Use the abbreviated highlight color
+						end
+
+						return item
+					end,
+				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-p>"] = cmp.mapping.select_prev_item(), -- Previous item
 					["<C-n>"] = cmp.mapping.select_next_item(), -- Next item
@@ -119,7 +145,7 @@ return {
 							fileypes = { "glsl", "vert", "frag", "geom", "comp" },
 						})
 					end,
-					tsserver = function()
+					ts_ls = function()
 						require("lspconfig").tsserver.setup({
 							filetypes = {
 								"javascript",
