@@ -1,5 +1,4 @@
 return {
-	-- A better way to navigate files with vim
 	"ThePrimeagen/harpoon",
 	lazy = true,
 	keys = {
@@ -86,20 +85,6 @@ return {
 				require("harpoon.ui").nav_file(0)
 			end,
 			desc = "Navigate to Bookmark 10",
-		},
-		{
-			"<C-j>",
-			function()
-				require("harpoon.ui").nav_next()
-			end,
-			desc = "Next Bookmark",
-		},
-		{
-			"<C-k>",
-			function()
-				require("harpoon.ui").nav_prev()
-			end,
-			desc = "Previous Bookmark",
 		},
 		{
 			"<leader>a",

@@ -1,6 +1,7 @@
 return {
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
 	lazy = false,
 	keys = {
 		{ "<leader>pf", "<CMD>Telescope find_files<CR>", desc = "Search file" },
@@ -9,7 +10,6 @@ return {
 		{ "<leader>gd", "<CMD>Telescope git_files<CR>", desc = "Git Files" },
 		{ "<leader>gb", "<CMD>Telescope git_branches<CR>", desc = "Git Branches" },
 		{ "<leader>ga", "<CMD>Telescope git_commits<CR>", desc = "Git Commits" },
-
 		{ "<leader>bf", "<CMD>Telescope buffers<CR>", desc = "Search Buffers" },
 		{ "<leader>br", "<CMD>Telescope oldfiles<CR>", desc = "Recent Buffers" },
 		{ "<leader>hk", "<CMD>Telescope keymaps<CR>", desc = "Keybinds" },
@@ -37,18 +37,11 @@ return {
 		{
 			"<C-p>",
 			function()
-				local opts = {} -- define here if you want to define something
-				vim.fn.system("git rev-parse --is-inside-work-tree")
-				if vim.v.shell_error == 0 then
-					require("telescope.builtin").git_files(opts)
-				else
-					require("telescope.builtin").find_files(opts)
-				end
+				require("telescope.builtin").find_files()
 			end,
 			desc = "Find Files",
 		},
 	},
-	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		require("telescope").setup({})
 	end,

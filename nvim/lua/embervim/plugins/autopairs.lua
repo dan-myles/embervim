@@ -1,14 +1,12 @@
 return {
-	-- Normal Autopairs
 	{
 		"altermo/ultimate-autopair.nvim",
 		lazy = true,
 		event = { "InsertEnter", "CmdlineEnter" },
-		branch = "v0.6", --recommended as each new version will have breaking changes
+		branch = "v0.6",
 		opts = {},
 	},
 
-	-- Autotag
 	{
 		"windwp/nvim-ts-autotag",
 		lazy = true,
@@ -16,9 +14,9 @@ return {
 		config = function()
 			require("nvim-ts-autotag").setup({
 				opts = {
-					enable_close = true, -- Auto close tags
-					enable_rename = true, -- Auto rename pairs of tags
-					enable_close_on_slash = false, -- Auto close on trailing </
+					enable_close = true,
+					enable_rename = true,
+					enable_close_on_slash = false,
 				},
 			})
 		end,

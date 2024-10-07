@@ -1,7 +1,6 @@
 return {
 	"jiaoshijie/undotree",
 	dependencies = "nvim-lua/plenary.nvim",
-	config = true,
 	keys = { -- load the plugin only when using it's keybinding:
 		{
 			"<leader>u",
@@ -11,4 +10,9 @@ return {
 			desc = "Toggle Undo Tree",
 		},
 	},
+	config = function()
+		require("undotree").setup({
+			float_diff = false,
+		})
+	end,
 }

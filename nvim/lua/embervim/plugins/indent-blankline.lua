@@ -1,5 +1,4 @@
 return {
-	-- Indent Blankline
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		lazy = true,
@@ -28,12 +27,9 @@ return {
 		end,
 	},
 
-	-- Active indent guide and indent text objects. When you're browsing
-	-- code, this highlights the current level of indentation, and animates
-	-- the highlighting.
 	{
 		"echasnovski/mini.indentscope",
-		version = false, -- wait till new 0.7.0 release to put it back on semver
+		version = false,
 		lazy = true,
 		event = { "BufWinEnter" },
 		opts = {

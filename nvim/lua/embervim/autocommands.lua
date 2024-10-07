@@ -24,9 +24,9 @@ autocmd({ "TextChanged", "BufWritePost" }, {
 
 -- Modify winbar in netrw
 autocmd("FileType", {
-	pattern = "netrw",
+	pattern = "oil",
 	callback = function()
-		vim.opt_local.winbar = "netrw"
+		vim.opt_local.winbar = "Oil"
 		vim.opt_local.fillchars:append({ eob = " " })
 		vim.opt_local.colorcolumn = ""
 	end,

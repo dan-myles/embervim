@@ -1,5 +1,4 @@
 return {
-	-- Commenter plugin
 	{
 		"numToStr/Comment.nvim",
 		lazy = true,
@@ -19,7 +18,6 @@ return {
 		end,
 	},
 
-	-- Correct commenting in TSX/JSX files
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		lazy = true,
