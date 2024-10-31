@@ -3,6 +3,12 @@ return {
 	lazy = true,
 	event = "VimEnter",
 	config = function()
-		require("reticle").setup({})
+		require("reticle").setup({
+			ignore = {
+				cursorline = {
+					"neo-tree",
+				},
+			},
+		})
 	end,
 }

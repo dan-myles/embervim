@@ -4,15 +4,13 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("conform").setup({
-			format_after_save = {
-				lsp_fallback = false,
-			},
 			formatters_by_ft = {
-				lua = { "stylua" },
-				go = { lsp_format = "first", "goimports", "golines" },
+				go = { lsp_format = "first", "goimports" },
 				rust = { lsp_format = "first" },
 				typescript = { "prettierd", "eslint_d" },
 				typescriptreact = { "prettierd", "eslint_d" },
+				lua = { "stylua" },
+				prisma = { lsp_format = "first" },
 				json = { "fixjson" },
 			},
 		})

@@ -17,12 +17,14 @@ return {
 		require("windows").setup({
 			ignore = {
 				filetype = {
-					"lspsagaoutline",
+					"CHADTree",
+					"sagaoutline",
+					"Outline",
 				},
 			},
 			animation = {
 				enable = true,
-				fps = 60,
+				fps = 120,
 			},
 		})
 	end,

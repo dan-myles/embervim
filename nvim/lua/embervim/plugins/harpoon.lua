@@ -1,100 +1,42 @@
 return {
 	"ThePrimeagen/harpoon",
-	lazy = true,
-	keys = {
-		{
-			"<C-e>",
-			function()
-				require("harpoon.ui").toggle_quick_menu()
-			end,
-			desc = "Toggle Bookmark Window",
+	branch = "harpoon2",
+	opts = {
+		menu = {
+			width = vim.api.nvim_win_get_width(0) - 4,
 		},
-		{
-			"<leader>m",
-			function()
-				require("harpoon.mark").add_file()
-			end,
-			desc = "Bookmark Current File",
-		},
-		{
-			"<leader>1",
-			function()
-				require("harpoon.ui").nav_file(1)
-			end,
-			desc = "Navigate to Bookmark 1",
-		},
-		{
-			"<leader>2",
-			function()
-				require("harpoon.ui").nav_file(2)
-			end,
-			desc = "Navigate to Bookmark 2",
-		},
-		{
-			"<leader>3",
-			function()
-				require("harpoon.ui").nav_file(3)
-			end,
-			desc = "Navigate to Bookmark 3",
-		},
-		{
-			"<leader>4",
-			function()
-				require("harpoon.ui").nav_file(4)
-			end,
-			desc = "Navigate to Bookmark 4",
-		},
-		{
-			"<leader>5",
-			function()
-				require("harpoon.ui").nav_file(5)
-			end,
-			desc = "Navigate to Bookmark 5",
-		},
-		{
-			"<leader>6",
-			function()
-				require("harpoon.ui").nav_file(6)
-			end,
-			desc = "Navigate to Bookmark 6",
-		},
-		{
-			"<leader>7",
-			function()
-				require("harpoon.ui").nav_file(7)
-			end,
-			desc = "Navigate to Bookmark 7",
-		},
-		{
-			"<leader>8",
-			function()
-				require("harpoon.ui").nav_file(8)
-			end,
-			desc = "Navigate to Bookmark 8",
-		},
-		{
-			"<leader>9",
-			function()
-				require("harpoon.ui").nav_file(9)
-			end,
-			desc = "Navigate to Bookmark 9",
-		},
-		{
-			"<leader>0",
-			function()
-				require("harpoon.ui").nav_file(0)
-			end,
-			desc = "Navigate to Bookmark 10",
-		},
-		{
-			"<leader>a",
-			function()
-				require("harpoon.mark").add_file()
-			end,
-			desc = "Bookmark Current File",
+		settings = {
+			save_on_toggle = true,
 		},
 	},
-	config = function()
-		require("harpoon").setup()
+	keys = function()
+		local keys = {
+			{
+				"<leader>a",
+				function()
+					require("harpoon"):list():add()
+				end,
+				desc = "Harpoon File",
+			},
+			{
+				"<C-e>",
+				function()
+					local harpoon = require("harpoon")
+					harpoon.ui:toggle_quick_menu(harpoon:list())
+				end,
+				desc = "Harpoon Quick Menu",
+			},
+		}
+
+		for i = 1, 5 do
+			table.insert(keys, {
+				"<leader>" .. i,
+				function()
+					require("harpoon"):list():select(i)
+				end,
+				desc = "Harpoon to File " .. i,
+			})
+		end
+		return keys
 	end,
 }

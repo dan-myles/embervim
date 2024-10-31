@@ -41,8 +41,19 @@ return {
 			end,
 			desc = "Find Files",
 		},
+		{
+			"<C-l>",
+			function()
+				require("telescope.builtin").diagnostics()
+			end,
+			desc = "Find Files",
+		},
 	},
 	config = function()
-		require("telescope").setup({})
+		require("telescope").setup({
+			defaults = {
+				initial_mode = "insert",
+			},
+		})
 	end,
 }

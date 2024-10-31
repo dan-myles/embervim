@@ -7,15 +7,15 @@ return {
 		config = function()
 			local c = require("vscode.colors").get_colors()
 			require("vscode").setup({
-				transparent = false,
-				italic_comments = false,
-				disable_nvimtree_bg = true,
-				group_overrides = {
-					Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
-				},
-				color_overrides = {
-					vscDarkYellow = "#aaaaaa",
-				},
+				-- transparent = false,
+				-- italic_comments = false,
+				-- disable_nvimtree_bg = true,
+				-- group_overrides = {
+				-- 	Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+				-- },
+				-- color_overrides = {
+				-- 	vscDarkYellow = "#aaaaaa",
+				-- },
 			})
 		end,
 	},
@@ -79,6 +79,13 @@ return {
 		lazy = false,
 		priority = 1000,
 		name = "kanagawa",
+	},
+
+	-- Tokyonight
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
 	},
 
 	-- Monokai

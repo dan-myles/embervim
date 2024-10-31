@@ -7,6 +7,9 @@ return {
 			{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 		},
 		config = function()
+			-- ------------------- --
+			-- Mason Default Tools --
+			-- ------------------- --
 			require("mason").setup({})
 			require("mason-tool-installer").setup({
 				ensure_installed = {
@@ -17,93 +20,19 @@ return {
 					"lua-language-server",
 					"yaml-language-server",
 					"tailwindcss-language-server",
+					"prisma-language-server",
 
 					-- Formatters
 					"prettierd",
 					"goimports",
-					"golines",
 					"stylua",
 					"fixjson",
+					"shfmt",
 
 					-- Linters
-					"golangci-lint",
-					"eslint_d",
+					"eslint-lsp",
 				},
-				auto_update = true,
-				run_on_start = true,
-				start_delay = 3000, -- 3 second delay when starting up
-				debounce_hours = 5, -- at least 5 hours between attempts to install/update
-			})
-		end,
-	},
-
-	-- LSP Zero
-	{
-		"VonHeikemen/lsp-zero.nvim",
-		branch = "v3.x",
-		lazy = true,
-		config = false,
-		init = function()
-			vim.g.lsp_zero_extend_cmp = 0
-			vim.g.lsp_zero_extend_lspconfig = 0
-		end,
-	},
-
-	-- Autocompletion
-	{
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		dependencies = {
-			{ "L3MON4D3/LuaSnip" },
-			{ "hrsh7th/cmp-nvim-lsp-signature-help" },
-			{ "brenoprata10/nvim-highlight-colors" },
-		},
-		config = function()
-			require("nvim-highlight-colors").setup({})
-			vim.opt.termguicolors = true
-			-- Here is where you configure the autocompletion settings.
-			local lsp_zero = require("lsp-zero")
-			lsp_zero.extend_cmp()
-			-- And you can configure cmp even more, if you want to.
-			local cmp = require("cmp")
-			cmp.setup({
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-				sources = {
-					{ name = "nvim_lsp" },
-					{ name = "nvim_lsp_signature_help" },
-				},
-
-				formatting = {
-					format = function(entry, item)
-						-- Apply nvim-highlight-colors first to get color-specific modifications
-						local color_item = require("nvim-highlight-colors").format(entry, { kind = item.kind })
-
-						-- Apply lsp_zero.cmp_format to format the item
-						item = lsp_zero
-							.cmp_format({
-								-- any lsp_zero format settings here (e.g., max_width, details, etc.)
-							})
-							.format(entry, item)
-
-						-- If nvim-highlight-colors applied any custom highlights, apply them back
-						if color_item.abbr_hl_group then
-							item.kind_hl_group = color_item.abbr_hl_group
-							item.kind = color_item.abbr -- Use the abbreviated highlight color
-						end
-
-						return item
-					end,
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-p>"] = cmp.mapping.select_prev_item(), -- Previous item
-					["<C-n>"] = cmp.mapping.select_next_item(), -- Next item
-					["<C-s>"] = cmp.mapping.complete(), -- Start completion
-					["<C-e>"] = cmp.mapping.close(), -- Close completion
-					["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Complete
-				}),
+				auto_upadate = true,
 			})
 		end,
 	},
@@ -114,62 +43,193 @@ return {
 		cmd = { "LspInfo", "LspInstall", "LspStart" },
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
-			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "VonHeikemen/lsp-zero.nvim", branch = "v4.x" },
+			{ "MysticalDevil/inlay-hints.nvim" },
+			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
-			{ "folke/neodev.nvim" },
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "L3MON4D3/LuaSnip" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "rafamadriz/friendly-snippets" },
+			{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 		},
 		config = function()
-			-- Neodev Setup (Has to be done before LSP Zero Setup)
-			require("neodev").setup({})
-
-			-- LSP Zero Setup
+			-- --------------------------- --
+			-- LSP Setup (nvim-lspconfig)  --
+			-- --------------------------- --
 			local lsp_zero = require("lsp-zero")
-			lsp_zero.extend_lspconfig()
-			lsp_zero.on_attach(function(client, bufnr)
-				lsp_zero.default_keymaps({ buffer = bufnr })
-			end)
+			local lsp_defaults = require("lspconfig").util.default_config
+			require("inlay-hints").setup()
+			lsp_defaults.capabilities =
+				vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-			-- LSP Config Setup w/ Mason integration
-			require("mason-lspconfig").setup({
-				ensure_installed = {},
-				handlers = {
-					lsp_zero.default_setup,
-					lua_ls = function()
-						-- (Optional) Configure lua language server for neovim
-						local lua_opts = lsp_zero.nvim_lua_ls()
-						require("lspconfig").lua_ls.setup(lua_opts)
-					end,
-					glsl_analyzer = function()
-						require("lspconfig").glsl_analyzer.setup({
-							root_dir = require("lspconfig").util.root_pattern(".git", ".root", ".project", ".hg"),
-							fileypes = { "glsl", "vert", "frag", "geom", "comp" },
-						})
-					end,
-					ts_ls = function()
-						require("lspconfig").tsserver.setup({
-							filetypes = {
-								"javascript",
-								"javascriptreact",
-								"javascript.jsx",
-								"typescript",
-								"typescriptreact",
-								"typescript.tsx",
-								"markdown.mdx",
-								"mdx",
-							},
-						})
-					end,
-					mdx_analyzer = function()
-						require("lspconfig").mdx_analyzer.setup({
-							filetypes = { "markdown.mdx", "mdx" },
-						})
-					end,
+			vim.diagnostic.config({
+				underline = true,
+				update_in_insert = false,
+				virtual_text = {
+					spacing = 4,
+					source = "if_many",
+					prefix = "",
+				},
+				severity_sort = true,
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = " ",
+						[vim.diagnostic.severity.WARN] = " ",
+						[vim.diagnostic.severity.HINT] = " ",
+						[vim.diagnostic.severity.INFO] = " ",
+					},
 				},
 			})
 
-			vim.diagnostic.config({
-				virtual_text = true,
-				underline = true,
+			-- All Available LSP Servers
+			-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+			--
+			-- Quick setup for lsp servers
+			-- https://www.lazyvim.org/
+			--
+			-- Keep in mind most LSP settings are already setup for us!
+			-- We are just doing some more setup here to enable inlay hints.
+			-- (Or you can customize whatever you want!)
+			require("mason-lspconfig").setup({
+				handlers = {
+					-- ----------------- --
+					-- START OF HANDLERS --
+					-- ----------------- --
+					function(server_name)
+						require("lspconfig")[server_name].setup({})
+					end,
+
+					-- ------------- --
+					-- ts_ls         --
+					-- ------------- --
+					ts_ls = function()
+						require("lspconfig").ts_ls.setup({
+							settings = {
+								typescript = {
+									inlayHints = {
+										-- includeInlayParameterNameHints = "all",
+										includeInlayParameterNameHints = false,
+										includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+										includeInlayFunctionParameterTypeHints = false,
+										includeInlayVariableTypeHints = false,
+										includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+										includeInlayPropertyDeclarationTypeHints = false,
+										includeInlayFunctionLikeReturnTypeHints = false,
+										includeInlayEnumMemberValueHints = false,
+									},
+								},
+								javascript = {
+									inlayHints = {
+										includeInlayParameterNameHints = "all",
+										includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+										includeInlayFunctionParameterTypeHints = true,
+										includeInlayVariableTypeHints = true,
+										includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+										includeInlayPropertyDeclarationTypeHints = true,
+										includeInlayFunctionLikeReturnTypeHints = true,
+										includeInlayEnumMemberValueHints = true,
+									},
+								},
+							},
+						})
+					end,
+
+					-- ------------- --
+					-- gopls         --
+					-- ------------- --
+					gopls = function()
+						require("lspconfig").gopls.setup({
+							settings = {
+								gopls = {
+									gofumpt = true,
+									codelenses = {
+										gc_details = false,
+										generate = true,
+										regenerate_cgo = true,
+										run_govulncheck = true,
+										test = true,
+										tidy = true,
+										upgrade_dependency = true,
+										vendor = true,
+									},
+									hints = {
+										assignVariableTypes = false,
+										compositeLiteralFields = false,
+										compositeLiteralTypes = false,
+										constantValues = false,
+										functionTypeParameters = false,
+										parameterNames = false,
+										rangeVariableTypes = false,
+									},
+									analyses = {
+										fieldalignment = false,
+										nilness = true,
+										unusedparams = true,
+										unusedwrite = true,
+										useany = true,
+									},
+									usePlaceholders = true,
+									completeUnimported = true,
+									staticcheck = true,
+									directoryFilters = {
+										"-.git",
+										"-.vscode",
+										"-.idea",
+										"-.vscode-test",
+										"-node_modules",
+										"-vendor",
+									},
+									semanticTokens = true,
+								},
+							},
+						})
+					end,
+
+					-- --------------- --
+					-- END OF HANDLERS --
+					-- --------------- --
+				},
+			})
+
+			-- --------------------------- --
+			-- Completion Setup (nvim-cmp) --
+			-- --------------------------- --
+			local cmp = require("cmp")
+			require("luasnip.loaders.from_vscode").lazy_load()
+			cmp.setup({
+				sources = {
+					{ name = "path" },
+					{ name = "nvim_lsp" },
+					{ name = "luasnip", keyword_length = 2 },
+					{ name = "buffer", keyword_length = 3 },
+				},
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
+				mapping = cmp.mapping.preset.insert({
+					["<C-p>"] = cmp.mapping.select_prev_item(), -- Previous item
+					["<C-n>"] = cmp.mapping.select_next_item(), -- Next item
+					["<C-s>"] = cmp.mapping.complete(), -- Start completion
+					["<C-e>"] = cmp.mapping.close(), -- Close completion
+					["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Complete
+				}),
+				snippet = {
+					expand = function(args)
+						require("luasnip").lsp_expand(args.body)
+					end,
+				},
+				experimental = {
+					ghost_text = true,
+				},
+				formatting = lsp_zero.cmp_format({ details = true }),
 			})
 		end,
 	},
@@ -177,13 +237,12 @@ return {
 	-- LSP Saga
 	{
 		"nvimdev/lspsaga.nvim",
-		lazy = true,
+		lazy = false,
 		event = { "LspAttach" },
 		keys = {
 			{ "K", "<CMD>Lspsaga hover_doc<CR>", desc = "Hover" },
-			{ "L", "<CMD>Lspsaga show_line_diagnostics<CR>", desc = "Show Line Diagnostics" },
+			{ "L", "<CMD>lua vim.diagnostic.open_float()<CR>", desc = "Show Line Diagnostics" },
 			{ "gd", "<CMD>Lspsaga goto_definition<CR>zz", desc = "Go to Definition" },
-			{ "<leader>o", "<CMD>Lspsaga outline<CR>", desc = "Toggle Code Outline" },
 			{ "<leader>lq", "<CMD>Lspsaga finder<CR>", desc = "Definition & References" },
 			{ "<leader>lr", "<CMD>Lspsaga rename ++project<CR>", desc = "Rename" },
 			{ "<leader>ld", "<CMD>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
@@ -241,6 +300,18 @@ return {
 					max_height = 0.5,
 				},
 			})
+		end,
+	},
+
+	-- Code Outline
+	{
+		"hedyhli/outline.nvim",
+		lazy = true,
+		keys = {
+			{ "<leader>o", "<CMD>Outline<CR>", desc = "Toggle code outline" },
+		},
+		config = function()
+			require("outline").setup({})
 		end,
 	},
 }

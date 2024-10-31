@@ -10,8 +10,8 @@ local bind = vim.keymap.set
 bind("n", "J", "mzJ`z", { noremap = true, silent = true, desc = "Concatenate from line below" })
 bind("n", "<leader>lm", "<CMD>LspRestart<CR>", { noremap = true, silent = true, desc = "Restart LSPs" })
 bind("n", "<leader>lf", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format" })
-bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
-bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
+-- bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
+-- bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
 
 --
 -- Visual Mode Keybinds
@@ -39,9 +39,3 @@ bind("n", "Q", "<nop>")
 bind("n", "q:", "<nop>")
 bind("n", "q/", "<nop>")
 bind("n", "q?", "<nop>")
-
--- Dont use arrow keys!!!
-bind("i", "<Left>", "<nop>")
-bind("i", "<Right>", "<nop>")
-bind("i", "<Up>", "<nop>")
-bind("i", "<Down>", "<nop>")

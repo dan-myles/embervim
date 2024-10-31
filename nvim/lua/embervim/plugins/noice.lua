@@ -30,6 +30,9 @@ return {
 			messages = {
 				enabled = true,
 			},
+			routes = {
+				{ filter = { event = "notify", find = "No code actions available" }, skip = true },
+			},
 		})
 	end,
 }

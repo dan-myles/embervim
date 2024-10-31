@@ -23,18 +23,18 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = {},
+				lualine_a = {
+					{
+						function()
+							return "embervim"
+						end,
+					},
+				},
 				lualine_b = {
 					{
 						function()
-							return "[embervim]"
-						end,
-						separator = "~",
-					},
-					{
-						function()
 							local cwd = vim.fn.getcwd()
-							local last_dir = cwd:match("([^\\]+)$")
+							local last_dir = cwd:match("([^/]+)$")
 							return last_dir
 						end,
 						separator = "",
@@ -42,21 +42,40 @@ return {
 					{
 						"branch",
 						separator = { left = "", right = "" },
-						icon = "on ",
+						icon = "~ ",
 						padding = { left = 0, right = 1 },
 					},
 				},
 				lualine_c = {
 					{
-						"diff",
-						separator = "-",
-					},
-					{
 						"diagnostics",
-						symbols = { error = "E:", warn = "W:", info = "I:", hint = "H:" },
+						symbols = {
+							error = " ",
+							warn = " ",
+							info = " ",
+							hint = " ",
+						},
 					},
 				},
 				lualine_x = {
+					{
+						"diff",
+						symbols = {
+							added = " ",
+							modified = " ",
+							removed = " ",
+						},
+						source = function()
+							local gitsigns = vim.b.gitsigns_status_dict
+							if gitsigns then
+								return {
+									added = gitsigns.added,
+									modified = gitsigns.changed,
+									removed = gitsigns.removed,
+								}
+							end
+						end,
+					},
 					{
 						function()
 							local msg = ""
@@ -93,7 +112,9 @@ return {
 						icons_enabled = false,
 					},
 				},
-				lualine_z = {},
+				lualine_z = {
+					"mode",
+				},
 			},
 			tabline = {},
 			extensions = {},
