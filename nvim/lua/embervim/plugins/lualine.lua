@@ -14,8 +14,8 @@ return {
 				disabled_filetypes = {
 					statusline = {
 						"alpha",
-						"TelescopePrompt",
 						"oil",
+						"TelescopePrompt",
 					},
 					winbar = {
 						"netrw",
@@ -24,11 +24,11 @@ return {
 			},
 			sections = {
 				lualine_a = {
-					{
-						function()
-							return "embervim"
-						end,
-					},
+					-- {
+					-- 	function()
+					-- 		return "embervim"
+					-- 	end,
+					-- },
 				},
 				lualine_b = {
 					{
@@ -112,9 +112,7 @@ return {
 						icons_enabled = false,
 					},
 				},
-				lualine_z = {
-					"mode",
-				},
+				lualine_z = {},
 			},
 			tabline = {},
 			extensions = {},

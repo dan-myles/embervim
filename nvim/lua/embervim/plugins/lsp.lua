@@ -54,7 +54,6 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 			{ "saadparwaiz1/cmp_luasnip" },
 			{ "rafamadriz/friendly-snippets" },
-			{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 		},
 		config = function()
 			-- --------------------------- --
@@ -277,6 +276,35 @@ return {
 					require("lspsaga.diagnostic"):goto_next()
 				end,
 				desc = "Next Diagnostic",
+			},
+			{
+				"<leader>lo",
+				function()
+					vim.lsp.buf.code_action({
+						apply = true,
+						context = {
+							only = { "source.fixAll" },
+						},
+					})
+				end,
+				desc = "Organize all imports",
+			},
+			{
+				"<leader>li",
+				function()
+					vim.lsp.buf.code_action({
+						apply = true,
+						context = {
+							only = { "source.addMissingImports" },
+						},
+					})
+				end,
+				desc = "Add missing imports",
+			},
+			{
+				"<leader>lc",
+        "<CMD>checkhealth lspconfig<CR>",
+				desc = "Active LSP Clients",
 			},
 		},
 		config = function()

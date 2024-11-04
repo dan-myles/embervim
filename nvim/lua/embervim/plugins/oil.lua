@@ -2,6 +2,7 @@ return {
 	"stevearc/oil.nvim",
 	keys = {
 		{ "<leader>pv", "<CMD>Oil<CR>", desc = "Open file explorer" },
+		{ "-", "<CMD>Oil<CR>", desc = "Open file explorer" },
 	},
 	lazy = false,
 	config = function()
@@ -9,6 +10,9 @@ return {
 			default_file_explorer = true,
 			delete_to_trash = true,
 			skip_confirm_for_simple_edits = true,
+			columns = {
+				"icon",
+			},
 			keymaps = {
 				["g?"] = "actions.show_help",
 				["<CR>"] = "actions.select",

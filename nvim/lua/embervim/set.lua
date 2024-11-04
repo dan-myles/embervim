@@ -12,8 +12,8 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
-vim.opt.cmdheight = 0
-vim.opt.laststatus = 3
+-- vim.opt.laststatus = 3
+-- vim.opt.cmdheight = 0
 
 -- Relative Numbers
 vim.opt.nu = true
@@ -32,8 +32,8 @@ vim.opt.isfname:append("@-@")
 
 -- Time
 vim.opt.updatetime = 50
--- vim.opt.colorcolumn = "100"
 vim.opt.cursorline = true
+-- vim.opt.colorcolumn = "100"
 
 -- NetRW
 vim.g.netrw_banner = 1

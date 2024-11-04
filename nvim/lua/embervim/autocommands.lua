@@ -4,7 +4,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local general = augroup("General Settings", { clear = true })
 
--- Lint
+-- Lint on Change
 autocmd({ "TextChanged", "BufWritePost" }, {
 	callback = function()
 		require("lint").try_lint()
