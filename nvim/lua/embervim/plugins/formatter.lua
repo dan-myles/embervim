@@ -12,6 +12,7 @@ return {
 				lua = { "stylua" },
 				prisma = { lsp_format = "first" },
 				json = { "fixjson" },
+        markdown = { "prettierd" },
 			},
 		})
 	end,

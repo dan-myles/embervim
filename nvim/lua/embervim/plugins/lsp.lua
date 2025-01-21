@@ -123,14 +123,14 @@ return {
 								},
 								javascript = {
 									inlayHints = {
-										includeInlayParameterNameHints = "all",
-										includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-										includeInlayFunctionParameterTypeHints = true,
-										includeInlayVariableTypeHints = true,
-										includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-										includeInlayPropertyDeclarationTypeHints = true,
-										includeInlayFunctionLikeReturnTypeHints = true,
-										includeInlayEnumMemberValueHints = true,
+										-- includeInlayParameterNameHints = "all",
+										includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+										includeInlayFunctionParameterTypeHints = false,
+										includeInlayVariableTypeHints = false,
+										includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+										includeInlayPropertyDeclarationTypeHints = false,
+										includeInlayFunctionLikeReturnTypeHints = false,
+										includeInlayEnumMemberValueHints = false,
 									},
 								},
 							},
@@ -283,7 +283,7 @@ return {
 					vim.lsp.buf.code_action({
 						apply = true,
 						context = {
-							only = { "source.fixAll" },
+							only = { "source.removeUnused" },
 						},
 					})
 				end,
@@ -303,7 +303,7 @@ return {
 			},
 			{
 				"<leader>lc",
-        "<CMD>checkhealth lspconfig<CR>",
+				"<CMD>checkhealth lspconfig<CR>",
 				desc = "Active LSP Clients",
 			},
 		},
