@@ -24,6 +24,7 @@ return {
 			{ "<leader>h", group = "+Home" },
 			{ "<leader>l", group = "+LSP" },
 			{ "<leader>p", group = "+Project" },
+      { "<leader>m", group = "+Markdown" },
 		})
 	end,
 }

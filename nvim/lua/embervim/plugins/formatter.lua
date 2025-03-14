@@ -7,8 +7,10 @@ return {
 			formatters_by_ft = {
 				go = { lsp_format = "first", "goimports" },
 				rust = { lsp_format = "first" },
-				typescript = { "prettierd", "eslint_d" },
-				typescriptreact = { "prettierd", "eslint_d" },
+				typescript = { "prettier", "eslint_d" },
+				typescriptreact = { "prettier", "eslint_d" },
+        javascript = { "prettier"},
+        javascriptreact = { "prettier"},
 				lua = { "stylua" },
 				prisma = { lsp_format = "first" },
 				json = { "fixjson" },
