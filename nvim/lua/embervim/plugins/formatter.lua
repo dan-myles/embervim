@@ -11,6 +11,7 @@ return {
 				typescriptreact = { "prettier", "eslint_d" },
         javascript = { "prettier"},
         javascriptreact = { "prettier"},
+        css = { "prettier"},
 				lua = { "stylua" },
 				prisma = { lsp_format = "first" },
 				json = { "fixjson" },

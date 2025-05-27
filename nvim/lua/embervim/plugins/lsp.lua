@@ -3,6 +3,9 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
+		keys = {
+			{ "<leader>hm", "<cmd>Mason<cr>" },
+		},
 		dependencies = {
 			{ "WhoIsSethDaniel/mason-tool-installer.nvim" },
 		},
@@ -56,7 +59,7 @@ return {
 			{ "rafamadriz/friendly-snippets" },
 			{
 				"davidosomething/format-ts-errors.nvim",
-				dir = "~/Developer/misc/format-ts-errors.nvim",
+				dir = "~/Developer/sandbox/format-ts-errors.nvim",
 			},
 		},
 		config = function()
@@ -237,6 +240,9 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "luasnip", keyword_length = 2 },
 					{ name = "buffer", keyword_length = 3 },
+					per_filetype = {
+						codecompanion = { "codecompanion" },
+					},
 				},
 				window = {
 					completion = cmp.config.window.bordered(),
@@ -250,7 +256,7 @@ return {
 					["<C-n>"] = cmp.mapping.select_next_item(), -- Next item
 					["<C-s>"] = cmp.mapping.complete(), -- Start completion
 					["<C-e>"] = cmp.mapping.close(), -- Close completion
-					["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Complete
+					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Complete
 				}),
 				snippet = {
 					expand = function(args)
@@ -258,7 +264,7 @@ return {
 					end,
 				},
 				experimental = {
-					ghost_text = true,
+					-- ghost_text = true,
 				},
 				formatting = lsp_zero.cmp_format({ details = true }),
 			})
