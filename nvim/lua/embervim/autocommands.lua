@@ -19,7 +19,7 @@ autocmd("BufWritePost", {
 	group = general,
 	desc = "Format & clean on save",
 	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
+		require("conform").format({ bufnr = args.buf, async = true })
 	end,
 })
 
