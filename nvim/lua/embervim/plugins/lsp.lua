@@ -57,10 +57,7 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 			{ "saadparwaiz1/cmp_luasnip" },
 			{ "rafamadriz/friendly-snippets" },
-			{
-				"davidosomething/format-ts-errors.nvim",
-				dir = "~/Developer/sandbox/format-ts-errors.nvim",
-			},
+			{ "davidosomething/format-ts-errors.nvim", },
 		},
 		config = function()
 			-- --------------------------- --
