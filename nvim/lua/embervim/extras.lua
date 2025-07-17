@@ -5,5 +5,9 @@ vim.cmd([[colorscheme catppuccin]])
 vim.filetype.add({
 	extension = {
 		mdx = "markdown",
+		json = "jsonc",
+	},
+	pattern = {
+		["%.env%.[%w_.-]+"] = "sh",
 	},
 })
