@@ -6,6 +6,7 @@ vim.filetype.add({
 	extension = {
 		mdx = "markdown",
 		json = "jsonc",
+		mdc = "markdown",
 	},
 	pattern = {
 		["%.env%.[%w_.-]+"] = "sh",

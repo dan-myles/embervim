@@ -38,3 +38,4 @@ autocmd("TextYankPost", {
 	desc = "Highlight on yank",
 	command = [[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]],
 })
+
