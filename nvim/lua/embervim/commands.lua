@@ -39,3 +39,21 @@ autocmd("TextYankPost", {
 	command = [[silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=200})]],
 })
 
+-- ESLint + TSC makeprg and errorformat
+autocmd("FileType", {
+	pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+	group = general,
+	desc = "Set makeprg and errorformat for ESLint + TSC",
+	callback = function()
+		vim.opt_local.makeprg = "bunx eslint . --format unix; bunx tsc --noEmit --pretty false"
+		vim.opt_local.errorformat = "%f:%l:%c: %m,%E%f(%l\\,%c): %m,%Z%f(%l\\,%c): %m,%W%f(%l\\,%c): %m"
+	end,
+})
+
+-- Auto-open Trouble quickfix on make
+-- autocmd("QuickFixCmdPost", {
+-- 	pattern = "[^l]*",
+-- 	group = general,
+-- 	desc = "Auto-open Trouble quickfix window",
+-- 	command = "cclose | Trouble qflist open",
+-- })

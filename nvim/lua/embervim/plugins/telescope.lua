@@ -50,9 +50,15 @@ return {
 		},
 	},
 	config = function()
+		local open_with_trouble = require("trouble.sources.telescope").open
+
 		require("telescope").setup({
 			defaults = {
 				initial_mode = "insert",
+				mappings = {
+					i = { ["<c-t>"] = open_with_trouble },
+					n = { ["<c-t>"] = open_with_trouble },
+				},
 			},
 		})
 	end,

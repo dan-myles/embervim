@@ -3,11 +3,11 @@ return {
 	opts = {},
 	cmd = "Trouble",
 	keys = {
-		{
-			"<C-r>",
-			"<cmd>Trouble diagnostics toggle<cr>",
-			desc = "Diagnostics (Trouble)",
-		},
+		-- {
+		-- 	"<C-r>",
+		-- 	"<CMD>Trouble diagnostics toggle focus=true<CR>",
+		-- 	desc = "Diagnostics (Trouble)",
+		-- },
 		-- {
 		--   "<leader>xX",
 		--   "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
@@ -30,8 +30,22 @@ return {
 		-- },
 		{
 			"<C-t>",
-			"<cmd>Trouble qflist toggle<cr>",
+			"<CMD>Trouble qflist toggle focus=true<CR>",
 			desc = "Quickfix List (Trouble)",
+		},
+		{
+			"]q",
+			function()
+				require("trouble").next({ skip_groups = true, jump = true })
+			end,
+			desc = "Next Trouble Item",
+		},
+		{
+			"[q",
+			function()
+				require("trouble").prev({ skip_groups = true, jump = true })
+			end,
+			desc = "Previous Trouble Item",
 		},
 	},
 }
