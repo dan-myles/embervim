@@ -49,11 +49,3 @@ autocmd("FileType", {
 		vim.opt_local.errorformat = "%f:%l:%c: %m,%E%f(%l\\,%c): %m,%Z%f(%l\\,%c): %m,%W%f(%l\\,%c): %m"
 	end,
 })
-
--- Auto-open Trouble quickfix on make
--- autocmd("QuickFixCmdPost", {
--- 	pattern = "[^l]*",
--- 	group = general,
--- 	desc = "Auto-open Trouble quickfix window",
--- 	command = "cclose | Trouble qflist open",
--- })
