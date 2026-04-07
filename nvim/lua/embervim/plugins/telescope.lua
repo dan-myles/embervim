@@ -41,13 +41,6 @@ return {
 			end,
 			desc = "Find Files",
 		},
-		{
-			"<C-l>",
-			function()
-				require("telescope.builtin").diagnostics()
-			end,
-			desc = "Find Files",
-		},
 	},
 	config = function()
 		local open_with_trouble = require("trouble.sources.telescope").open

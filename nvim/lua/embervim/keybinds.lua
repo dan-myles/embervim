@@ -11,8 +11,8 @@ bind("n", "J", "mzJ`z", { noremap = true, silent = true, desc = "Concatenate fro
 bind("n", "<leader>lm", "<CMD>LspRestart<CR>", { noremap = true, silent = true, desc = "Restart LSPs" })
 bind("n", "<leader>lf", vim.lsp.buf.format, { noremap = true, silent = true, desc = "Format" })
 bind("n", "<leader>hl", "<CMD>Lazy<CR>", { noremap = true, silent = true, desc = "Lazy" })
--- bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
--- bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
+bind("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll Down" })
+bind("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll Up" })
 
 --
 -- Visual Mode Keybinds
@@ -34,6 +34,13 @@ bind("i", "<M-v>", "<C-r>+", { noremap = true, silent = true, desc = "Paste from
 --
 bind("t", "<Esc>", [[<C-\><C-n>]], { remap = true, silent = true, desc = "Leave Insert Mode" })
 bind("t", "<C-w>", [[<C-\><C-n><C-w>]], { remap = true, silent = true, desc = "Close Terminal" })
+
+--
+-- Miscellaneous Keybinds
+--
+bind("x", "p", function()
+	return 'pgv"' .. vim.v.register .. "y"
+end, { remap = false, expr = true })
 
 -- Get rid of this evil garbage
 bind("n", "Q", "<nop>")
